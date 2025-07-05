@@ -2,7 +2,7 @@
 
 import { MapPin, Bed, Bath, Square, Calendar, Star } from 'lucide-react';
 import { ListingInfoProps } from './types';
-import { formatCurrency, formatArea, getTypeIcon, getTypeColor, getListingScore, getListingRating, getListingRatingColor } from './utils';
+import { formatCurrency, formatArea, getTypeIcon, getTypeColor, getListingScore, getListingRating, getListingRatingColor } from './utils.tsx';
 
 export default function ListingInfo({ 
   listing, 

@@ -1,8 +1,7 @@
 'use client';
 
 import { SafetyAlertsProps, SafetyAlert } from './types';
-import { getAlertIcon, getAlertColor } from './utils';
-import { formatDate } from './utils';
+import { getAlertIcon, getAlertColor, formatDate } from './utils';
 import { X, Bell } from 'lucide-react';
 
 export default function SafetyAlerts({ 

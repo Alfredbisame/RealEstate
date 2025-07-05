@@ -2,7 +2,7 @@
 
 import { IncidentSeverityProps } from './types';
 import { getSeverityColor } from './utils';
-import { AlertTriangle, XCircle, Warning, Info } from 'lucide-react';
+import { AlertTriangle, XCircle, AlertCircle, Info } from 'lucide-react';
 
 export default function IncidentSeverity({ 
   severity, 
@@ -18,7 +18,7 @@ export default function IncidentSeverity({
       case 'high':
         return <AlertTriangle className="w-3 h-3" />;
       case 'medium':
-        return <Warning className="w-3 h-3" />;
+        return <AlertCircle className="w-3 h-3" />;
       case 'low':
         return <Info className="w-3 h-3" />;
       default:

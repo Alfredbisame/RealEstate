@@ -1,5 +1,5 @@
 import { SafetyMetric, SafetyIncident, SafetyAlert } from './types';
-import { Shield, AlertTriangle, CheckCircle, Clock, TrendingUp, TrendingDown } from 'lucide-react';
+import { Shield, AlertTriangle, CheckCircle, Clock } from 'lucide-react';
 
 export const mockSafetyMetrics: SafetyMetric[] = [
   {

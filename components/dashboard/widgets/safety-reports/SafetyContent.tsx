@@ -98,7 +98,6 @@ export default function SafetyContent({
               <div>
                 <IncidentList
                   incidents={mockIncidents}
-                  maxIncidents={maxIncidents}
                   onIncidentClick={handleIncidentClick}
                   showFilters={false}
                   maxHeight="24rem"

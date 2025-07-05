@@ -3,14 +3,7 @@ import {
   Building2, 
   Home, 
   Factory, 
-  MapPin, 
-  TrendingUp, 
-  Eye, 
-  Heart,
-  Star,
-  Calendar,
-  DollarSign
-} from 'lucide-react';
+  MapPin} from 'lucide-react';
 
 export const getStatusColor = (status: PropertyListing['status']) => {
   switch (status.toLowerCase()) {

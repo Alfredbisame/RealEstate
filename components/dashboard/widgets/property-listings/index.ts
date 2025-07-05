@@ -1,5 +1,5 @@
 // Main component
-export { default as PropertyListings } from './PropertyListings';
+export { default as PropertyListings } from './ListingsContent';
 
 // Sub-components
 export { default as ListingsHeader } from './ListingsHeader';

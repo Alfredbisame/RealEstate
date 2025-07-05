@@ -1,6 +1,6 @@
 'use client';
 
-import { EmployeeAttendanceProps, Employee, AttendanceStats } from './types';
+import { EmployeeAttendanceProps, Employee, AttendanceStats as AttendanceStatsType } from './types';
 import { calculateAttendanceRate } from './utils';
 import { mockAttendanceData, mockAttendanceStats } from './mockData';
 import AttendanceHeader from './AttendanceHeader';

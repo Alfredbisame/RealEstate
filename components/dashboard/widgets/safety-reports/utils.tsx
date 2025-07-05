@@ -1,21 +1,14 @@
 import { SafetyMetric, SafetyIncident, SafetyStats, SafetyFilters, SafetyPriority, SafetyAlert } from './types';
 import { 
-  Shield, 
   AlertTriangle, 
   CheckCircle, 
   Clock, 
   TrendingUp, 
   TrendingDown, 
   Minus,
-  Warning,
+  AlertCircle,
   Info,
-  XCircle,
-  User,
-  MapPin,
-  Calendar,
-  DollarSign,
-  Clock as TimeIcon
-} from 'lucide-react';
+  XCircle} from 'lucide-react';
 
 export const getSeverityColor = (severity: SafetyIncident['severity']) => {
   switch (severity) {
@@ -291,7 +284,7 @@ export const getIncidentPriority = (incident: SafetyIncident): SafetyPriority =>
         color: 'orange',
         bgColor: 'bg-orange-50 dark:bg-orange-900/20',
         textColor: 'text-orange-700 dark:text-orange-300',
-        icon: Warning
+        icon: AlertCircle
       };
     case 'low':
       return {
@@ -315,7 +308,7 @@ export const getIncidentPriority = (incident: SafetyIncident): SafetyPriority =>
 export const getAlertIcon = (type: SafetyAlert['type']) => {
   switch (type) {
     case 'warning':
-      return <Warning className="w-4 h-4" />;
+      return <AlertCircle className="w-4 h-4" />;
     case 'critical':
       return <XCircle className="w-4 h-4" />;
     case 'info':

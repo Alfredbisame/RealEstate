@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo } from 'react';
-import { Material, ClientInfo, CostBreakdown as CostBreakdownType, InvoiceCalculations } from './types';
+import { Material, ClientInfo as ClientInfoType, CostBreakdown as CostBreakdownType, InvoiceCalculations } from './types';
 import { calculateInvoice, createEmptyMaterial } from './utils';
 import ClientInfo from './ClientInfo';
 import MaterialsSection from './MaterialsSection';
@@ -25,7 +25,7 @@ export default function InvoiceContent({
   initialData, 
   className = "" 
 }: InvoiceContentProps) {
-  const [clientInfo, setClientInfo] = useState<ClientInfo>({
+  const [clientInfo, setClientInfo] = useState<ClientInfoType>({
     clientName: initialData.clientName,
     projectName: initialData.projectName
   });
@@ -40,7 +40,7 @@ export default function InvoiceContent({
     return calculateInvoice(materials, costs.labor, costs.permits);
   }, [materials, costs.labor, costs.permits]);
 
-  const handleClientInfoChange = (field: keyof ClientInfo, value: string) => {
+  const handleClientInfoChange = (field: keyof ClientInfoType, value: string) => {
     setClientInfo(prev => ({ ...prev, [field]: value }));
   };
 

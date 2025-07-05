@@ -1,4 +1,4 @@
-import { Property, PropertyStatus, PropertyType } from './types';
+import { Property } from './types';
 import { 
   Home, 
   Building, 
@@ -182,8 +182,8 @@ export const calculatePropertyStats = (properties: Property[]) => {
   }, 0);
   
   const averageYield = properties.reduce((sum, p) => {
-    const yield = parseFloat(p.yield.replace(/[^0-9.-]+/g, ''));
-    return sum + (isNaN(yield) ? 0 : yield);
+    const yieldValue = parseFloat(p.yield.replace(/[^0-9.-]+/g, ''));
+    return sum + (isNaN(yieldValue) ? 0 : yieldValue);
   }, 0) / totalProperties;
   
   const averagePrice = totalValue / totalProperties;
@@ -209,10 +209,10 @@ export const getPropertyScore = (property: Property): number => {
   else if (value > 500000) score += 10;
   
   // Yield score (0-30 points)
-  const yield = parseFloat(property.yield.replace(/[^0-9.-]+/g, ''));
-  if (yield > 15) score += 30;
-  else if (yield > 10) score += 20;
-  else if (yield > 5) score += 10;
+  const yieldValue = parseFloat(property.yield.replace(/[^0-9.-]+/g, ''));
+  if (yieldValue > 15) score += 30;
+  else if (yieldValue > 10) score += 20;
+  else if (yieldValue > 5) score += 10;
   
   // Status score (0-20 points)
   if (property.status === 'available') score += 20;
