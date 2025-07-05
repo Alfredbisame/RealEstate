@@ -4,7 +4,7 @@ import { IncidentCardProps } from './types';
 import { formatDate, formatCurrency, formatTime } from './utils';
 import IncidentSeverity from './IncidentSeverity';
 import IncidentStatus from './IncidentStatus';
-import { User, MapPin, Calendar, DollarSign, TimeIcon, FileText } from 'lucide-react';
+import { User, MapPin, Calendar, DollarSign, TimerIcon, FileText } from 'lucide-react';
 
 export default function IncidentCard({ 
   incident, 
@@ -96,7 +96,7 @@ export default function IncidentCard({
           )}
           {incident.timeLost !== undefined && (
             <div className="flex items-center space-x-1 text-gray-600 dark:text-gray-400">
-              <TimeIcon className="w-3 h-3" />
+              <TimerIcon className="w-3 h-3" />
               <span>{formatTime(incident.timeLost)} lost</span>
             </div>
           )}

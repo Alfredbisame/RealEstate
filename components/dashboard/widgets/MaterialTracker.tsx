@@ -14,10 +14,13 @@ export default function MaterialTracker({
   materials = mockMaterials, 
   className = "" 
 }: MaterialTrackerProps) {
+  // Validate materials prop
+  const validMaterials = Array.isArray(materials) ? materials : mockMaterials;
+
   return (
     <div className={`h-full ${className}`}>
       <MaterialHeader />
-      <MaterialContent materials={materials} />
+      <MaterialContent materials={validMaterials} />
     </div>
   );
 }

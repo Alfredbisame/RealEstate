@@ -1,5 +1,5 @@
+import { Minus, TrendingDown, TrendingUp } from 'lucide-react';
 import { StatsCardProps, StatsCardMetric, StatsCardFilter } from './types';
-import { TrendingUp, TrendingDown, Minus, LucideIcon } from 'lucide-react';
 
 export const getColorClasses = (color: StatsCardProps['color']) => {
   const colorClasses = {
@@ -243,7 +243,7 @@ export const sortMetrics = (metrics: StatsCardMetric[], sortBy: 'value' | 'chang
 };
 
 export const getGridClasses = (columns: number = 4, gap: 'sm' | 'md' | 'lg' = 'md') => {
-  const columnClasses = {
+  const columnClasses: Record<number, string> = {
     1: 'grid-cols-1',
     2: 'grid-cols-1 sm:grid-cols-2',
     3: 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3',
@@ -258,7 +258,7 @@ export const getGridClasses = (columns: number = 4, gap: 'sm' | 'md' | 'lg' = 'm
     lg: 'gap-6'
   };
 
-  return `grid ${columnClasses[columns]} ${gapClasses[gap]}`;
+  return `grid ${columnClasses[columns] || columnClasses[4]} ${gapClasses[gap]}`;
 };
 
 export const animateValue = (start: number, end: number, duration: number, callback: (value: number) => void) => {
