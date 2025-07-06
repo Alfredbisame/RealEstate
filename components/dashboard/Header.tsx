@@ -2,7 +2,8 @@
 
 import { UserRole } from '@/types/roles';
 import { 
-  User
+  User,
+  Menu
   } from 'lucide-react';
 import { useState } from 'react';
 import HeaderLeft from './NavHeader/HeaderLeft';
@@ -27,6 +28,8 @@ interface HeaderProps {
   isDarkMode: boolean;
   onThemeToggle: () => void;
   onSettingsClick: () => void;
+  onMenuClick?: () => void;
+  isMobile?: boolean;
 }
 
 export default function Header({ 
@@ -34,7 +37,9 @@ export default function Header({
   onLogout, 
   isDarkMode, 
   onThemeToggle,
-  onSettingsClick 
+  onSettingsClick,
+  onMenuClick,
+  isMobile
 }: HeaderProps) {
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
@@ -56,20 +61,45 @@ export default function Header({
   ];
 
   return (
-    <header className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50 px-6 py-4 shadow-sm">
+    <header className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50 px-4 md:px-6 py-4 shadow-sm">
       <div className="flex items-center justify-between">
         {/* Left Section */}
-        <div className="flex items-center space-x-6">
-          <HeaderLeft user={user} currentTime={currentTime} />
+        <div className="flex items-center space-x-4 md:space-x-6">
+          {/* Mobile Menu Button */}
+          {isMobile && (
+            <button
+              onClick={onMenuClick}
+              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"
+            >
+              <Menu className="w-5 h-5 text-gray-600 dark:text-gray-300" />
+            </button>
+          )}
+          <div className="hidden sm:block">
+            <HeaderLeft user={user} currentTime={currentTime} />
+          </div>
+          {/* Mobile User Info */}
+          <div className="sm:hidden">
+            <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">
+              {user.name}
+            </h2>
+          </div>
         </div>
-        {/* Center Section - Search */}
-        <HeaderSearch />
+        
+        {/* Center Section - Search - Hidden on mobile */}
+        <div className="hidden md:block">
+          <HeaderSearch />
+        </div>
+        
         {/* Right Section */}
-        <div className="flex items-center space-x-4">
-          <HeaderCurrency />
+        <div className="flex items-center space-x-2 md:space-x-4">
+          <div className="hidden sm:block">
+            <HeaderCurrency />
+          </div>
           <HeaderThemeToggle isDarkMode={isDarkMode} onThemeToggle={onThemeToggle} />
           <HeaderNotifications notificationsOpen={notificationsOpen} setNotificationsOpen={setNotificationsOpen} notifications={notifications} />
-          <HeaderSettings onSettingsClick={onSettingsClick} />
+          <div className="hidden sm:block">
+            <HeaderSettings onSettingsClick={onSettingsClick} />
+          </div>
           <HeaderUserMenu user={user} userDropdownOpen={userDropdownOpen} setUserDropdownOpen={setUserDropdownOpen} onLogout={onLogout} onSettingsClick={onSettingsClick} />
         </div>
       </div>

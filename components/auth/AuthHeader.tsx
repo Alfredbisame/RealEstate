@@ -1,6 +1,6 @@
 'use client';
 
-import { Building2 } from 'lucide-react';
+import Image from 'next/image';
 
 interface AuthHeaderProps {
   isSignUp: boolean;
@@ -12,8 +12,14 @@ export default function AuthHeader({ isSignUp, className = '' }: AuthHeaderProps
     <div className={className}>
       {/* Mobile Logo */}
       <div className="lg:hidden flex items-center justify-center space-x-3 mb-8">
-        <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl flex items-center justify-center">
-          <Building2 className="w-6 h-6 text-white" />
+        <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-md flex items-center justify-center overflow-hidden p-1">
+          <Image
+            src="/logo.webp"
+            alt="Ghana Real Estate Logo"
+            width={48}
+            height={48}
+            className="object-cover"
+          />
         </div>
         <div>
           <h1 className="text-xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">

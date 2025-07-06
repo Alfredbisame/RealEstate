@@ -68,7 +68,10 @@ export default function HeaderUserMenu({ user, userDropdownOpen, setUserDropdown
               <span className="text-sm text-gray-700 dark:text-gray-300">Profile Settings</span>
             </button>
             <button 
-              onClick={onSettingsClick}
+              onClick={() => {
+                onSettingsClick();
+                setUserDropdownOpen(false);
+              }}
               className="w-full flex items-center space-x-3 px-3 py-2 text-left hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors"
             >
               <Settings size={16} />
