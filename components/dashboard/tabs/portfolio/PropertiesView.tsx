@@ -9,7 +9,7 @@ interface Property {
   location: string;
   value: string;
   yield: string;
-  status: string;
+  status: 'occupied' | 'available' | 'under construction' | 'maintenance' | 'sold' | 'rented';
   image: string;
   type: string;
   bedrooms: number | null;
@@ -29,7 +29,7 @@ export default function PropertiesView({ properties, viewMode }: PropertiesViewP
   return (
     <div className="space-y-6">
       {viewMode === 'grid' ? (
-        <PropertiesGrid properties={properties} />
+        <PropertiesGrid properties={properties as any} />
       ) : (
         <PropertiesTable properties={properties} />
       )}

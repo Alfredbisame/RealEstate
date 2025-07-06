@@ -1,23 +1,7 @@
 'use client';
 
 import PropertyCard from '../../widgets/PropertyCard';
-
-interface Property {
-  id: string;
-  name: string;
-  location: string;
-  value: string;
-  yield: string;
-  status: string;
-  image: string;
-  type: string;
-  bedrooms: number | null;
-  bathrooms: number;
-  area: string;
-  monthlyRent: string;
-  purchaseDate: string;
-  appreciation: string;
-}
+import { Property } from '../../widgets/property-card/types';
 
 interface PropertiesGridProps {
   properties: Property[];

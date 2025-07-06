@@ -1,5 +1,5 @@
 // Main component
-export { default as InvoiceGenerator } from './InvoiceGenerator';
+export { default as InvoiceGenerator } from './InvoiceContent';
 
 // Sub-components
 export { default as InvoiceHeader } from './InvoiceHeader';
