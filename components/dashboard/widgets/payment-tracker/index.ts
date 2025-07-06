@@ -1,5 +1,5 @@
 // Main component
-export { default as PaymentTracker } from './PaymentTracker';
+export { default as PaymentTracker } from './PaymentContent';
 
 // Sub-components
 export { default as PaymentHeader } from './PaymentHeader';

@@ -1,5 +1,5 @@
 // Main component
-export { default as PayrollSummary } from './PayrollSummary';
+export { default as PayrollSummary } from './PayrollContent';
 
 // Sub-components
 export { default as PayrollHeader } from './PayrollHeader';

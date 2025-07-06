@@ -1,5 +1,5 @@
 // Main component
-export { default as ProfitCalculator } from './ProfitCalculator';
+export { default as ProfitCalculator } from './ProfitContent';
 
 // Sub-components
 export { default as ProfitHeader } from './ProfitHeader';

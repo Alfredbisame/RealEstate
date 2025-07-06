@@ -7,7 +7,7 @@ import {
   FileText, PieChart, MapPin, Briefcase, Calendar,
   TrendingUp, CreditCard, Shield, Clock, Award,
   UserCheck, Search, Bell, HelpCircle, Package,
-  Truck, Wrench, Phone, Mail, Globe, Zap
+  Truck, Wrench, Phone, Mail, Zap
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 

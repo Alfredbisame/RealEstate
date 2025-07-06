@@ -8,7 +8,7 @@ export { default as PropertyLocation } from './PropertyLocation';
 export { default as PropertyStatus } from './PropertyStatus';
 export { default as PropertyValue } from './PropertyValue';
 export { default as PropertyFeatures } from './PropertyFeatures';
-export { default as PropertyAgent } from './PropertyAgent';
+export { default as PropertyAgentCard } from './PropertyAgent';
 export { default as PropertyActions } from './PropertyActions';
 
 // Types
