@@ -1,7 +1,7 @@
 'use client';
 
 import { ProjectStatusProps } from './types';
-import { getStatusIcon, getStatusColor, getStatusBgColor } from './utils.tsx';
+import { getStatusIcon, getStatusColor, getStatusBgColor } from './utils';
 
 export default function ProjectStatus({ 
   status, 

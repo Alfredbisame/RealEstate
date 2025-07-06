@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Star, Eye, Heart } from 'lucide-react';
 import { ListingImageProps } from './types';
-import { getStatusColor } from './utils.tsx';
+import { getStatusColor } from './utils';
 
 export default function ListingImage({ 
   image, 

@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { PropertyListing, ListingsGridProps } from './types';
-import { calculateListingsSummary, filterListings, searchListings, sortListings } from './utils.tsx';
+import { calculateListingsSummary, filterListings, searchListings, sortListings } from './utils';
 import ListingsGrid from './ListingsGrid';
 
 interface ListingsContentProps {

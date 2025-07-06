@@ -1,7 +1,7 @@
 'use client';
 
 import { ProjectProgressProps } from './types';
-import { getProgressColor, getProgressLabel } from './utils.tsx';
+import { getProgressColor, getProgressLabel } from './utils';
 
 export default function ProjectProgress({ 
   progress, 

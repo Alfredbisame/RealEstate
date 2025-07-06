@@ -2,7 +2,7 @@
 
 import { Calendar, Flag } from 'lucide-react';
 import { ProjectHeaderProps } from './types';
-import { formatDate, getDaysUntilDeadline, isOverdue, isDueSoon, getPriorityConfig, getPriorityIcon } from './utils.tsx';
+import { formatDate, getDaysUntilDeadline, isOverdue, isDueSoon, getPriorityConfig, getPriorityIcon } from './utils';
 import ProjectStatus from './ProjectStatus';
 import ProjectBudget from './ProjectBudget';
 
