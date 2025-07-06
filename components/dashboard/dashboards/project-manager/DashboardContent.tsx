@@ -16,7 +16,7 @@ export default function DashboardContent({ widgetType }: DashboardContentProps) 
       name: 'East Legon Residential Complex',
       progress: 65,
       deadline: '2024-08-15',
-      status: 'On Track',
+      status: 'on track' as const,
       budget: 'GHS 850,000',
       spent: 'GHS 552,500'
     },
@@ -25,7 +25,7 @@ export default function DashboardContent({ widgetType }: DashboardContentProps) 
       name: 'Kumasi Shopping Center',
       progress: 45,
       deadline: '2024-10-30',
-      status: 'Behind Schedule',
+      status: 'behind schedule' as const,
       budget: 'GHS 1,200,000',
       spent: 'GHS 540,000'
     },
@@ -34,17 +34,17 @@ export default function DashboardContent({ widgetType }: DashboardContentProps) 
       name: 'Tema Industrial Warehouse',
       progress: 85,
       deadline: '2024-06-20',
-      status: 'Ahead of Schedule',
+      status: 'ahead of schedule' as const,
       budget: 'GHS 650,000',
       spent: 'GHS 552,500'
     }
   ];
 
   const materials = [
-    { name: 'Cement (50kg bags)', current: 450, required: 500, price: 45, unit: 'bags' },
-    { name: 'Steel Bars (12mm)', current: 25, required: 30, price: 180, unit: 'bundles' },
-    { name: 'Blocks (6inch)', current: 2800, required: 3000, price: 2.5, unit: 'pieces' },
-    { name: 'Roofing Sheets', current: 85, required: 100, price: 55, unit: 'sheets' }
+    { id: '1', name: 'Cement (50kg bags)', current: 450, required: 500, price: 45, unit: 'bags' },
+    { id: '2', name: 'Steel Bars (12mm)', current: 25, required: 30, price: 180, unit: 'bundles' },
+    { id: '3', name: 'Blocks (6inch)', current: 2800, required: 3000, price: 2.5, unit: 'pieces' },
+    { id: '4', name: 'Roofing Sheets', current: 85, required: 100, price: 55, unit: 'sheets' }
   ];
 
   switch (widgetType) {

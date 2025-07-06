@@ -32,7 +32,6 @@ export default function RevenueChart({ className = '' }: RevenueChartProps) {
       title="Revenue vs Expenses"
       data={revenueChartData}
       type="area"
-      className={className}
     />
   );
 } 

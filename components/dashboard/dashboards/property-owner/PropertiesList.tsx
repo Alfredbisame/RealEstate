@@ -10,7 +10,7 @@ export default function PropertiesList() {
       location: 'East Legon, Accra',
       value: 'GHS 450,000',
       yield: '12.5%',
-      status: 'Occupied',
+      status: 'occupied' as const,
       image: 'https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=300'
     },
     {
@@ -19,7 +19,7 @@ export default function PropertiesList() {
       location: 'Airport Hills, Accra',
       value: 'GHS 680,000',
       yield: '15.2%',
-      status: 'Available',
+      status: 'available' as const,
       image: 'https://images.pexels.com/photos/186077/pexels-photo-186077.jpeg?auto=compress&cs=tinysrgb&w=300'
     },
     {
@@ -28,7 +28,7 @@ export default function PropertiesList() {
       location: 'Asokore Mampong, Kumasi',
       value: 'GHS 320,000',
       yield: '18.7%',
-      status: 'Under Construction',
+      status: 'under construction' as const,
       image: 'https://images.pexels.com/photos/280222/pexels-photo-280222.jpeg?auto=compress&cs=tinysrgb&w=300'
     }
   ];

@@ -5,7 +5,7 @@ import { Users, Clock, DollarSign, Award } from 'lucide-react';
 interface Tab {
   id: string;
   label: string;
-  icon: React.ComponentType<{ size?: number }>;
+  icon: React.ComponentType<{ size?: number | string; className?: string }>;
 }
 
 interface NavigationTabsProps {

@@ -33,7 +33,6 @@ export default function DashboardContent({ widgets, onWidgetsChange, className =
       widgets={widgets}
       onWidgetsChange={onWidgetsChange}
       renderWidget={renderWidget}
-      className={className}
     />
   );
 } 
