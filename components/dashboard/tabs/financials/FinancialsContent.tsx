@@ -2,21 +2,13 @@
 
 import NavigationTabs from './NavigationTabs';
 import ViewContent from './ViewContent';
-
-interface Invoice {
-  id: string;
-  client: string;
-  amount: string;
-  dueDate: string;
-  status: 'Paid' | 'Pending' | 'Overdue';
-  type: string;
-}
+import { Payment } from '../../widgets/payment-tracker/types';
 
 interface FinancialsContentProps {
   activeView: string;
   onViewChange: (view: string) => void;
-  invoices: Invoice[];
-  onInvoiceClick?: (invoice: Invoice) => void;
+  invoices: Payment[];
+  onInvoiceClick?: (invoice: Payment) => void;
 }
 
 export default function FinancialsContent({

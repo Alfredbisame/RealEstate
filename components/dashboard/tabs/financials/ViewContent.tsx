@@ -6,20 +6,12 @@ import RecentInvoices from './RecentInvoices';
 import { ReportsGrid } from './ReportCard';
 import InvoiceGenerator from '../../widgets/InvoiceGenerator';
 import PaymentTracker from '../../widgets/PaymentTracker';
-
-interface Invoice {
-  id: string;
-  client: string;
-  amount: string;
-  dueDate: string;
-  status: 'Paid' | 'Pending' | 'Overdue';
-  type: string;
-}
+import { Payment } from '../../widgets/payment-tracker/types';
 
 interface ViewContentProps {
   activeView: string;
-  invoices: Invoice[];
-  onInvoiceClick?: (invoice: Invoice) => void;
+  invoices: Payment[];
+  onInvoiceClick?: (invoice: Payment) => void;
 }
 
 export default function ViewContent({
@@ -27,6 +19,16 @@ export default function ViewContent({
   invoices,
   onInvoiceClick
 }: ViewContentProps) {
+  // Convert Payment[] to Invoice[] for RecentInvoices component
+  const recentInvoices = invoices.map(payment => ({
+    id: payment.id,
+    client: payment.client,
+    amount: payment.amount,
+    dueDate: payment.dueDate,
+    status: payment.status.charAt(0).toUpperCase() + payment.status.slice(1) as 'Paid' | 'Pending' | 'Overdue',
+    type: payment.type
+  }));
+
   const invoiceData = {
     clientName: '',
     projectName: '',
@@ -59,8 +61,14 @@ export default function ViewContent({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <InvoiceGenerator data={invoiceData} />
             <RecentInvoices 
-              invoices={invoices} 
-              onInvoiceClick={onInvoiceClick} 
+              invoices={recentInvoices} 
+              onInvoiceClick={(invoice) => {
+                // Convert back to Payment type for the callback
+                const payment = invoices.find(p => p.id === invoice.id);
+                if (payment && onInvoiceClick) {
+                  onInvoiceClick(payment);
+                }
+              }} 
             />
           </div>
         );
