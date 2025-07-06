@@ -26,8 +26,8 @@ export function WorkerList({
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
   // Get unique values for filters
-  const sites = useMemo(() => [...new Set(workers.map(w => w.site))], [workers]);
-  const roles = useMemo(() => [...new Set(workers.map(w => w.role))], [workers]);
+  const sites = useMemo(() => Array.from(new Set(workers.map(w => w.site))), [workers]);
+  const roles = useMemo(() => Array.from(new Set(workers.map(w => w.role))), [workers]);
   const statuses = ['present', 'late', 'absent'];
 
   // Filter and sort workers

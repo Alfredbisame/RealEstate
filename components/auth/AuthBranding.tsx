@@ -1,6 +1,7 @@
 'use client';
 
-import { Building2, Briefcase, Shield, CheckCircle } from 'lucide-react';
+import { Briefcase, Shield, CheckCircle } from 'lucide-react';
+import Image from 'next/image';
 
 interface AuthBrandingProps {
   className?: string;
@@ -30,7 +31,7 @@ export default function AuthBranding({ className = '' }: AuthBrandingProps) {
       iconColor: 'text-orange-600 dark:text-orange-400'
     },
     {
-      icon: Building2,
+      icon: Briefcase,
       title: 'Portfolio Management',
       description: 'Comprehensive property portfolio tracking and valuation.',
       color: 'bg-purple-100 dark:bg-purple-900',
@@ -42,8 +43,14 @@ export default function AuthBranding({ className = '' }: AuthBrandingProps) {
     <div className={`hidden lg:block space-y-8 ${className}`}>
       <div className="text-center lg:text-left">
         <div className="flex items-center justify-center lg:justify-start space-x-3 mb-6">
-          <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl flex items-center justify-center">
-            <Building2 className="w-7 h-7 text-white" />
+          <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-md flex items-center justify-center overflow-hidden p-1">
+            <Image
+              src="/logo.webp"
+              alt="Ghana Real Estate Logo"
+              width={48}
+              height={48}
+              className="object-cover"
+            />
           </div>
           <div>
             <h1 className="text-3xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">

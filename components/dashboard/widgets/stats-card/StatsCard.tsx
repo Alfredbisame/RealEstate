@@ -88,7 +88,6 @@ export default function StatsCard({
         ${variants.hover}
       `}
       onClick={handleClick}
-      role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
       onKeyDown={onClick ? (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
@@ -96,7 +95,7 @@ export default function StatsCard({
           handleClick();
         }
       } : undefined}
-      {...getAccessibilityProps(title, displayValue, change)}
+      {...(onClick ? { role: 'button' } : getAccessibilityProps(title, displayValue, change))}
     >
       <StatsCardHeader
         icon={icon}
