@@ -1,5 +1,5 @@
 // Main component
-export { default as MaterialTracker } from './MaterialTracker';
+export { default as MaterialTracker } from './MaterialContent';
 
 // Sub-components
 export { default as MaterialHeader } from './MaterialHeader';

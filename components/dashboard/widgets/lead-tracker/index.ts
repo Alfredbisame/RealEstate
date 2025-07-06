@@ -1,5 +1,5 @@
 // Main component
-export { default as LeadTracker } from './LeadTracker';
+export { default as LeadTracker } from './LeadContent';
 
 // Sub-components
 export { default as LeadHeader } from './LeadHeader';
