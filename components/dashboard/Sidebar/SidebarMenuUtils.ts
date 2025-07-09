@@ -34,7 +34,7 @@ export const getMenuItems = (role: UserRole): MenuItem[] => {
       { id: 'budget', icon: Calculator, label: 'Budget Tracker', href: '#' },
       { id: 'resources', icon: Hammer, label: 'Resources', href: '#' },
       { id: 'materials', icon: Package, label: 'Materials', href: '#' },
-      { id: 'quality', icon: Shield, label: 'Quality Control', href: '#' },
+      { id: 'quality-control', icon: Shield, label: 'Quality Control', href: '#' },
       { id: 'logistics', icon: Truck, label: 'Logistics', href: '#' },
       { id: 'equipment', icon: Wrench, label: 'Equipment', href: '#' },
     ],
