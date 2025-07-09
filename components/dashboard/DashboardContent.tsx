@@ -30,6 +30,7 @@ import EquipmentScreen from './dashboards/project-manager/EquipmentScreen';
 import AccountantInvoicesScreen from './dashboards/accountant/InvoicesScreen';
 import AccountantPaymentsScreen from './dashboards/accountant/PaymentsScreen';
 import AccountantReportsScreen from './dashboards/accountant/ReportsScreen';
+import AccountantTaxComplianceScreen from './dashboards/accountant/TaxComplianceScreen';
 
 interface User {
   id: string;
@@ -118,6 +119,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <AccountantPaymentsScreen user={user} />;
           case 'reports':
             return <AccountantReportsScreen user={user} />;
+          case 'tax-compliance':
+            return <AccountantTaxComplianceScreen user={user} />;
           default:
             return <AccountantDashboard />;
         }

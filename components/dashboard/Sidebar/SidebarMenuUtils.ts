@@ -43,7 +43,7 @@ export const getMenuItems = (role: UserRole): MenuItem[] => {
       { id: 'invoices', icon: FileText, label: 'Invoices', href: '#' },
       { id: 'payments', icon: CreditCard, label: 'Payments', href: '#' },
       { id: 'reports', icon: PieChart, label: 'Reports', href: '#' },
-      { id: 'taxes', icon: Shield, label: 'Tax Compliance', href: '#' },
+      { id: 'tax-compliance', icon: Shield, label: 'Tax Compliance', href: '#' },
       { id: 'reconciliation', icon: BarChart3, label: 'Reconciliation', href: '#' },
       { id: 'budgets', icon: DollarSign, label: 'Budget Planning', href: '#' },
       { id: 'audit', icon: Eye, label: 'Audit Trail', href: '#' },

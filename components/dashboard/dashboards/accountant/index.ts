@@ -6,4 +6,5 @@ export { default as RevenueChart } from './RevenueChart';
 export { default as InvoiceWidget } from './InvoiceWidget';
 export { default as PaymentWidget } from './PaymentWidget';
 export { default as DashboardContent } from './DashboardContent';
-export { default as NavigationTabs } from './NavigationTabs'; 
+export { default as NavigationTabs } from './NavigationTabs';
+export { default as TaxComplianceScreen } from './TaxComplianceScreen'; 
