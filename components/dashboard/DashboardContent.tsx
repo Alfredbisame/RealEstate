@@ -33,6 +33,7 @@ import AccountantReportsScreen from './dashboards/accountant/ReportsScreen';
 import AccountantTaxComplianceScreen from './dashboards/accountant/TaxComplianceScreen';
 import AccountantReconciliationScreen from './dashboards/accountant/ReconciliationScreen';
 import AccountantBudgetPlanningScreen from './dashboards/accountant/BudgetPlanningScreen';
+import AccountantAuditTrailScreen from './dashboards/accountant/AuditTrailScreen';
 
 interface User {
   id: string;
@@ -127,6 +128,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <AccountantReconciliationScreen user={user} />;
           case 'budgets':
             return <AccountantBudgetPlanningScreen user={user} />;
+          case 'audit':
+            return <AccountantAuditTrailScreen user={user} />;
           default:
             return <AccountantDashboard />;
         }
