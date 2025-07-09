@@ -25,6 +25,7 @@ import BudgetTrackerScreen from './dashboards/property-owner/BudgetTrackerScreen
 import ResourcesScreen from './dashboards/project-manager/ResourcesScreen';
 import MaterialsScreen from './dashboards/project-manager/MaterialsScreen';
 import QualityControlScreen from './dashboards/project-manager/QualityControlScreen';
+import LogisticsScreen from './dashboards/project-manager/LogisticsScreen';
 
 interface User {
   id: string;
@@ -93,6 +94,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <MaterialsScreen user={user} />;
           case 'quality-control':
             return <QualityControlScreen user={user} />;
+          case 'logistics':
+            return <LogisticsScreen user={user} />;
           default:
             return <ProjectManagerDashboard />;
         }
