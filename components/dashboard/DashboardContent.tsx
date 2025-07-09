@@ -28,6 +28,7 @@ import QualityControlScreen from './dashboards/project-manager/QualityControlScr
 import LogisticsScreen from './dashboards/project-manager/LogisticsScreen';
 import EquipmentScreen from './dashboards/project-manager/EquipmentScreen';
 import AccountantInvoicesScreen from './dashboards/accountant/InvoicesScreen';
+import AccountantPaymentsScreen from './dashboards/accountant/PaymentsScreen';
 
 interface User {
   id: string;
@@ -112,6 +113,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <FinancialsTab user={user} />;
           case 'invoices':
             return <AccountantInvoicesScreen user={user} />;
+          case 'payments':
+            return <AccountantPaymentsScreen user={user} />;
           default:
             return <AccountantDashboard />;
         }
