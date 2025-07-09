@@ -23,6 +23,7 @@ import PropertyValuesScreen from './dashboards/property-owner/PropertyValuesScre
 import InvoicesScreen from './dashboards/super-admin/InvoicesScreen';
 import BudgetTrackerScreen from './dashboards/property-owner/BudgetTrackerScreen';
 import ResourcesScreen from './dashboards/project-manager/ResourcesScreen';
+import MaterialsScreen from './dashboards/project-manager/MaterialsScreen';
 
 interface User {
   id: string;
@@ -87,6 +88,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <BudgetTrackerScreen user={user} />;
           case 'resources':
             return <ResourcesScreen user={user} />;
+          case 'materials':
+            return <MaterialsScreen user={user} />;
           default:
             return <ProjectManagerDashboard />;
         }
