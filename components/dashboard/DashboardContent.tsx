@@ -19,6 +19,7 @@ import CommunicationsTab from './tabs/CommunicationsTab';
 import IntegrationsTab from './tabs/IntegrationsTab';
 import CashFlowScreen from './dashboards/property-owner/CashFlowScreen';
 import TaxSummaryScreen from './dashboards/property-owner/TaxSummaryScreen';
+import PropertyValuesScreen from './dashboards/property-owner/PropertyValuesScreen';
 
 interface User {
   id: string;
@@ -65,6 +66,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <CashFlowScreen user={user} />;
           case 'taxes':
             return <TaxSummaryScreen user={user} />;
+          case 'properties':
+            return <PropertyValuesScreen user={user} />;
           default:
             return <PropertyOwnerDashboard />;
         }
