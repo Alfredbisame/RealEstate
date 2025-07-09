@@ -20,6 +20,7 @@ import IntegrationsTab from './tabs/IntegrationsTab';
 import CashFlowScreen from './dashboards/property-owner/CashFlowScreen';
 import TaxSummaryScreen from './dashboards/property-owner/TaxSummaryScreen';
 import PropertyValuesScreen from './dashboards/property-owner/PropertyValuesScreen';
+import InvoicesScreen from './dashboards/super-admin/InvoicesScreen';
 
 interface User {
   id: string;
@@ -68,6 +69,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <TaxSummaryScreen user={user} />;
           case 'properties':
             return <PropertyValuesScreen user={user} />;
+          case 'invoices':
+            return <InvoicesScreen user={user} />;
           default:
             return <PropertyOwnerDashboard />;
         }
