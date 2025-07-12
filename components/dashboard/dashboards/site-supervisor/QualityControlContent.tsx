@@ -1,7 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import QualityInspectionsView from './QualityInspectionsView';
-import QualityIssuesView from './QualityIssuesView';
-import QualityReportsView from './QualityReportsView';
+import QualityInspectionsView from '../../tabs/quality-control/QualityInspectionsView';
+import QualityIssuesView from '../../tabs/quality-control/QualityIssuesView';
+import QualityReportsView from '../../tabs/quality-control/QualityReportsView';
 
 interface QualityControlContentProps {
   activeView: string;

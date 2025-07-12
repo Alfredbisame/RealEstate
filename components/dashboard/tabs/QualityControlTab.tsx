@@ -8,7 +8,7 @@ interface QualityControlTabProps {
 }
 
 export default function QualityControlTab({ user }: QualityControlTabProps) {
-  const [activeView, setActiveView] = useState('foundation');
+  const [activeView, setActiveView] = useState('inspections');
 
   return (
     <div className="space-y-6">

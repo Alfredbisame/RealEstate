@@ -46,6 +46,7 @@ import ProgressTrackingTab from './tabs/ProgressTrackingTab';
 import ProgressTrackingScreen from './dashboards/site-supervisor/ProgressTrackingScreen';
 import MaterialRequestsTab from './tabs/MaterialRequestsTab';
 import MaterialRequestsScreen from './dashboards/site-supervisor/MaterialRequestsScreen';
+import SiteSupervisorQualityControlScreen from './dashboards/site-supervisor/QualityControlScreen';
 
 interface User {
   id: string;
@@ -162,6 +163,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <ProgressTrackingScreen user={user} />;
           case 'materials':
             return <MaterialRequestsScreen user={user} />;
+          case 'quality':
+            return <SiteSupervisorQualityControlScreen user={user} />;
           default:
             return <SiteSupervisorDashboard />;
         }
