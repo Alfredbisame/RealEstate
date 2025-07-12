@@ -34,6 +34,8 @@ import AccountantTaxComplianceScreen from './dashboards/accountant/TaxCompliance
 import AccountantReconciliationScreen from './dashboards/accountant/ReconciliationScreen';
 import AccountantBudgetPlanningScreen from './dashboards/accountant/BudgetPlanningScreen';
 import AccountantAuditTrailScreen from './dashboards/accountant/AuditTrailScreen';
+import WorkersTab from './tabs/WorkersTab';
+import WorkersScreen from './dashboards/site-supervisor/WorkersScreen';
 
 interface User {
   id: string;
@@ -138,6 +140,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
         switch (activeTab) {
           case 'dashboard':
             return <SiteSupervisorDashboard />;
+          case 'workers':
+            return <WorkersScreen user={user} />;
           default:
             return <SiteSupervisorDashboard />;
         }

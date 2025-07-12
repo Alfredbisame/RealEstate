@@ -5,4 +5,7 @@ export { default as StatsGrid } from './StatsGrid';
 export { default as DailyActivityLog } from './DailyActivityLog';
 export { default as DashboardContent } from './DashboardContent';
 export { default as NavigationTabs } from './NavigationTabs';
-export { default as ViewContent } from './ViewContent'; 
+export { default as ViewContent } from './ViewContent';
+export { default as WorkersHeader } from './WorkersHeader';
+export { default as WorkersStats } from './WorkersStats';
+export { default as WorkersContent } from './WorkersContent'; 
