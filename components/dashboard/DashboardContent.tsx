@@ -42,6 +42,10 @@ import SafetyTab from './tabs/SafetyTab';
 import SafetyReportsScreen from './dashboards/site-supervisor/SafetyReportsScreen';
 import EquipmentTab from './tabs/EquipmentTab';
 import EquipmentScreen from './dashboards/site-supervisor/EquipmentScreen';
+import ProgressTrackingTab from './tabs/ProgressTrackingTab';
+import ProgressTrackingScreen from './dashboards/site-supervisor/ProgressTrackingScreen';
+import MaterialRequestsTab from './tabs/MaterialRequestsTab';
+import MaterialRequestsScreen from './dashboards/site-supervisor/MaterialRequestsScreen';
 
 interface User {
   id: string;
@@ -154,6 +158,10 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <SafetyReportsScreen user={user} />;
           case 'equipment':
             return <EquipmentScreen user={user} />;
+          case 'progress':
+            return <ProgressTrackingScreen user={user} />;
+          case 'materials':
+            return <MaterialRequestsScreen user={user} />;
           default:
             return <SiteSupervisorDashboard />;
         }
