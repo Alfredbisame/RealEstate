@@ -47,6 +47,8 @@ import ProgressTrackingScreen from './dashboards/site-supervisor/ProgressTrackin
 import MaterialRequestsTab from './tabs/MaterialRequestsTab';
 import MaterialRequestsScreen from './dashboards/site-supervisor/MaterialRequestsScreen';
 import SiteSupervisorQualityControlScreen from './dashboards/site-supervisor/QualityControlScreen';
+import ClientsTab from './tabs/ClientsTab';
+import ClientsScreen from './dashboards/sales-agent/ClientsScreen';
 
 interface User {
   id: string;
@@ -173,6 +175,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
         switch (activeTab) {
           case 'dashboard':
             return <SalesAgentDashboard />;
+          case 'clients':
+            return <ClientsScreen user={user} />;
           default:
             return <SalesAgentDashboard />;
         }
