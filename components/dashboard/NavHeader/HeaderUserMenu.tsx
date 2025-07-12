@@ -1,5 +1,6 @@
 import { User, ChevronDown, Settings, HelpCircle, LogOut } from 'lucide-react';
 import { UserRole, ROLE_CONFIGS } from '@/types/roles';
+import { createPortal } from 'react-dom';
 
 interface UserType {
   id: string;
@@ -40,8 +41,8 @@ export default function HeaderUserMenu({ user, userDropdownOpen, setUserDropdown
         <ChevronDown size={16} className="text-gray-500" />
       </button>
 
-      {userDropdownOpen && (
-        <div className="absolute right-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-xl shadow-xl border border-gray-200 dark:border-gray-700 z-50 backdrop-blur-xl">
+      {userDropdownOpen && createPortal(
+        <div className="fixed right-4 top-20 w-64 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 z-[99999] backdrop-blur-xl">
           <div className="p-4 border-b border-gray-200 dark:border-gray-700">
             <div className="flex items-center space-x-3">
               <div className="w-12 h-12 rounded-full overflow-hidden bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center">
@@ -91,7 +92,8 @@ export default function HeaderUserMenu({ user, userDropdownOpen, setUserDropdown
               <span className="text-sm">Sign Out</span>
             </button>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   );
