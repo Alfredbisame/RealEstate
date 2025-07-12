@@ -38,6 +38,8 @@ import WorkersTab from './tabs/WorkersTab';
 import WorkersScreen from './dashboards/site-supervisor/WorkersScreen';
 import AttendanceTab from './tabs/AttendanceTab';
 import AttendanceScreen from './dashboards/site-supervisor/AttendanceScreen';
+import SafetyTab from './tabs/SafetyTab';
+import SafetyReportsScreen from './dashboards/site-supervisor/SafetyReportsScreen';
 
 interface User {
   id: string;
@@ -146,6 +148,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <WorkersScreen user={user} />;
           case 'attendance':
             return <AttendanceScreen user={user} />;
+          case 'safety':
+            return <SafetyReportsScreen user={user} />;
           default:
             return <SiteSupervisorDashboard />;
         }
