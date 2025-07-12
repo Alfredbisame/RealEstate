@@ -26,7 +26,7 @@ import ResourcesScreen from './dashboards/project-manager/ResourcesScreen';
 import MaterialsScreen from './dashboards/project-manager/MaterialsScreen';
 import QualityControlScreen from './dashboards/project-manager/QualityControlScreen';
 import LogisticsScreen from './dashboards/project-manager/LogisticsScreen';
-import EquipmentScreen from './dashboards/project-manager/EquipmentScreen';
+import ProjectManagerEquipmentScreen from './dashboards/project-manager/EquipmentScreen';
 import AccountantInvoicesScreen from './dashboards/accountant/InvoicesScreen';
 import AccountantPaymentsScreen from './dashboards/accountant/PaymentsScreen';
 import AccountantReportsScreen from './dashboards/accountant/ReportsScreen';
@@ -40,6 +40,8 @@ import AttendanceTab from './tabs/AttendanceTab';
 import AttendanceScreen from './dashboards/site-supervisor/AttendanceScreen';
 import SafetyTab from './tabs/SafetyTab';
 import SafetyReportsScreen from './dashboards/site-supervisor/SafetyReportsScreen';
+import EquipmentTab from './tabs/EquipmentTab';
+import EquipmentScreen from './dashboards/site-supervisor/EquipmentScreen';
 
 interface User {
   id: string;
@@ -111,7 +113,7 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
           case 'logistics':
             return <LogisticsScreen user={user} />;
           case 'equipment':
-            return <EquipmentScreen user={user} />;
+            return <ProjectManagerEquipmentScreen user={user} />;
           default:
             return <ProjectManagerDashboard />;
         }
@@ -150,6 +152,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <AttendanceScreen user={user} />;
           case 'safety':
             return <SafetyReportsScreen user={user} />;
+          case 'equipment':
+            return <EquipmentScreen user={user} />;
           default:
             return <SiteSupervisorDashboard />;
         }

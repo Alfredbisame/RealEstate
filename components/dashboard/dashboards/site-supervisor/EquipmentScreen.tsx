@@ -1,13 +1,15 @@
-import { useState } from 'react';
-import EquipmentHeader from './equipment/EquipmentHeader';
-import EquipmentStats from './equipment/EquipmentStats';
-import EquipmentContent from './equipment/EquipmentContent';
+'use client';
 
-interface EquipmentTabProps {
+import { useState } from 'react';
+import EquipmentHeader from './EquipmentHeader';
+import EquipmentStats from './EquipmentStats';
+import EquipmentContent from './EquipmentContent';
+
+interface EquipmentScreenProps {
   user: any;
 }
 
-export default function EquipmentTab({ user }: EquipmentTabProps) {
+export default function EquipmentScreen({ user }: EquipmentScreenProps) {
   const [activeView, setActiveView] = useState('inventory');
 
   return (

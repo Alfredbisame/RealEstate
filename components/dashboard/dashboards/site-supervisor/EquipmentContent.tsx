@@ -1,8 +1,8 @@
 'use client';
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import EquipmentInventoryView from './EquipmentInventoryView';
-import MaintenanceTrackingView from './MaintenanceTrackingView';
+import EquipmentInventoryView from '../../tabs/equipment/EquipmentInventoryView';
+import MaintenanceTrackingView from '../../tabs/equipment/MaintenanceTrackingView';
 
 interface EquipmentContentProps {
   activeView: string;
