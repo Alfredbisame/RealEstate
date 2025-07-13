@@ -1,6 +1,5 @@
 'use client';
 
-import { User } from '@/types/roles';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import AllLeadsView from './AllLeadsView';
 import HotLeadsView from './HotLeadsView';
@@ -8,6 +7,15 @@ import LeadSourcesView from './LeadSourcesView';
 import LeadScoringView from './LeadScoringView';
 import LeadAnalyticsView from './LeadAnalyticsView';
 import LeadFollowUpView from './LeadFollowUpView';
+import { UserRole } from '@/types/roles';
+
+interface User {
+  id: string;
+  email: string;
+  name: string;
+  role: UserRole; // <-- use UserRole, not string
+  avatar?: string;
+}
 
 interface LeadsContentProps {
   user: User;
@@ -66,11 +74,11 @@ export default function LeadsContent({ user, activeTab, onTabChange }: LeadsCont
       </TabsContent>
 
       <TabsContent value="sources" className="space-y-4">
-        <LeadSourcesView user={user} />
+        <LeadSourcesView UserRole={user.role} />
       </TabsContent>
 
       <TabsContent value="scoring" className="space-y-4">
-        <LeadScoringView user={user} />
+        <LeadScoringView UserRole={user.role} />
       </TabsContent>
 
       <TabsContent value="analytics" className="space-y-4">

@@ -1,8 +1,8 @@
 'use client';
 
-import { User } from '@/types/roles';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { UserRole } from '@/types/roles';
 import { 
   Plus, 
   Search, 
@@ -19,6 +19,14 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
+
+interface User {
+  id: string;
+  email: string;
+  name: string;
+  role: UserRole;
+  avatar?: string;
+}
 
 interface LeadsHeaderProps {
   user: User;
