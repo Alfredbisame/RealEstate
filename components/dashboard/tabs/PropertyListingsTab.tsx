@@ -1,12 +1,13 @@
 'use client';
 
 import PropertyListingScreen from '../dashboards/sales-agent/PropertyListingScreen';
+import { UserRole } from '@/types/roles';
 
 interface User {
   id: string;
   email: string;
   name: string;
-  role: string;
+  role: UserRole;
   avatar?: string;
 }
 

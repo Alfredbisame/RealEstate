@@ -1,7 +1,7 @@
 'use client';
 
-import { User } from '@/types/roles';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { UserRole } from '@/types/roles';
 import { 
   TrendingUp, 
   TrendingDown, 
@@ -12,6 +12,14 @@ import {
   Phone,
   Mail
 } from 'lucide-react';
+
+interface User {
+  id: string;
+  email: string;
+  name: string;
+  role: UserRole;
+  avatar?: string;
+}
 
 interface LeadsStatsProps {
   user: User;

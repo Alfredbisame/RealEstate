@@ -14,7 +14,7 @@ export default function InvoicesTab({ user }: InvoicesTabProps) {
     <div className="space-y-6">
       <InvoicesHeader />
       <InvoicesStats />
-      <InvoicesContent activeView={activeView} onViewChange={setActiveView} />
+      <InvoicesContent activeView={activeView} onViewChange={setActiveView} user={user} />
     </div>
   );
 } 

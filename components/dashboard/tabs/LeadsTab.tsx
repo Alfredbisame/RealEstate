@@ -1,7 +1,15 @@
 'use client';
 
-import { User } from '@/types/roles';
 import LeadsScreen from '../dashboards/sales-agent/LeadsScreen';
+import { UserRole } from '@/types/roles';
+
+interface User {
+  id: string;
+  email: string;
+  name: string;
+  role: UserRole;
+  avatar?: string;
+}
 
 interface LeadsTabProps {
   user: User;

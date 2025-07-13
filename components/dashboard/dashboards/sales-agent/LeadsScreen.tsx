@@ -1,10 +1,18 @@
 'use client';
 
 import { useState } from 'react';
-import { User } from '@/types/roles';
+import { UserRole } from '@/types/roles';
 import LeadsHeader from './LeadsHeader';
 import LeadsStats from './LeadsStats';
 import LeadsContent from './LeadsContent';
+
+interface User {
+  id: string;
+  email: string;
+  name: string;
+  role: UserRole;
+  avatar?: string;
+}
 
 interface LeadsScreenProps {
   user: User;

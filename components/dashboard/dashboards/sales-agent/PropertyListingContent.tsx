@@ -7,13 +7,14 @@ import PropertyDetailsView from './PropertyDetailsView';
 import PhotoGalleryView from './PhotoGalleryView';
 import PricingView from './PricingView';
 import InquiriesView from './InquiriesView';
-import AnalyticsView from './PropertyAnalyticsView';
+import AnalyticsView from './AnalyticsView';
+import { UserRole } from '@/types/roles';
 
 interface User {
   id: string;
   email: string;
   name: string;
-  role: string;
+  role: UserRole;
   avatar?: string;
 }
 

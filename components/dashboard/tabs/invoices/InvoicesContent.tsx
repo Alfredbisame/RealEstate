@@ -6,9 +6,10 @@ import InvoiceActionsPanel from './InvoiceActionsPanel';
 interface InvoicesContentProps {
   activeView: string;
   onViewChange: (view: string) => void;
+  user: any; // or the correct User type if you have it
 }
 
-export default function InvoicesContent({ activeView, onViewChange }: InvoicesContentProps) {
+export default function InvoicesContent({ activeView, onViewChange, user }: InvoicesContentProps) {
   return (
     <div className="bg-white/80 dark:bg-gray-800/80 rounded-xl p-6 mt-4 border border-gray-200 dark:border-gray-700">
       <div className="flex space-x-4 mb-6">
@@ -31,8 +32,8 @@ export default function InvoicesContent({ activeView, onViewChange }: InvoicesCo
           Actions
         </button>
       </div>
-      {activeView === 'table' && <InvoiceTableView />}
-      {activeView === 'analytics' && <InvoiceAnalyticsView />}
+      {activeView === 'table' && <InvoiceTableView user={user} />}
+      {activeView === 'analytics' && <InvoiceAnalyticsView user={user} />}
       {activeView === 'actions' && <InvoiceActionsPanel />}
     </div>
   );

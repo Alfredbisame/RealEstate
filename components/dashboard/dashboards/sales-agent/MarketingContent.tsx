@@ -8,25 +8,26 @@ import SocialMediaView from './SocialMediaView';
 import LeadGenerationView from './LeadGenerationView';
 import AnalyticsView from './AnalyticsView';
 import ContentToolsView from './ContentToolsView';
+import { UserRole } from '@/types/roles';
 
 interface User {
   id: string;
   email: string;
   name: string;
-  role: string;
+  role: UserRole; // <-- use UserRole, not string
   avatar?: string;
 }
 
 interface MarketingContentProps {
   user: User;
+  activeTab: string;
+  onTabChange: (tab: string) => void;
 }
 
-export default function MarketingContent({ user }: MarketingContentProps) {
-  const [activeTab, setActiveTab] = useState('campaign-overview');
-
+export default function MarketingContent({ user, activeTab, onTabChange }: MarketingContentProps) {
   return (
     <div className="space-y-6">
-      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
+      <Tabs value={activeTab} onValueChange={onTabChange} className="w-full">
         <TabsList className="grid w-full grid-cols-6 bg-gray-100 dark:bg-gray-800">
           <TabsTrigger 
             value="campaign-overview"

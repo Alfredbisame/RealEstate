@@ -63,7 +63,7 @@ export default function BudgetTableView() {
               </td>
               <td className="px-4 py-2 text-sm text-green-700 dark:text-green-300 font-semibold">GHS {item.spent.toLocaleString()}</td>
               <td className="px-4 py-2 text-sm">
-                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${statusColors[item.status]}`}>{item.status}</span>
+                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${statusColors[item.status as keyof typeof statusColors] || ''}`}>{item.status}</span>
               </td>
               <td className="px-4 py-2 text-sm">
                 {editId === item.id ? (
