@@ -51,6 +51,8 @@ import ClientsTab from './tabs/ClientsTab';
 import ClientsScreen from './dashboards/sales-agent/ClientsScreen';
 import LeadsTab from './tabs/LeadsTab';
 import LeadsScreen from './dashboards/sales-agent/LeadsScreen';
+import SalesPipelineTab from './tabs/SalesPipelineTab';
+import SalesPipelineScreen from './dashboards/sales-agent/SalesPipelineScreen';
 
 interface User {
   id: string;
@@ -181,6 +183,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <ClientsScreen user={user} />;
           case 'leads':
             return <LeadsScreen user={user} />;
+          case 'sales-pipeline':
+            return <SalesPipelineScreen user={user} />;
           default:
             return <SalesAgentDashboard />;
         }

@@ -62,7 +62,7 @@ export const getMenuItems = (role: UserRole): MenuItem[] => {
       { id: 'properties', icon: Building2, label: 'Properties', href: '#' },
       { id: 'clients', icon: Users, label: 'Clients', href: '#' },
       { id: 'leads', icon: TrendingUp, label: 'Leads', href: '#' },
-      { id: 'pipeline', icon: BarChart3, label: 'Sales Pipeline', href: '#' },
+      { id: 'sales-pipeline', icon: BarChart3, label: 'Sales Pipeline', href: '#' },
       { id: 'commissions', icon: DollarSign, label: 'Commissions', href: '#' },
       { id: 'marketing', icon: Award, label: 'Marketing', href: '#' },
       { id: 'listings', icon: MapPin, label: 'Listings', href: '#' },

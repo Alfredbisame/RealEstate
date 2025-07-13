@@ -1,7 +1,7 @@
 'use client';
 
-import { User } from '@/types/roles';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { UserRole } from '@/types/roles';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { 
@@ -25,6 +25,14 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { Input } from '@/components/ui/input';
+
+interface User {
+  id: string;
+  email: string;
+  name: string;
+  role: UserRole;
+  avatar?: string;
+}
 
 interface AllLeadsViewProps {
   user: User;

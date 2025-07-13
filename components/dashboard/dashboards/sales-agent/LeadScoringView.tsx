@@ -1,7 +1,7 @@
 'use client';
 
-import { User } from '@/types/roles';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { UserRole } from '@/types/roles';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
@@ -18,7 +18,6 @@ import {
   Edit,
   MoreHorizontal,
   CheckCircle,
-  AlertCircle,
   Clock,
   Mail
 } from 'lucide-react';
@@ -31,10 +30,10 @@ import {
 import { Input } from '@/components/ui/input';
 
 interface LeadScoringViewProps {
-  user: User;
+  UserRole: UserRole;
 }
 
-export default function LeadScoringView({ user }: LeadScoringViewProps) {
+export default function LeadScoringView({ UserRole }: LeadScoringViewProps) {
   const scoredLeads = [
     {
       id: '1',

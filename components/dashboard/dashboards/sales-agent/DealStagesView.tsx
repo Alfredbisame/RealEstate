@@ -1,7 +1,7 @@
 'use client';
 
 import { UserRole } from '@/types/roles';
-import { Card, CardContent } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
@@ -9,10 +9,11 @@ import {
   Search, 
   Filter, 
   Download, 
-  Globe,
+  DollarSign,
   Users,
+  Clock,
+  Target,
   TrendingUp,
-  BarChart3,
   Eye,
   Edit,
   MoreHorizontal
@@ -25,87 +26,71 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { Input } from '@/components/ui/input';
 
-interface LeadSourcesViewProps {
-  UserRole: UserRole;
+interface User {
+  id: string;
+  email: string;
+  name: string;
+  role: UserRole;
+  avatar?: string;
 }
 
-export default function LeadSourcesView({ UserRole }: LeadSourcesViewProps) {
-  const sources = [
+interface DealStagesViewProps {
+  user: User;
+}
+
+export default function DealStagesView({ user }: DealStagesViewProps) {
+  const stages = [
     {
       id: '1',
-      name: 'Website',
-      leads: 456,
-      conversionRate: 23.4,
-      avgValue: 'GH₵45,200',
-      cost: 'GH₵2,500',
-      roi: 825,
-      status: 'Active'
+      name: 'Discovery',
+      deals: 8,
+      value: 'GH₵320,000',
+      conversionRate: 25,
+      avgDealSize: 'GH₵40,000',
+      avgCycle: '15 days',
+      color: 'from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950 border-blue-200 dark:border-blue-800'
     },
     {
       id: '2',
-      name: 'Referrals',
-      leads: 234,
-      conversionRate: 34.2,
-      avgValue: 'GH₵52,800',
-      cost: 'GH₵0',
-      roi: 0,
-      status: 'Active'
+      name: 'Qualification',
+      deals: 6,
+      value: 'GH₵480,000',
+      conversionRate: 40,
+      avgDealSize: 'GH₵80,000',
+      avgCycle: '25 days',
+      color: 'from-yellow-50 to-amber-50 dark:from-yellow-950 dark:to-amber-950 border-yellow-200 dark:border-yellow-800'
     },
     {
       id: '3',
-      name: 'Social Media',
-      leads: 189,
-      conversionRate: 18.7,
-      avgValue: 'GH₵38,500',
-      cost: 'GH₵1,800',
-      roi: 1025,
-      status: 'Active'
+      name: 'Proposal',
+      deals: 4,
+      value: 'GH₵630,000',
+      conversionRate: 60,
+      avgDealSize: 'GH₵157,500',
+      avgCycle: '35 days',
+      color: 'from-purple-50 to-violet-50 dark:from-purple-950 dark:to-violet-950 border-purple-200 dark:border-purple-800'
     },
     {
       id: '4',
-      name: 'Cold Calls',
-      leads: 156,
-      conversionRate: 12.3,
-      avgValue: 'GH₵28,900',
-      cost: 'GH₵3,200',
-      roi: 415,
-      status: 'Active'
+      name: 'Negotiation',
+      deals: 3,
+      value: 'GH₵540,000',
+      conversionRate: 75,
+      avgDealSize: 'GH₵180,000',
+      avgCycle: '45 days',
+      color: 'from-orange-50 to-red-50 dark:from-orange-950 dark:to-red-950 border-orange-200 dark:border-orange-800'
     },
     {
       id: '5',
-      name: 'Email Marketing',
-      leads: 98,
-      conversionRate: 15.6,
-      avgValue: 'GH₵32,100',
-      cost: 'GH₵900',
-      roi: 1650,
-      status: 'Active'
-    },
-    {
-      id: '6',
-      name: 'Print Ads',
-      leads: 67,
-      conversionRate: 8.9,
-      avgValue: 'GH₵25,400',
-      cost: 'GH₵2,100',
-      roi: 210,
-      status: 'Inactive'
+      name: 'Closing',
+      deals: 2,
+      value: 'GH₵430,000',
+      conversionRate: 90,
+      avgDealSize: 'GH₵215,000',
+      avgCycle: '60 days',
+      color: 'from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 border-green-200 dark:border-green-800'
     }
   ];
-
-  const getStatusColor = (status: string) => {
-    switch (status) {
-      case 'Active': return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
-      case 'Inactive': return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
-      default: return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
-    }
-  };
-
-  const getRoiColor = (roi: number) => {
-    if (roi >= 1000) return 'text-green-600 dark:text-green-400';
-    if (roi >= 500) return 'text-yellow-600 dark:text-yellow-400';
-    return 'text-red-600 dark:text-red-400';
-  };
 
   return (
     <div className="space-y-4">
@@ -114,7 +99,7 @@ export default function LeadSourcesView({ UserRole }: LeadSourcesViewProps) {
           <div className="relative">
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
             <Input
-              placeholder="Search sources..."
+              placeholder="Search stages..."
               className="pl-10 w-64 bg-gray-50 dark:bg-gray-800 border-gray-200 dark:border-gray-700"
             />
           </div>
@@ -130,28 +115,28 @@ export default function LeadSourcesView({ UserRole }: LeadSourcesViewProps) {
       </div>
 
       <div className="grid gap-4">
-        {sources.map((source) => (
-          <Card key={source.id} className="hover:shadow-md transition-shadow duration-200">
+        {stages.map((stage) => (
+          <Card key={stage.id} className={`hover:shadow-lg transition-all duration-200 bg-gradient-to-r ${stage.color} border-2`}>
             <CardContent className="p-6">
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-4">
                   <div className="flex-1">
                     <div className="flex items-center space-x-2 mb-2">
                       <h3 className="font-semibold text-gray-900 dark:text-gray-100">
-                        {source.name}
+                        {stage.name}
                       </h3>
-                      <Badge className={getStatusColor(source.status)}>
-                        {source.status}
+                      <Badge className="bg-white/50 dark:bg-gray-800/50 text-gray-700 dark:text-gray-300">
+                        {stage.deals} deals
                       </Badge>
                     </div>
                     <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
                       <div className="flex items-center space-x-2">
-                        <Users className="h-3 w-3" />
-                        <span>{source.leads} leads</span>
+                        <DollarSign className="h-3 w-3" />
+                        <span>Value: {stage.value}</span>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <TrendingUp className="h-3 w-3" />
-                        <span>{source.conversionRate}% conversion rate</span>
+                        <Target className="h-3 w-3" />
+                        <span>Conversion: {stage.conversionRate}%</span>
                       </div>
                     </div>
                   </div>
@@ -160,28 +145,19 @@ export default function LeadSourcesView({ UserRole }: LeadSourcesViewProps) {
                 <div className="flex items-center space-x-4">
                   <div className="text-right">
                     <div className="font-semibold text-gray-900 dark:text-gray-100">
-                      {source.avgValue}
+                      {stage.avgDealSize}
                     </div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">
-                      Avg. Value
+                      Avg. Deal Size
                     </div>
                     <div className="text-xs text-gray-500 dark:text-gray-400">
-                      Cost: {source.cost}
-                    </div>
-                  </div>
-                  
-                  <div className="text-right">
-                    <div className={`font-semibold ${getRoiColor(source.roi)}`}>
-                      {source.roi}% ROI
-                    </div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">
-                      Return
+                      Cycle: {stage.avgCycle}
                     </div>
                   </div>
                   
                   <div className="flex items-center space-x-2">
                     <Button size="sm" variant="outline">
-                      <BarChart3 className="h-3 w-3" />
+                      <Eye className="h-3 w-3" />
                     </Button>
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
@@ -192,15 +168,15 @@ export default function LeadSourcesView({ UserRole }: LeadSourcesViewProps) {
                       <DropdownMenuContent align="end">
                         <DropdownMenuItem>
                           <Eye className="h-4 w-4 mr-2" />
-                          View Details
+                          View Deals
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                           <Edit className="h-4 w-4 mr-2" />
-                          Edit Source
+                          Edit Stage
                         </DropdownMenuItem>
                         <DropdownMenuItem>
                           <TrendingUp className="h-4 w-4 mr-2" />
-                          Performance Report
+                          Stage Analytics
                         </DropdownMenuItem>
                       </DropdownMenuContent>
                     </DropdownMenu>
@@ -211,22 +187,22 @@ export default function LeadSourcesView({ UserRole }: LeadSourcesViewProps) {
               <div className="mt-4 space-y-3">
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-gray-600 dark:text-gray-400">Conversion Rate</span>
-                  <span className="font-medium text-gray-900 dark:text-gray-100">{source.conversionRate}%</span>
+                  <span className="font-medium text-gray-900 dark:text-gray-100">{stage.conversionRate}%</span>
                 </div>
-                <Progress value={source.conversionRate} className="h-2" />
+                <Progress value={stage.conversionRate} className="h-2" />
                 
                 <div className="grid grid-cols-3 gap-4 text-sm text-gray-600 dark:text-gray-400">
                   <div className="flex items-center space-x-1">
-                    <Globe className="h-3 w-3" />
-                    <span>Total Leads: {source.leads}</span>
+                    <Users className="h-3 w-3" />
+                    <span>Deals: {stage.deals}</span>
                   </div>
                   <div className="flex items-center space-x-1">
-                    <TrendingUp className="h-3 w-3" />
-                    <span>Avg Value: {source.avgValue}</span>
+                    <DollarSign className="h-3 w-3" />
+                    <span>Value: {stage.value}</span>
                   </div>
                   <div className="flex items-center space-x-1">
-                    <BarChart3 className="h-3 w-3" />
-                    <span>ROI: {source.roi}%</span>
+                    <Clock className="h-3 w-3" />
+                    <span>Cycle: {stage.avgCycle}</span>
                   </div>
                 </div>
               </div>
