@@ -57,6 +57,7 @@ import CommissionsTab from './tabs/CommissionsTab';
 import CommissionsScreen from './dashboards/sales-agent/CommissionsScreen';
 import MarketingTab from './tabs/MarketingTab';
 import MarketingScreen from './dashboards/sales-agent/MarketingScreen';
+import PropertyListingsTab from './tabs/PropertyListingsTab';
 
 interface User {
   id: string;
@@ -193,6 +194,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <CommissionsScreen user={user} />;
           case 'marketing':
             return <MarketingScreen user={user} />;
+          case 'listings':
+            return <PropertyListingsTab user={user} />;
           default:
             return <SalesAgentDashboard />;
         }
