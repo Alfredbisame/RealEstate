@@ -13,6 +13,7 @@ export default function HRManagerDashboard() {
     { id: '3', type: 'payroll', x: 0, y: 2, w: 6, h: 4 },
     { id: '4', type: 'performance', x: 6, y: 4, w: 6, h: 3 },
     { id: '5', type: 'recruitment', x: 0, y: 6, w: 12, h: 4 },
+    { id: '6', type: 'training', x: 0, y: 10, w: 12, h: 4 },
   ]);
 
   const handleAddEmployee = () => {

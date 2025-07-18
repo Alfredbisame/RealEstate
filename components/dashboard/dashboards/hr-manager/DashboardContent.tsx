@@ -5,6 +5,7 @@ import AttendanceScreen from './AttendanceScreen';
 import PayrollScreen from './PayrollScreen';
 import PerformanceScreen from './PerformanceScreen';
 import RecruitmentScreen from './RecruitmentScreen';
+import TrainingScreen from './TrainingScreen';
 
 interface DashboardContentProps {
   widgetType: string;
@@ -22,6 +23,8 @@ export default function DashboardContent({ widgetType }: DashboardContentProps) 
       return <PerformanceScreen />;
     case 'recruitment':
       return <RecruitmentScreen />;
+      case 'training':
+        return <TrainingScreen />;
     default:
       return <div>Widget not found</div>;
   }
