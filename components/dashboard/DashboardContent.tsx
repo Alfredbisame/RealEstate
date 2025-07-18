@@ -63,6 +63,7 @@ import HRManagerPayrollTab from './tabs/HRManagerPayrollTab';
 import HRManagerPerformanceTab from './tabs/HRManagerPerformanceTab';
 import HRManagerRecruitmentTab from './tabs/HRManagerRecruitmentTab';
 import HRManagerTrainingTab from './tabs/HRManagerTrainingTab';
+import HRManagerBenefitsTab from './tabs/HRManagerBenefitsTab';
 
 interface User {
   id: string;
@@ -221,6 +222,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <HRManagerRecruitmentTab />;
           case 'training':
             return <HRManagerTrainingTab />;
+          case 'benefits':
+            return <HRManagerBenefitsTab />;
           default:
             return <HRManagerDashboard />;
         }
