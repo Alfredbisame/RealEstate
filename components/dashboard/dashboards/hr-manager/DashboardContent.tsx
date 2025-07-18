@@ -1,7 +1,7 @@
 'use client';
 
 import StatsGrid from './StatsGrid';
-import EmployeeAttendance from '../../widgets/EmployeeAttendance';
+import AttendanceScreen from './AttendanceScreen';
 import PayrollSummary from '../../widgets/PayrollSummary';
 import PerformanceOverview from './PerformanceOverview';
 
@@ -14,7 +14,7 @@ export default function DashboardContent({ widgetType }: DashboardContentProps) 
     case 'stats':
       return <StatsGrid />;
     case 'attendance':
-      return <EmployeeAttendance />;
+      return <AttendanceScreen />;
     case 'payroll':
       return <PayrollSummary />;
     case 'performance':
