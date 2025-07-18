@@ -12,6 +12,7 @@ export default function HRManagerDashboard() {
     { id: '2', type: 'attendance', x: 4, y: 0, w: 8, h: 4 },
     { id: '3', type: 'payroll', x: 0, y: 2, w: 6, h: 4 },
     { id: '4', type: 'performance', x: 6, y: 4, w: 6, h: 3 },
+    { id: '5', type: 'recruitment', x: 0, y: 6, w: 12, h: 4 },
   ]);
 
   const handleAddEmployee = () => {
