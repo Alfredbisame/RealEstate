@@ -3,7 +3,7 @@
 import StatsGrid from './StatsGrid';
 import AttendanceScreen from './AttendanceScreen';
 import PayrollScreen from './PayrollScreen';
-import PerformanceOverview from './PerformanceOverview';
+import PerformanceScreen from './PerformanceScreen';
 
 interface DashboardContentProps {
   widgetType: string;
@@ -18,7 +18,7 @@ export default function DashboardContent({ widgetType }: DashboardContentProps) 
     case 'payroll':
       return <PayrollScreen />;
     case 'performance':
-      return <PerformanceOverview />;
+      return <PerformanceScreen />;
     default:
       return <div>Widget not found</div>;
   }
