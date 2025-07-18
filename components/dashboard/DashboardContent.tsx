@@ -59,6 +59,7 @@ import MarketingTab from './tabs/MarketingTab';
 import MarketingScreen from './dashboards/sales-agent/MarketingScreen';
 import PropertyListingsTab from './tabs/PropertyListingsTab';
 import HRManagerAttendanceTab from './tabs/HRManagerAttendanceTab';
+import HRManagerPayrollTab from './tabs/HRManagerPayrollTab';
 
 interface User {
   id: string;
@@ -209,6 +210,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <EmployeesTab user={user} />;
           case 'attendance':
             return <HRManagerAttendanceTab />;
+          case 'payroll':
+            return <HRManagerPayrollTab />;
           default:
             return <HRManagerDashboard />;
         }
