@@ -70,6 +70,7 @@ import AuditorDocumentsScreen from './dashboards/auditor/AuditorDocumentsScreen'
 import ComplianceScreen from './dashboards/auditor/ComplianceScreen';
 import TransactionsScreen from './dashboards/auditor/TransactionsScreen';
 import { AuditTrailScreen } from './dashboards/auditor';
+import FinancialReviewScreen from './dashboards/auditor/FinancialReviewScreen';
 
 interface User {
   id: string;
@@ -250,6 +251,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <TransactionsScreen />;
           case 'audit-trail':
             return <AuditTrailScreen />;
+          case 'financial-review':
+            return <FinancialReviewScreen />;
           default:
             return <AuditorDashboard />;
         }

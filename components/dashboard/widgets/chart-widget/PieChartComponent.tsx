@@ -65,11 +65,11 @@ export default function PieChartComponent({ data, type, className = "" }: PieCha
               paddingTop: '10px',
               fontSize: '12px'
             }}
-            formatter={(value: any, entry: any) => [
-              <span style={{ color: PIE_CHART_COLORS[entry.payload.index % PIE_CHART_COLORS.length] }}>
+            formatter={(value: any, entry: any, index: number) => (
+              <span key={index} style={{ color: PIE_CHART_COLORS[entry.payload.index % PIE_CHART_COLORS.length] }}>
                 {value}
               </span>
-            ]}
+            )}
           />
         </PieChart>
       </ResponsiveContainer>

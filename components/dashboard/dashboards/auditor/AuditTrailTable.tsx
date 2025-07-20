@@ -1,7 +1,19 @@
-import { useState } from 'react';
 import { Eye } from 'lucide-react';
 
-export default function AuditTrailTable({ auditTrail, onViewDetails }) {
+interface AuditTrailEntry {
+  id: string;
+  action: string;
+  user: string;
+  timestamp: string;
+  details: string;
+}
+
+interface AuditTrailTableProps {
+  auditTrail: AuditTrailEntry[];
+  onViewDetails: (audit: AuditTrailEntry) => void;
+}
+
+export default function AuditTrailTable({ auditTrail, onViewDetails }: AuditTrailTableProps) {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-sm">
       {/* Removed search input here */}

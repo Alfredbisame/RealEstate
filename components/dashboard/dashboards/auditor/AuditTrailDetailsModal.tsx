@@ -1,4 +1,18 @@
-export default function AuditTrailDetailsModal({ audit, open, onClose }) {
+interface AuditTrailEntry {
+  id: string;
+  action: string;
+  user: string;
+  timestamp: string;
+  details: string;
+}
+
+interface AuditTrailDetailsModalProps {
+  audit: AuditTrailEntry | null;
+  open: boolean;
+  onClose: () => void;
+}
+
+export default function AuditTrailDetailsModal({ audit, open, onClose }: AuditTrailDetailsModalProps) {
   if (!open || !audit) return null;
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40">
