@@ -1,7 +1,6 @@
-import { BarChart3, FileText, Shield, Clock, TrendingUp } from 'lucide-react';
+import { BarChart3, Shield, Clock, TrendingUp } from 'lucide-react';
 import StatsCard from '../../widgets/StatsCard';
 import ChartWidget from '../../widgets/ChartWidget';
-import type { StatsCardProps } from '../../widgets/stats-card/types';
 
 const transactionMetrics = [
   {

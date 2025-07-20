@@ -6,4 +6,5 @@ export { default as TransactionsList } from './TransactionsList';
 export { default as DashboardContent } from './DashboardContent';
 export { default as AuditorDocumentsScreen } from './AuditorDocumentsScreen';
 export { default as ComplianceScreen } from './ComplianceScreen';
-export { default as TransactionsScreen } from './TransactionsScreen'; 
+export { default as TransactionsScreen } from './TransactionsScreen';
+export { default as AuditTrailScreen } from './AuditTrailScreen'; 
