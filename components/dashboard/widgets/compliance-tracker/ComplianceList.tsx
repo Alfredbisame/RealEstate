@@ -10,7 +10,7 @@ interface ComplianceListProps {
 
 export default function ComplianceList({ categories, className = "" }: ComplianceListProps) {
   return (
-    <div className={`space-y-4 overflow-y-auto max-h-64 ${className}`}>
+    <div className={`space-y-4 ${className}`}>
       {categories.map((category, index) => (
         <ComplianceCategory
           key={index}

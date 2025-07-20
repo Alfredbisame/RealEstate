@@ -67,6 +67,7 @@ import HRManagerBenefitsTab from './tabs/HRManagerBenefitsTab';
 import HRManagerComplianceTab from './tabs/HRManagerComplianceTab';
 import AuditorReportsScreen from './dashboards/auditor/ReportsScreen';
 import AuditorDocumentsScreen from './dashboards/auditor/AuditorDocumentsScreen';
+import ComplianceScreen from './dashboards/auditor/ComplianceScreen';
 
 interface User {
   id: string;
@@ -241,6 +242,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <AuditorReportsScreen user={user} />;
           case 'documents':
             return <AuditorDocumentsScreen user={user} />;
+          case 'compliance':
+            return <ComplianceScreen />;
           default:
             return <AuditorDashboard />;
         }

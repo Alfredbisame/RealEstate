@@ -13,8 +13,6 @@ export default function DashboardContent({ widgetType }: DashboardContentProps) 
   switch (widgetType) {
     case 'stats':
       return <StatsGrid />;
-    case 'compliance':
-      return <ComplianceTracker />;
     case 'reports':
       return <AuditReports />;
     case 'transactions':
