@@ -1,4 +1,3 @@
-// components/dashboard/dashboards/auditor/ReportsScreen.tsx
 'use client';
 
 import { useState } from 'react';
