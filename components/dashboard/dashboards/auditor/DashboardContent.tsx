@@ -3,7 +3,7 @@
 import StatsGrid from './StatsGrid';
 import ComplianceTracker from '../../widgets/ComplianceTracker';
 import AuditReports from '../../widgets/AuditReports';
-import TransactionsList from './TransactionsList';
+import TransactionsScreen from './TransactionsScreen';
 
 interface DashboardContentProps {
   widgetType: string;
@@ -16,7 +16,7 @@ export default function DashboardContent({ widgetType }: DashboardContentProps) 
     case 'reports':
       return <AuditReports />;
     case 'transactions':
-      return <TransactionsList />;
+      return <TransactionsScreen />;
     default:
       return <div>Widget not found</div>;
   }

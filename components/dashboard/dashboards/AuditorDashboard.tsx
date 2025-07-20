@@ -11,7 +11,6 @@ export default function AuditorDashboard() {
     { id: '1', type: 'stats', x: 0, y: 0, w: 4, h: 2 },
     { id: '2', type: 'compliance', x: 4, y: 0, w: 8, h: 4 },
     { id: '3', type: 'reports', x: 0, y: 2, w: 6, h: 4 },
-    { id: '4', type: 'transactions', x: 6, y: 4, w: 6, h: 3 },
   ]);
 
   const handleViewReports = () => {
