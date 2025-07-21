@@ -1,6 +1,7 @@
 'use client';
 
-import { DollarSign, FileText, CreditCard, TrendingUp } from 'lucide-react';
+import { FileText, CreditCard, TrendingUp } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 
 interface Tab {
   id: string;
@@ -15,7 +16,7 @@ interface NavigationTabsProps {
 
 export default function NavigationTabs({ activeView, onViewChange }: NavigationTabsProps) {
   const tabs: Tab[] = [
-    { id: 'overview', label: 'Overview', icon: DollarSign },
+    { id: 'overview', label: 'Overview', icon: FaCediSign },
     { id: 'invoices', label: 'Invoices', icon: FileText },
     { id: 'payments', label: 'Payments', icon: CreditCard },
     { id: 'reports', label: 'Reports', icon: TrendingUp }

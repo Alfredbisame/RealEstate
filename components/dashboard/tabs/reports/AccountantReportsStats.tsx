@@ -1,4 +1,5 @@
-import { FileText, BarChart3, DollarSign, PieChart } from 'lucide-react';
+import { FileText, BarChart3, PieChart } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 
 const stats = [
   {
@@ -22,7 +23,7 @@ const stats = [
   {
     label: 'Total Revenue',
     value: 'GHS 2,400,000',
-    icon: DollarSign,
+    icon: FaCediSign,
     color: 'bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-200'
   }
 ];

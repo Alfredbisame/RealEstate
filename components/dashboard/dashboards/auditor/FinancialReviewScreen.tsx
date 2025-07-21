@@ -1,6 +1,7 @@
 'use client';
 
-import { DollarSign, TrendingUp, FileText, CreditCard, BarChart3, Download } from 'lucide-react';
+import { TrendingUp, FileText, CreditCard, BarChart3, Download } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 import StatsCard from '../../widgets/StatsCard';
 import ChartWidget from '../../widgets/ChartWidget';
 import { useState } from 'react';
@@ -11,7 +12,7 @@ const kpiData = [
     value: 'GHS 1.25M',
     change: '+8.2%',
     changeType: 'positive' as const,
-    icon: DollarSign,
+    icon: FaCediSign,
     color: 'green' as const,
     description: 'Year-to-date revenue',
     trend: 'up',

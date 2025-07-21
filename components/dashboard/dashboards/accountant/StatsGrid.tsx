@@ -1,6 +1,7 @@
 'use client';
 
-import { DollarSign, FileText, TrendingUp, Calculator } from 'lucide-react';
+import { FileText, TrendingUp, Calculator } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 import StatsCard from '../../widgets/StatsCard';
 
 interface StatsGridProps {
@@ -14,7 +15,7 @@ export default function StatsGrid({ className = '' }: StatsGridProps) {
       value: 'GHS 180,400',
       change: '+15.2%',
       changeType: 'positive' as const,
-      icon: DollarSign,
+      icon: FaCediSign,
       color: 'green' as const
     },
     {

@@ -1,10 +1,11 @@
-import { DollarSign, TrendingDown, TrendingUp, PieChart } from 'lucide-react';
+import { TrendingDown, TrendingUp, PieChart } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 
 const stats = [
   {
     label: 'Total Budget',
     value: 'GHS 500,000',
-    icon: DollarSign,
+    icon: FaCediSign,
     color: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-200'
   },
   {

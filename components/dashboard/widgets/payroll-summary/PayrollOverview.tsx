@@ -1,6 +1,7 @@
 'use client';
 
-import { DollarSign, Users, TrendingUp, Calculator } from 'lucide-react';
+import { Users, TrendingUp, Calculator } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 import { PayrollOverviewProps } from './types';
 import PayrollCard from './PayrollCard';
 
@@ -13,7 +14,7 @@ export default function PayrollOverview({
       <PayrollCard
         title="Total Payroll"
         value={payrollData.totalPayroll}
-        icon={DollarSign}
+        icon={FaCediSign}
         color="green"
         subtitle="Gross payroll amount"
       />

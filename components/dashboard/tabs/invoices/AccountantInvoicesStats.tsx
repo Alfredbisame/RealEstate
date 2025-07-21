@@ -1,4 +1,5 @@
-import { FileText, DollarSign, CheckCircle, AlertTriangle } from 'lucide-react';
+import { FileText, CheckCircle, AlertTriangle } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 
 const stats = [
   {
@@ -22,7 +23,7 @@ const stats = [
   {
     label: 'Total Amount',
     value: 'GHS 1,200,000',
-    icon: DollarSign,
+    icon: FaCediSign,
     color: 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200'
   }
 ];

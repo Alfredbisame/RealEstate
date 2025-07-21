@@ -9,7 +9,6 @@ import {
   Search, 
   Filter, 
   Download, 
-  DollarSign,
   Calculator,
   Gift,
   Award,
@@ -23,6 +22,7 @@ import {
   Users,
   Receipt
 } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -209,7 +209,7 @@ export default function CommissionHistoryView({ user }: CommissionHistoryViewPro
                         <Receipt className="h-3 w-3" />
                       </Button>
                       <Button size="sm" variant="outline" className="bg-purple-50 hover:bg-purple-100 dark:bg-purple-900/20 dark:hover:bg-purple-900/30 border-purple-200 dark:border-purple-700 text-purple-700 dark:text-purple-300">
-                        <DollarSign className="h-3 w-3" />
+                        <FaCediSign className="h-3 w-3" />
                       </Button>
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>

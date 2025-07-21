@@ -1,10 +1,11 @@
-import { Layers, DollarSign, TrendingUp, FileText } from 'lucide-react';
+import { Layers, TrendingUp, FileText } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 
 const stats = [
   {
     label: 'Total Material Cost',
     value: 'GHS 1,200,000',
-    icon: DollarSign,
+    icon: FaCediSign,
     color: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-200'
   },
   {

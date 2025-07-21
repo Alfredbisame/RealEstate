@@ -12,7 +12,6 @@ import {
   Filter, 
   Download, 
   Calculator,
-  DollarSign,
   Gift,
   Award,
   Target,
@@ -25,6 +24,7 @@ import {
   Users,
   Percent
 } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -183,7 +183,7 @@ export default function CommissionCalculatorView({ user }: CommissionCalculatorV
                       </div>
                       <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
                         <div className="flex items-center space-x-2">
-                          <DollarSign className="h-3 w-3" />
+                          <FaCediSign className="h-3 w-3" />
                           <span>Sale Value: GH₵{calc.saleValue.toLocaleString()}</span>
                         </div>
                         <div className="flex items-center space-x-2">

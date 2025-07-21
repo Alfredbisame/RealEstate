@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { DollarSign, AlertCircle } from 'lucide-react';
+import { AlertCircle } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 
 interface CostInputProps {
   label: string;
@@ -20,7 +21,7 @@ export default function CostInput({
   value,
   onChange,
   placeholder,
-  icon: Icon = DollarSign,
+  icon: Icon = FaCediSign,
   className = "",
   min = 0,
   max,

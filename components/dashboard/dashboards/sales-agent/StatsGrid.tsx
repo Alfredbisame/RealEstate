@@ -1,8 +1,9 @@
 'use client';
 
 import { 
-  Users, Building2, DollarSign, Target 
+  Users, Building2, Target 
 } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 import StatsCard from '../../widgets/StatsCard';
 
 export default function StatsGrid() {
@@ -28,7 +29,7 @@ export default function StatsGrid() {
       value: 'GHS 18,500',
       change: '+25%',
       changeType: 'positive' as const,
-      icon: DollarSign,
+      icon: FaCediSign,
       color: 'green' as const
     },
     {

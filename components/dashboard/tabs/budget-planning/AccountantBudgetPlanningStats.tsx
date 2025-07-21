@@ -1,10 +1,11 @@
-import { DollarSign, TrendingUp, AlertTriangle, CheckCircle, Wallet } from 'lucide-react';
+import { TrendingUp, AlertTriangle, CheckCircle, Wallet } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 
 const stats = [
   {
     label: 'Total Budget',
     value: 'GHS 2.8M',
-    icon: DollarSign,
+    icon: FaCediSign,
     color: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-200'
   },
   {

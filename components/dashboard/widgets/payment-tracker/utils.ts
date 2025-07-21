@@ -1,4 +1,5 @@
-import { CheckCircle, Clock, AlertCircle, DollarSign } from 'lucide-react';
+import { CheckCircle, Clock, AlertCircle } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 import { Payment, PaymentStatus, PaymentStats } from './types';
 
 export const getStatusIcon = (status: PaymentStatus) => {
@@ -10,7 +11,7 @@ export const getStatusIcon = (status: PaymentStatus) => {
     case 'overdue': 
       return { icon: AlertCircle, className: 'text-red-600 dark:text-red-400' };
     case 'partial': 
-      return { icon: DollarSign, className: 'text-blue-600 dark:text-blue-400' };
+      return { icon: FaCediSign, className: 'text-blue-600 dark:text-blue-400' };
     default: 
       return { icon: Clock, className: 'text-gray-600 dark:text-gray-400' };
   }

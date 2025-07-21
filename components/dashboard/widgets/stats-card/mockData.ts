@@ -2,7 +2,6 @@ import { StatsCardMetric, StatsCardCategory } from './types';
 import { 
   TrendingUp, 
   TrendingDown, 
-  DollarSign, 
   Users, 
   Home, 
   Building2, 
@@ -21,6 +20,7 @@ import {
   Zap,
   Heart
 } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 
 export const mockStatsCards: StatsCardMetric[] = [
   {
@@ -29,7 +29,7 @@ export const mockStatsCards: StatsCardMetric[] = [
     value: '₵2.4M',
     change: '+12.5%',
     changeType: 'positive',
-    icon: DollarSign,
+    icon: FaCediSign,
     color: 'green',
     description: 'Monthly revenue from all properties',
     trend: 'up',
@@ -223,7 +223,7 @@ export const mockCategories: StatsCardCategory[] = [
     name: 'Financial Metrics',
     description: 'Revenue, costs, and profitability indicators',
     color: 'green',
-    icon: DollarSign,
+    icon: FaCediSign,
     metrics: mockStatsCards.filter(m => m.category === 'financial')
   },
   {

@@ -16,7 +16,7 @@ interface SidebarNavProps {
 
 export default function SidebarNav({ menuItems, collapsed, activeTab, onTabChange }: SidebarNavProps) {
   return (
-    <nav className="flex-1 p-4 overflow-y-auto">
+    <nav className="flex-1 p-4 overflow-y-auto overflow-x-hidden">
       <ul className="space-y-1">
         {menuItems.map((item) => (
           <li key={item.id}>
@@ -24,7 +24,7 @@ export default function SidebarNav({ menuItems, collapsed, activeTab, onTabChang
               onClick={() => onTabChange(item.id)}
               className={cn(
                 "w-full flex items-center px-3 py-2.5 rounded-xl transition-all duration-200 group relative",
-                collapsed ? "justify-center min-w-[48px] w-12" : "",
+                collapsed ? "justify-center min-w-0 w-12 px-0" : "",
                 activeTab === item.id 
                   ? "bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-lg" 
                   : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50"

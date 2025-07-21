@@ -9,7 +9,6 @@ import {
   Search, 
   Filter, 
   Download, 
-  DollarSign,
   TrendingUp,
   TrendingDown,
   Edit,
@@ -19,6 +18,7 @@ import {
   BarChart3,
   Eye
 } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -136,7 +136,7 @@ export default function PricingView({ user }: PricingViewProps) {
                       </div>
                       <div className="text-sm text-gray-600 dark:text-gray-400 space-y-1">
                         <div className="flex items-center space-x-2">
-                          <DollarSign className="h-3 w-3" />
+                          <FaCediSign className="h-3 w-3" />
                           <span>Market Value: {property.marketValue}</span>
                         </div>
                         <div className="flex items-center space-x-2">
@@ -228,7 +228,7 @@ export default function PricingView({ user }: PricingViewProps) {
                   <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
                     <div className="flex items-center space-x-4">
                       <div className="flex items-center space-x-1">
-                        <DollarSign className="h-3 w-3" />
+                        <FaCediSign className="h-3 w-3" />
                         <span>Current: {property.currentPrice}</span>
                       </div>
                       <div className="flex items-center space-x-1">

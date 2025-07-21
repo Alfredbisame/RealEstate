@@ -2,7 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Search, Filter, Calculator, DollarSign, TrendingUp, Building2, CreditCard, Target } from 'lucide-react';
+import { Search, Filter, Calculator, TrendingUp, Building2, CreditCard, Target } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 
 const clientBudgetTools = [
   {
@@ -182,14 +183,14 @@ export default function ClientBudgetView() {
                 <div>
                   <span className="text-gray-600 dark:text-gray-400">Budget:</span>
                   <div className="font-medium text-gray-900 dark:text-gray-100 flex items-center">
-                    <DollarSign className="h-4 w-4 mr-1 text-green-600" />
+                    <FaCediSign className="h-4 w-4 mr-1 text-green-600" />
                     {tool.budget}
                   </div>
                 </div>
                 <div>
                   <span className="text-gray-600 dark:text-gray-400">Estimated Cost:</span>
                   <div className="font-medium text-gray-900 dark:text-gray-100 flex items-center">
-                    <DollarSign className="h-4 w-4 mr-1 text-blue-600" />
+                    <FaCediSign className="h-4 w-4 mr-1 text-blue-600" />
                     {tool.estimatedCost}
                   </div>
                 </div>
@@ -198,7 +199,7 @@ export default function ClientBudgetView() {
                   <div className={`font-medium flex items-center ${
                     tool.savings.startsWith('-') ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'
                   }`}>
-                    <DollarSign className="h-4 w-4 mr-1" />
+                    <FaCediSign className="h-4 w-4 mr-1" />
                     {tool.savings}
                   </div>
                 </div>
@@ -260,7 +261,7 @@ export default function ClientBudgetView() {
                   Generate Report
                 </Button>
                 <Button size="sm" variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">
-                  <DollarSign className="h-4 w-4 mr-1" />
+                  <FaCediSign className="h-4 w-4 mr-1" />
                   Financing Options
                 </Button>
                 <Button size="sm" variant="outline" className="border-gray-300 text-gray-700 hover:bg-gray-50 dark:border-gray-600 dark:text-gray-300 dark:hover:bg-gray-700">

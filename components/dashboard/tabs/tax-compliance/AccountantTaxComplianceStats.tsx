@@ -1,10 +1,11 @@
-import { Shield, DollarSign, FileText, CheckCircle } from 'lucide-react';
+import { Shield, FileText, CheckCircle } from 'lucide-react';
+import { FaCediSign } from 'react-icons/fa6';
 
 const stats = [
   {
     label: 'Total Tax Paid',
     value: 'GHS 450,000',
-    icon: DollarSign,
+    icon: FaCediSign,
     color: 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-200'
   },
   {
