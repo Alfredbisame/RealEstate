@@ -146,7 +146,7 @@ export default function HelpTab({ user }: HelpTabProps) {
       type: 'Phone Support',
       description: 'Call us for urgent technical issues',
       icon: Phone,
-      action: '+233 30 123 4567',
+      action: '+233 554572904',
       available: true
     },
     {

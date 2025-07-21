@@ -1,5 +1,4 @@
 import { ChevronLeft, ChevronRight, Building2 } from 'lucide-react';
-import { cn } from '@/lib/utils';
 
 interface SidebarHeaderProps {
   collapsed: boolean;

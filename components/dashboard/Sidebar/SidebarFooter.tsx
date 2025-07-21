@@ -9,6 +9,12 @@ export default function SidebarFooter() {
       <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
         Proudly Ghanaian 🇬🇭
       </p>
+      <p className="text-xs text-gray-400 dark:text-gray-500 text-center mt-1">
+        Version: {process.env.NEXT_PUBLIC_APP_VERSION || '0.0.1'}
+      </p>
+      <p className="text-xs text-gray-400 dark:text-gray-500 text-center">
+        © {new Date().getFullYear()} RealEstate Pro. All rights reserved.
+      </p>
     </div>
   );
 } 

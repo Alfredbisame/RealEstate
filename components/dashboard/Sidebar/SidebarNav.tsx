@@ -23,13 +23,14 @@ export default function SidebarNav({ menuItems, collapsed, activeTab, onTabChang
             <button
               onClick={() => onTabChange(item.id)}
               className={cn(
-                "w-full flex items-center px-3 py-2.5 rounded-xl transition-all duration-200 group",
+                "w-full flex items-center px-3 py-2.5 rounded-xl transition-all duration-200 group relative",
+                collapsed ? "justify-center min-w-[48px] w-12" : "",
                 activeTab === item.id 
                   ? "bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-lg" 
                   : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50"
               )}
             >
-              <item.icon size={20} className="flex-shrink-0" />
+              <item.icon size={20} className={cn("flex-shrink-0", collapsed ? "mx-auto" : "")}/>
               {!collapsed && (
                 <span className="ml-3 font-medium">{item.label}</span>
               )}
