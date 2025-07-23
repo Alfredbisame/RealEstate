@@ -1,4 +1,5 @@
-import { User, ChevronDown, Settings, HelpCircle, LogOut } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { ChevronDown, User, Settings, HelpCircle, LogOut } from 'lucide-react';
 import { UserRole, ROLE_CONFIGS } from '@/types/roles';
 import { createPortal } from 'react-dom';
 
@@ -19,8 +20,26 @@ interface HeaderUserMenuProps {
 }
 
 export default function HeaderUserMenu({ user, userDropdownOpen, setUserDropdownOpen, onLogout, onSettingsClick }: HeaderUserMenuProps) {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (ref.current && !ref.current.contains(event.target as Node)) {
+        setUserDropdownOpen(false);
+      }
+    };
+
+    if (userDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [userDropdownOpen, setUserDropdownOpen]);
+
   return (
-    <div className="relative">
+    <div ref={ref} className="relative">
       <button
         onClick={() => setUserDropdownOpen(!userDropdownOpen)}
         className="flex items-center space-x-3 px-3 py-2 bg-gray-100/80 dark:bg-gray-700/80 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-all backdrop-blur-sm"

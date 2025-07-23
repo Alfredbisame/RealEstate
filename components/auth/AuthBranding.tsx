@@ -64,7 +64,7 @@ export default function AuthBranding({ className = '' }: AuthBrandingProps) {
           Transform Your Real Estate Business
         </h2>
         <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-          Comprehensive analytics, project management, and financial tools designed for Ghana's real estate market.
+          Comprehensive analytics, project management, and financial tools designed for Ghana&apos;s real estate market.
         </p>
       </div>
 
