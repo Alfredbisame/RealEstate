@@ -1,11 +1,17 @@
 import { LucideIcon } from 'lucide-react';
 
+// Define a more flexible icon type that works with both lucide-react and react-icons
+export type StatsCardIconType = React.ComponentType<{ 
+  size?: number | string; 
+  className?: string;
+}>;
+
 export interface StatsCardProps {
   title: string;
   value: string;
   change: string;
   changeType: 'positive' | 'negative' | 'neutral';
-  icon: LucideIcon;
+  icon: StatsCardIconType;
   color: 'green' | 'blue' | 'orange' | 'purple' | 'red' | 'pink' | 'yellow' | 'indigo' | 'teal' | 'cyan';
   description?: string;
   trend?: 'up' | 'down' | 'stable';
@@ -31,7 +37,7 @@ export interface StatsCardData {
 }
 
 export interface StatsCardHeaderProps {
-  icon: LucideIcon;
+  icon: StatsCardIconType;
   color: StatsCardProps['color'];
   change: string;
   changeType: 'positive' | 'negative' | 'neutral';
@@ -53,7 +59,7 @@ export interface StatsCardContentProps {
 }
 
 export interface StatsCardIconProps {
-  icon: LucideIcon;
+  icon: StatsCardIconType;
   color: StatsCardProps['color'];
   className?: string;
   size?: StatsCardProps['size'];
@@ -115,7 +121,7 @@ export interface StatsCardMetric {
   value: string;
   change: string;
   changeType: 'positive' | 'negative' | 'neutral';
-  icon: LucideIcon;
+  icon: StatsCardIconType;
   color: StatsCardProps['color'];
   description?: string;
   trend?: 'up' | 'down' | 'stable';
@@ -131,7 +137,7 @@ export interface StatsCardCategory {
   name: string;
   description?: string;
   color: StatsCardProps['color'];
-  icon: LucideIcon;
+  icon: StatsCardIconType;
   metrics: StatsCardMetric[];
 }
 
@@ -171,4 +177,4 @@ export interface StatsCardConfig {
     keyboardNavigation: boolean;
     highContrast: boolean;
   };
-} 
+}

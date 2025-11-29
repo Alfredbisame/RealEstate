@@ -24,4 +24,4 @@ export default function StatsCardIcon({
       <Icon size={sizes.iconSize} className="transition-transform duration-300 group-hover:rotate-12" />
     </div>
   );
-} 
+}
