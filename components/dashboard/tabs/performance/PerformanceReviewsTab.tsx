@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import PerformanceOverview from '../../dashboards/hr-manager/PerformanceOverview';
+import PerformanceOverview from '../../dashboard-screens/hr-manager/PerformanceOverview';
 import BarChart from './charts/BarChart';
 import RadarPerformanceChart from './charts/RadarPerformanceChart';
 

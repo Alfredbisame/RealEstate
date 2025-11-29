@@ -5,4 +5,5 @@ export { default as StatsGrid } from './StatsGrid';
 export { default as PortfolioChart } from './PortfolioChart';
 export { default as PropertiesList } from './PropertiesList';
 export { default as CashFlowChart } from './CashFlowChart';
-export { default as DashboardContent } from './DashboardContent'; 
+export { default as DashboardContent } from './DashboardContent';
+export { default as InvestmentROIScreen } from './InvestmentROIScreen';

@@ -1,7 +1,7 @@
 'use client';
 
 import { UserRole } from '@/types/roles';
-import SalesPipelineScreen from '../dashboards/sales-agent/SalesPipelineScreen';
+import SalesPipelineScreen from '../dashboard-screens/sales-agent/SalesPipelineScreen';
 
 interface User {
   id: string;

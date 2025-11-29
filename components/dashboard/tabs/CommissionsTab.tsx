@@ -1,7 +1,7 @@
 'use client';
 
 import { UserRole } from '@/types/roles';
-import CommissionsScreen from '../dashboards/sales-agent/CommissionsScreen';
+import CommissionsScreen from '../dashboard-screens/sales-agent/CommissionsScreen';
 
 interface User {
   id: string;

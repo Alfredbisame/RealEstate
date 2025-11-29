@@ -1,6 +1,6 @@
 'use client';
 
-import LeadsScreen from '../dashboards/sales-agent/LeadsScreen';
+import LeadsScreen from '../dashboard-screens/sales-agent/LeadsScreen';
 import { UserRole } from '@/types/roles';
 
 interface User {

@@ -1,13 +1,13 @@
 'use client';
 
 import { UserRole } from '@/types/roles';
-import PropertyOwnerDashboard from './dashboards/PropertyOwnerDashboard';
-import ProjectManagerDashboard from './dashboards/ProjectManagerDashboard';
-import AccountantDashboard from './dashboards/AccountantDashboard';
-import SiteSupervisorDashboard from './dashboards/SiteSupervisorDashboard';
-import SalesAgentDashboard from './dashboards/SalesAgentDashboard';
-import HRManagerDashboard from './dashboards/HRManagerDashboard';
-import AuditorDashboard from './dashboards/AuditorDashboard';
+import PropertyOwnerDashboard from './dashboard-screens/PropertyOwnerDashboard';
+import ProjectManagerDashboard from './dashboard-screens/ProjectManagerDashboard';
+import AccountantDashboard from './dashboard-screens/AccountantDashboard';
+import SiteSupervisorDashboard from './dashboard-screens/SiteSupervisorDashboard';
+import SalesAgentDashboard from './dashboard-screens/SalesAgentDashboard';
+import HRManagerDashboard from './dashboard-screens/HRManagerDashboard';
+import AuditorDashboard from './dashboard-screens/AuditorDashboard';
 import AnalyticsTab from './tabs/AnalyticsTab';
 import PortfolioTab from './tabs/PortfolioTab';
 import ProjectsTab from './tabs/ProjectsTab';
@@ -17,46 +17,47 @@ import NotificationsTab from './tabs/NotificationsTab';
 import HelpTab from './tabs/HelpTab';
 import CommunicationsTab from './tabs/CommunicationsTab';
 import IntegrationsTab from './tabs/IntegrationsTab';
-import CashFlowScreen from './dashboards/property-owner/CashFlowScreen';
-import TaxSummaryScreen from './dashboards/property-owner/TaxSummaryScreen';
-import PropertyValuesScreen from './dashboards/property-owner/PropertyValuesScreen';
-import InvoicesScreen from './dashboards/super-admin/InvoicesScreen';
-import BudgetTrackerScreen from './dashboards/property-owner/BudgetTrackerScreen';
-import ResourcesScreen from './dashboards/project-manager/ResourcesScreen';
-import MaterialsScreen from './dashboards/project-manager/MaterialsScreen';
-import QualityControlScreen from './dashboards/project-manager/QualityControlScreen';
-import LogisticsScreen from './dashboards/project-manager/LogisticsScreen';
-import ProjectManagerEquipmentScreen from './dashboards/project-manager/EquipmentScreen';
-import AccountantInvoicesScreen from './dashboards/accountant/InvoicesScreen';
-import AccountantPaymentsScreen from './dashboards/accountant/PaymentsScreen';
-import AccountantReportsScreen from './dashboards/accountant/ReportsScreen';
-import AccountantTaxComplianceScreen from './dashboards/accountant/TaxComplianceScreen';
-import AccountantReconciliationScreen from './dashboards/accountant/ReconciliationScreen';
-import AccountantBudgetPlanningScreen from './dashboards/accountant/BudgetPlanningScreen';
-import AccountantAuditTrailScreen from './dashboards/accountant/AuditTrailScreen';
+import CashFlowScreen from './dashboard-screens/property-owner/CashFlowScreen';
+import TaxSummaryScreen from './dashboard-screens/property-owner/TaxSummaryScreen';
+import PropertyValuesScreen from './dashboard-screens/property-owner/PropertyValuesScreen';
+import InvestmentROIScreen from './dashboard-screens/property-owner/InvestmentROIScreen';
+import InvoicesScreen from './dashboard-screens/super-admin/InvoicesScreen';
+import BudgetTrackerScreen from './dashboard-screens/property-owner/BudgetTrackerScreen';
+import ResourcesScreen from './dashboard-screens/project-manager/ResourcesScreen';
+import MaterialsScreen from './dashboard-screens/project-manager/MaterialsScreen';
+import QualityControlScreen from './dashboard-screens/project-manager/QualityControlScreen';
+import LogisticsScreen from './dashboard-screens/project-manager/LogisticsScreen';
+import ProjectManagerEquipmentScreen from './dashboard-screens/project-manager/EquipmentScreen';
+import AccountantInvoicesScreen from './dashboard-screens/accountant/InvoicesScreen';
+import AccountantPaymentsScreen from './dashboard-screens/accountant/PaymentsScreen';
+import AccountantReportsScreen from './dashboard-screens/accountant/ReportsScreen';
+import AccountantTaxComplianceScreen from './dashboard-screens/accountant/TaxComplianceScreen';
+import AccountantReconciliationScreen from './dashboard-screens/accountant/ReconciliationScreen';
+import AccountantBudgetPlanningScreen from './dashboard-screens/accountant/BudgetPlanningScreen';
+import AccountantAuditTrailScreen from './dashboard-screens/accountant/AuditTrailScreen';
 import WorkersTab from './tabs/WorkersTab';
-import WorkersScreen from './dashboards/site-supervisor/WorkersScreen';
+import WorkersScreen from './dashboard-screens/site-supervisor/WorkersScreen';
 import AttendanceTab from './tabs/AttendanceTab';
-import AttendanceScreen from './dashboards/site-supervisor/AttendanceScreen';
+import AttendanceScreen from './dashboard-screens/site-supervisor/AttendanceScreen';
 import SafetyTab from './tabs/SafetyTab';
-import SafetyReportsScreen from './dashboards/site-supervisor/SafetyReportsScreen';
+import SafetyReportsScreen from './dashboard-screens/site-supervisor/SafetyReportsScreen';
 import EquipmentTab from './tabs/EquipmentTab';
-import EquipmentScreen from './dashboards/site-supervisor/EquipmentScreen';
+import EquipmentScreen from './dashboard-screens/site-supervisor/EquipmentScreen';
 import ProgressTrackingTab from './tabs/ProgressTrackingTab';
-import ProgressTrackingScreen from './dashboards/site-supervisor/ProgressTrackingScreen';
+import ProgressTrackingScreen from './dashboard-screens/site-supervisor/ProgressTrackingScreen';
 import MaterialRequestsTab from './tabs/MaterialRequestsTab';
-import MaterialRequestsScreen from './dashboards/site-supervisor/MaterialRequestsScreen';
-import SiteSupervisorQualityControlScreen from './dashboards/site-supervisor/QualityControlScreen';
+import MaterialRequestsScreen from './dashboard-screens/site-supervisor/MaterialRequestsScreen';
+import SiteSupervisorQualityControlScreen from './dashboard-screens/site-supervisor/QualityControlScreen';
 import ClientsTab from './tabs/ClientsTab';
-import ClientsScreen from './dashboards/sales-agent/ClientsScreen';
+import ClientsScreen from './dashboard-screens/sales-agent/ClientsScreen';
 import LeadsTab from './tabs/LeadsTab';
-import LeadsScreen from './dashboards/sales-agent/LeadsScreen';
+import LeadsScreen from './dashboard-screens/sales-agent/LeadsScreen';
 import SalesPipelineTab from './tabs/SalesPipelineTab';
-import SalesPipelineScreen from './dashboards/sales-agent/SalesPipelineScreen';
+import SalesPipelineScreen from './dashboard-screens/sales-agent/SalesPipelineScreen';
 import CommissionsTab from './tabs/CommissionsTab';
-import CommissionsScreen from './dashboards/sales-agent/CommissionsScreen';
+import CommissionsScreen from './dashboard-screens/sales-agent/CommissionsScreen';
 import MarketingTab from './tabs/MarketingTab';
-import MarketingScreen from './dashboards/sales-agent/MarketingScreen';
+import MarketingScreen from './dashboard-screens/sales-agent/MarketingScreen';
 import PropertyListingsTab from './tabs/PropertyListingsTab';
 import HRManagerAttendanceTab from './tabs/HRManagerAttendanceTab';
 import HRManagerPayrollTab from './tabs/HRManagerPayrollTab';
@@ -65,12 +66,12 @@ import HRManagerRecruitmentTab from './tabs/HRManagerRecruitmentTab';
 import HRManagerTrainingTab from './tabs/HRManagerTrainingTab';
 import HRManagerBenefitsTab from './tabs/HRManagerBenefitsTab';
 import HRManagerComplianceTab from './tabs/HRManagerComplianceTab';
-import AuditorReportsScreen from './dashboards/auditor/ReportsScreen';
-import AuditorDocumentsScreen from './dashboards/auditor/AuditorDocumentsScreen';
-import ComplianceScreen from './dashboards/auditor/ComplianceScreen';
-import TransactionsScreen from './dashboards/auditor/TransactionsScreen';
-import { AuditTrailScreen } from './dashboards/auditor';
-import FinancialReviewScreen from './dashboards/auditor/FinancialReviewScreen';
+import AuditorReportsScreen from './dashboard-screens/auditor/ReportsScreen';
+import AuditorDocumentsScreen from './dashboard-screens/auditor/AuditorDocumentsScreen';
+import ComplianceScreen from './dashboard-screens/auditor/ComplianceScreen';
+import TransactionsScreen from './dashboard-screens/auditor/TransactionsScreen';
+import { AuditTrailScreen } from './dashboard-screens/auditor';
+import FinancialReviewScreen from './dashboard-screens/auditor/FinancialReviewScreen';
 
 interface User {
   id: string;
@@ -111,6 +112,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <PropertyOwnerDashboard />;
           case 'portfolio':
             return <PortfolioTab user={user} />;
+          case 'investments':
+            return <InvestmentROIScreen user={user} />;
           case 'financials':
             return <FinancialsTab user={user} />;
           case 'cashflow':
@@ -124,7 +127,7 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
           default:
             return <PropertyOwnerDashboard />;
         }
-      
+
       case 'project-manager':
         switch (activeTab) {
           case 'dashboard':
@@ -146,7 +149,7 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
           default:
             return <ProjectManagerDashboard />;
         }
-      
+
       case 'accountant':
         switch (activeTab) {
           case 'dashboard':
@@ -170,7 +173,7 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
           default:
             return <AccountantDashboard />;
         }
-      
+
       case 'site-supervisor':
         switch (activeTab) {
           case 'dashboard':
@@ -192,7 +195,7 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
           default:
             return <SiteSupervisorDashboard />;
         }
-      
+
       case 'sales-agent':
         switch (activeTab) {
           case 'dashboard':
@@ -212,7 +215,7 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
           default:
             return <SalesAgentDashboard />;
         }
-      
+
       case 'hr-manager':
         switch (activeTab) {
           case 'dashboard':
@@ -236,7 +239,7 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
           default:
             return <HRManagerDashboard />;
         }
-      
+
       case 'auditor':
         switch (activeTab) {
           case 'dashboard':
@@ -256,7 +259,7 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
           default:
             return <AuditorDashboard />;
         }
-      
+
       default:
         return <PropertyOwnerDashboard />;
     }

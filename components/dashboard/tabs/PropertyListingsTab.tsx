@@ -1,6 +1,6 @@
 'use client';
 
-import PropertyListingScreen from '../dashboards/sales-agent/PropertyListingScreen';
+import PropertyListingScreen from '../dashboard-screens/sales-agent/PropertyListingScreen';
 import { UserRole } from '@/types/roles';
 
 interface User {
