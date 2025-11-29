@@ -28,8 +28,8 @@ export default function DashboardGrid({
   const [isDragging, setIsDragging] = useState(false);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  const GRID_COLS = 1; // Single column for vertical layout
-  const GRID_ROW_HEIGHT = 400; // Fixed height for consistency
+  const GRID_COLS = 1; 
+  const GRID_ROW_HEIGHT = 400; 
   const GRID_GAP = 24;
 
   const handleMouseDown = useCallback((e: React.MouseEvent, widgetId: string) => {
@@ -48,7 +48,7 @@ export default function DashboardGrid({
       return;
     }
 
-    if (e.button !== 0) return; // Only handle left click
+    if (e.button !== 0) return;
     
     const widget = widgets.find(w => w.id === widgetId);
     if (!widget) return;
@@ -131,7 +131,7 @@ export default function DashboardGrid({
       onMouseLeave={handleMouseUp}
     >
       {widgets
-        .sort((a, b) => a.y - b.y) // Sort by Y position for vertical layout
+        .sort((a, b) => a.y - b.y) 
         .map((widget, index) => (
           <div
             key={widget.id}
