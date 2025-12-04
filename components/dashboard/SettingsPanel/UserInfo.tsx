@@ -15,9 +15,9 @@ interface UserInfoProps {
 
 export default function UserInfo({ user }: UserInfoProps) {
   return (
-    <div className="p-6 border-b border-gray-200/50 dark:border-gray-700/50 bg-gradient-to-r from-green-50 to-blue-50 dark:from-green-900/20 dark:to-blue-900/20">
+    <div className="p-6 border-b border-gray-200 dark:border-gray-700 bg-blue-50 dark:bg-gray-800">
       <div className="flex items-center space-x-4">
-        <div className="w-16 h-16 rounded-full overflow-hidden bg-gradient-to-r from-green-500 to-blue-500 flex items-center justify-center">
+        <div className="w-16 h-16 rounded-full overflow-hidden bg-blue-500 flex items-center justify-center">
           {user.avatar ? (
             <img src={user.avatar} alt={user.name} className="w-full h-full object-cover" />
           ) : (

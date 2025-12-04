@@ -27,7 +27,7 @@ export default function AppearanceTab() {
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-sm text-gray-700 dark:text-gray-300">Primary Color</span>
-            <div className="w-8 h-8 bg-green-500 rounded border cursor-pointer" />
+            <div className="w-8 h-8 bg-blue-500 rounded border cursor-pointer" />
           </div>
           <div className="flex items-center justify-between">
             <span className="text-sm text-gray-700 dark:text-gray-300">Secondary Color</span>

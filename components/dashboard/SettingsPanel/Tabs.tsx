@@ -23,7 +23,7 @@ const tabs: Tab[] = [
 
 export default function Tabs({ activeTab, setActiveTab }: TabsProps) {
   return (
-    <div className="flex overflow-x-auto border-b border-gray-200/50 dark:border-gray-700/50">
+    <div className="flex overflow-x-auto border-b border-gray-200 dark:border-gray-700">
       {tabs.map((tab) => (
         <button
           key={tab.id}
@@ -31,7 +31,7 @@ export default function Tabs({ activeTab, setActiveTab }: TabsProps) {
           className={cn(
             "flex items-center space-x-2 px-4 py-3 text-sm font-medium transition-colors whitespace-nowrap",
             activeTab === tab.id
-              ? "text-green-600 border-b-2 border-green-600 bg-green-50/50 dark:bg-green-900/20"
+              ? "text-blue-500 border-b-2 border-blue-500 bg-blue-50 dark:bg-blue-900"
               : "text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
           )}
         >
