@@ -107,11 +107,11 @@ export default function ClientBudgetView() {
       case 'Budget Consultation':
         return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
       case 'Material Cost Estimator':
-        return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200';
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
       case 'ROI Calculator':
-        return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
       case 'Financing Options':
-        return 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200';
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
       default:
         return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
     }
@@ -122,11 +122,11 @@ export default function ClientBudgetView() {
       case 'Budget Consultation':
         return <Calculator className="h-4 w-4 text-blue-600" />;
       case 'Material Cost Estimator':
-        return <Building2 className="h-4 w-4 text-purple-600" />;
+        return <Building2 className="h-4 w-4 text-blue-600" />;
       case 'ROI Calculator':
-        return <TrendingUp className="h-4 w-4 text-green-600" />;
+        return <TrendingUp className="h-4 w-4 text-blue-600" />;
       case 'Financing Options':
-        return <CreditCard className="h-4 w-4 text-orange-600" />;
+        return <CreditCard className="h-4 w-4 text-blue-600" />;
       default:
         return <Calculator className="h-4 w-4 text-gray-600" />;
     }
@@ -183,29 +183,29 @@ export default function ClientBudgetView() {
                 <div>
                   <span className="text-gray-600 dark:text-gray-400">Budget:</span>
                   <div className="font-medium text-gray-900 dark:text-gray-100 flex items-center">
-                    <FaCediSign className="h-4 w-4 mr-1 text-green-600" />
+                    <FaCediSign className="h-4 w-4 mr-1 text-blue-500" />
                     {tool.budget}
                   </div>
                 </div>
                 <div>
                   <span className="text-gray-600 dark:text-gray-400">Estimated Cost:</span>
                   <div className="font-medium text-gray-900 dark:text-gray-100 flex items-center">
-                    <FaCediSign className="h-4 w-4 mr-1 text-blue-600" />
+                    <FaCediSign className="h-4 w-4 mr-1 text-blue-500" />
                     {tool.estimatedCost}
                   </div>
                 </div>
                 <div>
                   <span className="text-gray-600 dark:text-gray-400">Savings:</span>
                   <div className={`font-medium flex items-center ${
-                    tool.savings.startsWith('-') ? 'text-red-600 dark:text-red-400' : 'text-green-600 dark:text-green-400'
+                    tool.savings.startsWith('-') ? 'text-gray-600 dark:text-gray-400' : 'text-blue-600 dark:text-blue-400'
                   }`}>
                     <FaCediSign className="h-4 w-4 mr-1" />
                     {tool.savings}
                   </div>
                 </div>
                 <div>
-                  <span className="text-gray-600 dark:text-gray-400">Agent:</span>
-                  <div className="font-medium text-gray-900 dark:text-gray-100">{tool.agent}</div>
+                  <span className="text-gray-600 dark:text-gray-400">Date:</span>
+                  <div className="font-medium text-gray-900 dark:text-gray-100">{tool.date}</div>
                 </div>
               </div>
               

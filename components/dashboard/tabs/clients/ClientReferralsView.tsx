@@ -2,7 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
-import { Search, Filter, Award, Users, DollarSign, Gift, CheckCircle, Clock, AlertTriangle } from 'lucide-react';
+import { Search, Filter, Award, Users, DollarSign, Gift, CheckCircle, Clock, AlertTriangle, Calendar } from 'lucide-react';
 
 const clientReferrals = [
   {
@@ -96,13 +96,13 @@ export default function ClientReferralsView() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'completed':
-        return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
       case 'in-progress':
         return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
       case 'pending':
-        return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200';
+        return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
       case 'cancelled':
-        return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200';
+        return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
       default:
         return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
     }
@@ -111,11 +111,11 @@ export default function ClientReferralsView() {
   const getRewardStatusColor = (status: string) => {
     switch (status) {
       case 'paid':
-        return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
       case 'pending':
-        return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200';
+        return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
       case 'cancelled':
-        return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200';
+        return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
       default:
         return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
     }
@@ -124,13 +124,13 @@ export default function ClientReferralsView() {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'completed':
-        return <CheckCircle className="h-4 w-4 text-green-600" />;
+        return <CheckCircle className="h-4 w-4 text-blue-600" />;
       case 'in-progress':
         return <Clock className="h-4 w-4 text-blue-600" />;
       case 'pending':
-        return <AlertTriangle className="h-4 w-4 text-yellow-600" />;
+        return <AlertTriangle className="h-4 w-4 text-gray-600" />;
       case 'cancelled':
-        return <AlertTriangle className="h-4 w-4 text-red-600" />;
+        return <AlertTriangle className="h-4 w-4 text-gray-600" />;
       default:
         return <Clock className="h-4 w-4 text-gray-600" />;
     }
@@ -187,22 +187,22 @@ export default function ClientReferralsView() {
                 <div>
                   <span className="text-gray-600 dark:text-gray-400">Property Value:</span>
                   <div className="font-medium text-gray-900 dark:text-gray-100 flex items-center">
-                    <DollarSign className="h-4 w-4 mr-1 text-green-600" />
+                    <DollarSign className="h-4 w-4 mr-1 text-blue-500" />
                     {referral.propertyValue}
                   </div>
                 </div>
                 <div>
                   <span className="text-gray-600 dark:text-gray-400">Commission:</span>
                   <div className="font-medium text-gray-900 dark:text-gray-100 flex items-center">
-                    <DollarSign className="h-4 w-4 mr-1 text-blue-600" />
+                    <DollarSign className="h-4 w-4 mr-1 text-blue-500" />
                     {referral.commission}
                   </div>
                 </div>
                 <div>
-                  <span className="text-gray-600 dark:text-gray-400">Reward:</span>
+                  <span className="text-gray-600 dark:text-gray-400">Referral Date:</span>
                   <div className="font-medium text-gray-900 dark:text-gray-100 flex items-center">
-                    <Gift className="h-4 w-4 mr-1 text-purple-600" />
-                    {referral.reward}
+                    <Calendar className="h-4 w-4 mr-1 text-blue-500" />
+                    {referral.date}
                   </div>
                 </div>
                 <div>

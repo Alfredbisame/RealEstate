@@ -91,11 +91,11 @@ export default function ClientCommunicationView() {
   const getTypeColor = (type: string) => {
     switch (type) {
       case 'call':
-        return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
       case 'email':
         return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
       case 'meeting':
-        return 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200';
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
       default:
         return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
     }
@@ -104,9 +104,9 @@ export default function ClientCommunicationView() {
   const getStatusColor = (status: string) => {
     switch (status) {
       case 'completed':
-        return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
       case 'pending':
-        return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200';
+        return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
       case 'scheduled':
         return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
       default:
@@ -117,11 +117,11 @@ export default function ClientCommunicationView() {
   const getPriorityColor = (priority: string) => {
     switch (priority) {
       case 'high':
-        return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200';
+        return 'bg-blue-200 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
       case 'medium':
-        return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200';
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
       case 'low':
-        return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
+        return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
       default:
         return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
     }
@@ -130,11 +130,11 @@ export default function ClientCommunicationView() {
   const getTypeIcon = (type: string) => {
     switch (type) {
       case 'call':
-        return <Phone className="h-4 w-4 text-green-600" />;
+        return <Phone className="h-4 w-4 text-blue-600" />;
       case 'email':
         return <Mail className="h-4 w-4 text-blue-600" />;
       case 'meeting':
-        return <Calendar className="h-4 w-4 text-purple-600" />;
+        return <Calendar className="h-4 w-4 text-blue-600" />;
       default:
         return <MessageSquare className="h-4 w-4 text-gray-600" />;
     }
@@ -207,7 +207,7 @@ export default function ClientCommunicationView() {
                     {communication.satisfaction ? (
                       <div className="flex items-center">
                         {[...Array(communication.satisfaction)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                          <Star key={i} className="h-4 w-4 text-blue-500 fill-current" />
                         ))}
                       </div>
                     ) : 'N/A'}
@@ -232,11 +232,11 @@ export default function ClientCommunicationView() {
               </div>
               
               <div className="flex items-center space-x-2 pt-2">
-                <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">
+                <Button size="sm" className="bg-blue-500 hover:bg-blue-600 text-white">
                   <MessageSquare className="h-4 w-4 mr-1" />
                   Send Message
                 </Button>
-                <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white">
+                <Button size="sm" className="bg-blue-500 hover:bg-blue-600 text-white">
                   <Calendar className="h-4 w-4 mr-1" />
                   Schedule Follow Up
                 </Button>

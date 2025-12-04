@@ -144,30 +144,37 @@ export default function ClientPreferencesView() {
             <CardContent className="space-y-4">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                 <div>
+                  <span className="text-gray-600 dark:text-gray-400">Match Score:</span>
+                  <div className="font-medium text-gray-900 dark:text-gray-100 flex items-center">
+                    <Star className="h-4 w-4 mr-1 text-blue-500 fill-current" />
+                    {preference.matchScore}%
+                  </div>
+                </div>
+                <div>
                   <span className="text-gray-600 dark:text-gray-400">Budget Range:</span>
                   <div className="font-medium text-gray-900 dark:text-gray-100 flex items-center">
-                    <DollarSign className="h-4 w-4 mr-1 text-green-600" />
+                    <DollarSign className="h-4 w-4 mr-1 text-blue-500" />
                     {preference.budget}
                   </div>
                 </div>
                 <div>
                   <span className="text-gray-600 dark:text-gray-400">Preferred Locations:</span>
                   <div className="font-medium text-gray-900 dark:text-gray-100 flex items-center">
-                    <MapPin className="h-4 w-4 mr-1 text-blue-600" />
+                    <MapPin className="h-4 w-4 mr-1 text-blue-500" />
                     {preference.location}
                   </div>
                 </div>
                 <div>
                   <span className="text-gray-600 dark:text-gray-400">Property Type:</span>
                   <div className="font-medium text-gray-900 dark:text-gray-100 flex items-center">
-                    <Home className="h-4 w-4 mr-1 text-purple-600" />
+                    <Home className="h-4 w-4 mr-1 text-blue-500" />
                     {preference.propertyType}
                   </div>
                 </div>
                 <div>
                   <span className="text-gray-600 dark:text-gray-400">Bedrooms/Bathrooms:</span>
                   <div className="font-medium text-gray-900 dark:text-gray-100 flex items-center">
-                    <Users className="h-4 w-4 mr-1 text-orange-600" />
+                    <Users className="h-4 w-4 mr-1 text-blue-500" />
                     {preference.bedrooms} bed, {preference.bathrooms} bath
                   </div>
                 </div>
@@ -192,7 +199,7 @@ export default function ClientPreferencesView() {
                 <span className="text-sm font-medium text-gray-600 dark:text-gray-400">Desired Amenities:</span>
                 <div className="flex flex-wrap gap-2 mt-2">
                   {preference.amenities.map((amenity, index) => (
-                    <Badge key={index} variant="outline" className="text-xs">
+                    <Badge key={index} variant="outline" className="text-xs border-blue-500 text-blue-500">
                       {amenity}
                     </Badge>
                   ))}
@@ -200,11 +207,11 @@ export default function ClientPreferencesView() {
               </div>
               
               <div className="flex items-center space-x-2 pt-2">
-                <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white">
+                <Button size="sm" className="bg-blue-500 hover:bg-blue-600 text-white">
                   <Star className="h-4 w-4 mr-1" />
                   View Recommendations
                 </Button>
-                <Button size="sm" className="bg-green-600 hover:bg-green-700 text-white">
+                <Button size="sm" className="bg-blue-500 hover:bg-blue-600 text-white">
                   <Heart className="h-4 w-4 mr-1" />
                   Update Preferences
                 </Button>

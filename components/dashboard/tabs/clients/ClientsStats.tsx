@@ -11,7 +11,7 @@ export default function ClientsStats() {
       trend: 'up',
       icon: Users,
       color: 'text-blue-600',
-      bgColor: 'bg-blue-50',
+      bgColor: 'bg-blue-100',
       progress: 94
     },
     {
@@ -20,8 +20,8 @@ export default function ClientsStats() {
       change: '+5%',
       trend: 'up',
       icon: MessageSquare,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-100',
       progress: 87
     },
     {
@@ -30,8 +30,8 @@ export default function ClientsStats() {
       change: '+3%',
       trend: 'up',
       icon: Calendar,
-      color: 'text-purple-600',
-      bgColor: 'bg-purple-50',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-100',
       progress: 78
     },
     {
@@ -40,8 +40,8 @@ export default function ClientsStats() {
       change: '+2',
       trend: 'up',
       icon: Award,
-      color: 'text-orange-600',
-      bgColor: 'bg-orange-50',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-100',
       progress: 85
     }
   ];
@@ -66,7 +66,7 @@ export default function ClientsStats() {
                 {stat.value}
               </span>
               <div className={`flex items-center text-xs font-medium ${
-                stat.trend === 'up' ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
+                stat.trend === 'up' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-400'
               }`}>
                 {stat.trend === 'up' ? (
                   <TrendingUp className="w-3 h-3 mr-1" />
@@ -85,4 +85,4 @@ export default function ClientsStats() {
       ))}
     </div>
   );
-} 
+}
