@@ -51,13 +51,13 @@ export default function PropertyValuesListView() {
             <h4 className="font-bold text-lg text-gray-900 dark:text-white mb-1">{property.name}</h4>
             <p className="text-sm text-gray-500 dark:text-gray-300 mb-2">{property.location}</p>
             <div className="flex items-center justify-between mb-2">
-              <span className="font-semibold text-purple-600 dark:text-purple-300">{property.value}</span>
-              <span className="text-green-600 dark:text-green-400 font-medium">{property.appreciation}</span>
+              <span className="font-semibold text-blue-600 dark:text-blue-300">{property.value}</span>
+              <span className="text-blue-600 dark:text-blue-400 font-medium">{property.appreciation}</span>
             </div>
-            <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${property.status === 'Occupied' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200' : property.status === 'Available' ? 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-200' : 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-200'}`}>{property.status}</span>
+            <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${property.status === 'Occupied' ? 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200' : property.status === 'Available' ? 'bg-blue-50 text-blue-700 dark:bg-blue-800 dark:text-blue-200' : 'bg-blue-100 text-blue-700 dark:bg-blue-900 dark:text-blue-200'}`}>{property.status}</span>
           </div>
         </div>
       ))}
     </div>
   );
-} 
+}
