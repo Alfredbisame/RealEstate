@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { ChevronDown, User, Settings, HelpCircle, LogOut } from 'lucide-react';
 import { UserRole, ROLE_CONFIGS } from '@/types/roles';
 import { createPortal } from 'react-dom';
-import { useTheme } from '@/app/components/useTheme';
 
 interface UserType {
   id: string;
@@ -23,7 +22,6 @@ interface HeaderUserMenuProps {
 export default function HeaderUserMenu({ user, userDropdownOpen, setUserDropdownOpen, onLogout, onSettingsClick }: HeaderUserMenuProps) {
   const ref = useRef<HTMLDivElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
-  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -51,9 +49,9 @@ export default function HeaderUserMenu({ user, userDropdownOpen, setUserDropdown
     <div ref={ref} className="relative">
       <button
         onClick={() => setUserDropdownOpen(!userDropdownOpen)}
-        className={`flex items-center space-x-3 px-3 py-2 rounded-xl ${isDarkMode ? 'bg-gray-700/80 hover:bg-gray-600' : 'bg-gray-100/80 hover:bg-gray-200'} transition-all backdrop-blur-sm`}
+        className="flex items-center space-x-3 px-3 py-2 bg-gray-100 dark:bg-gray-700 rounded-xl hover:bg-gray-200 dark:hover:bg-gray-600 transition-all"
       >
-        <div className={`w-8 h-8 rounded-full overflow-hidden ${isDarkMode ? 'bg-red-600' : 'bg-red-500'} flex items-center justify-center`}>
+        <div className="w-8 h-8 rounded-full overflow-hidden bg-blue-500 flex items-center justify-center">
           {user.avatar ? (
             <img src={user.avatar} alt={user.name} className="w-full h-full object-cover" />
           ) : (
@@ -73,7 +71,7 @@ export default function HeaderUserMenu({ user, userDropdownOpen, setUserDropdown
         <div ref={dropdownRef} className="fixed right-4 top-20 w-64 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 z-[99999] backdrop-blur-xl">
           <div className="p-4 border-b border-gray-200 dark:border-gray-700">
             <div className="flex items-center space-x-3">
-              <div className={`w-12 h-12 rounded-full overflow-hidden ${isDarkMode ? 'bg-red-600' : 'bg-red-500'} flex items-center justify-center`}>
+              <div className="w-12 h-12 rounded-full overflow-hidden bg-blue-500 flex items-center justify-center">
                 {user.avatar ? (
                   <img src={user.avatar} alt={user.name} className="w-full h-full object-cover" />
                 ) : (
@@ -117,7 +115,7 @@ export default function HeaderUserMenu({ user, userDropdownOpen, setUserDropdown
                 onLogout();
                 setUserDropdownOpen(false);
               }}
-              className="w-full flex items-center space-x-3 px-3 py-2 text-left hover:bg-red-50 dark:hover:bg-red-900/20 rounded-lg transition-colors text-red-600 dark:text-red-400"
+              className="w-full flex items-center space-x-3 px-3 py-2 text-left hover:bg-red-50 dark:hover:bg-red-900 rounded-lg transition-colors text-red-600 dark:text-red-400"
             >
               <LogOut size={16} />
               <span className="text-sm">Sign Out</span>

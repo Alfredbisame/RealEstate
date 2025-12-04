@@ -1,6 +1,5 @@
 import { Globe } from 'lucide-react';
 import { UserRole, ROLE_CONFIGS } from '@/types/roles';
-import { useTheme } from '@/app/components/useTheme';
 
 interface HeaderLeftProps {
   user: {
@@ -10,11 +9,9 @@ interface HeaderLeftProps {
 }
 
 export default function HeaderLeft({ user, currentTime }: HeaderLeftProps) {
-  const { isDarkMode } = useTheme();
-  
   return (
     <div>
-      <h2 className={`text-xl font-bold ${isDarkMode ? 'text-white' : 'text-gray-900'}`}>
+      <h2 className="text-xl font-bold text-blue-500">
         {ROLE_CONFIGS[user.role].name} Dashboard
       </h2>
       <p className="text-sm text-gray-600 dark:text-gray-400 flex items-center">

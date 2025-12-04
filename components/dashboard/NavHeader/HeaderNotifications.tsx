@@ -1,7 +1,6 @@
 import { Bell } from 'lucide-react';
 import React, { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
-import { useTheme } from '@/app/components/useTheme';
 
 interface Notification {
   id: number;
@@ -18,7 +17,6 @@ interface HeaderNotificationsProps {
 
 export default function HeaderNotifications({ notificationsOpen, setNotificationsOpen, notifications }: HeaderNotificationsProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -43,14 +41,14 @@ export default function HeaderNotifications({ notificationsOpen, setNotification
       </div>
       <div className="max-h-64 overflow-y-auto">
         {notifications.map((notification) => (
-          <div key={notification.id} className="p-4 border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+          <div key={notification.id} className="p-4 border-b border-gray-100 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
             <p className="font-medium text-gray-900 dark:text-white text-sm">{notification.title}</p>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{notification.time}</p>
           </div>
         ))}
       </div>
       <div className="p-3 border-t border-gray-200 dark:border-gray-700">
-        <button className={`w-full text-center text-sm ${isDarkMode ? 'text-red-400 hover:text-red-300' : 'text-red-600 hover:text-red-700'} font-medium`}>
+        <button className="w-full text-center text-sm text-green-600 hover:text-green-700 font-medium">
           View All Notifications
         </button>
       </div>
@@ -59,9 +57,9 @@ export default function HeaderNotifications({ notificationsOpen, setNotification
 
   return (
     <div className="relative">
-      <button 
+      <button
         onClick={() => setNotificationsOpen(!notificationsOpen)}
-        className={`relative p-2.5 rounded-xl ${isDarkMode ? 'bg-gray-700/80 hover:bg-gray-600' : 'bg-gray-100/80 hover:bg-gray-200'} transition-all backdrop-blur-sm`}
+        className="relative p-2.5 rounded-xl bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all"
       >
         <Bell size={20} />
         <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>

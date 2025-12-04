@@ -1,5 +1,4 @@
 import { cn } from '@/lib/utils';
-import { useTheme } from '@/app/components/useTheme';
 
 interface MenuItem {
   id: string;
@@ -16,8 +15,6 @@ interface SidebarNavProps {
 }
 
 export default function SidebarNav({ menuItems, collapsed, activeTab, onTabChange }: SidebarNavProps) {
-  const { isDarkMode } = useTheme();
-  
   return (
     <nav className="flex-1 p-4 overflow-y-auto overflow-x-hidden">
       <ul className="space-y-1">
@@ -28,17 +25,17 @@ export default function SidebarNav({ menuItems, collapsed, activeTab, onTabChang
               className={cn(
                 "w-full flex items-center px-3 py-2.5 rounded-xl transition-all duration-200 group relative",
                 collapsed ? "justify-center min-w-0 w-12 px-0" : "",
-                activeTab === item.id 
-                  ? `${isDarkMode ? 'bg-red-600' : 'bg-red-500'} text-white shadow-lg` 
-                  : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50"
+                activeTab === item.id
+                  ? "bg-blue-500 text-white shadow-lg"
+                  : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
               )}
             >
-              <item.icon size={20} className={cn("flex-shrink-0", collapsed ? "mx-auto" : "")}/>
+              <item.icon size={20} className={cn("flex-shrink-0", collapsed ? "mx-auto" : "")} />
               {!collapsed && (
                 <span className="ml-3 font-medium">{item.label}</span>
               )}
               {collapsed && (
-                <div className="absolute left-16 bg-gray-900 text-white px-2 py-1 rounded-md text-sm opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-50">
+                <div className="absolute left-16 bg-gray-900 text-white px-2 py-1 rounded-md text-sm hidden group-hover:block transition-all pointer-events-none z-50">
                   {item.label}
                 </div>
               )}
