@@ -10,8 +10,8 @@ export default function ProgressTrackingStats() {
       change: '+2.5%',
       trend: 'up',
       icon: TrendingUp,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-50',
       progress: 78
     },
     {
@@ -30,8 +30,8 @@ export default function ProgressTrackingStats() {
       change: '-5',
       trend: 'down',
       icon: Clock,
-      color: 'text-orange-600',
-      bgColor: 'bg-orange-50',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-50',
       progress: 85
     },
     {
@@ -40,8 +40,8 @@ export default function ProgressTrackingStats() {
       change: '-1',
       trend: 'down',
       icon: AlertTriangle,
-      color: 'text-red-600',
-      bgColor: 'bg-red-50',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-50',
       progress: 90
     }
   ];
@@ -66,7 +66,7 @@ export default function ProgressTrackingStats() {
                 {stat.value}
               </span>
               <div className={`flex items-center text-xs font-medium ${
-                stat.trend === 'up' ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
+                stat.trend === 'up' ? 'text-blue-600 dark:text-blue-400' : 'text-blue-600 dark:text-blue-400'
               }`}>
                 {stat.trend === 'up' ? (
                   <TrendingUp className="w-3 h-3 mr-1" />
@@ -85,4 +85,4 @@ export default function ProgressTrackingStats() {
       ))}
     </div>
   );
-} 
+}

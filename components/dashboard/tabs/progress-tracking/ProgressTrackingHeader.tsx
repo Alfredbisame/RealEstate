@@ -4,14 +4,14 @@ import { Badge } from '@/components/ui/badge';
 
 export default function ProgressTrackingHeader() {
   return (
-    <div className="bg-gradient-to-r from-blue-600 to-indigo-700 rounded-xl p-6 text-white shadow-lg">
+    <div className="bg-blue-500 rounded-xl p-6 text-white shadow-lg">
       <div className="flex items-center justify-between mb-4">
         <div>
           <h1 className="text-3xl font-bold mb-2">Progress Tracking</h1>
           <p className="text-blue-100 text-lg">Monitor construction progress, milestones, and project timelines</p>
         </div>
         <div className="flex items-center space-x-3">
-          <Button variant="outline" size="sm" className="bg-white/10 border-white/20 text-white hover:bg-white/20 dark:bg-gray-700/20 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-700/30">
+          <Button variant="outline" size="sm" className="bg-blue-400 border-blue-300 text-white hover:bg-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200 dark:hover:bg-gray-600">
             <Calendar className="w-4 h-4 mr-2" />
             Export Report
           </Button>
@@ -23,7 +23,7 @@ export default function ProgressTrackingHeader() {
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+        <div className="bg-blue-400 rounded-lg p-4">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-blue-100 text-sm font-medium">Overall Progress</p>
@@ -34,7 +34,7 @@ export default function ProgressTrackingHeader() {
           </div>
         </div>
         
-        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+        <div className="bg-blue-400 rounded-lg p-4">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-blue-100 text-sm font-medium">Milestones</p>
@@ -45,7 +45,7 @@ export default function ProgressTrackingHeader() {
           </div>
         </div>
         
-        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+        <div className="bg-blue-400 rounded-lg p-4">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-blue-100 text-sm font-medium">Days Remaining</p>
@@ -56,7 +56,7 @@ export default function ProgressTrackingHeader() {
           </div>
         </div>
         
-        <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4">
+        <div className="bg-blue-400 rounded-lg p-4">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-blue-100 text-sm font-medium">Delayed Tasks</p>
@@ -69,4 +69,4 @@ export default function ProgressTrackingHeader() {
       </div>
     </div>
   );
-} 
+}
