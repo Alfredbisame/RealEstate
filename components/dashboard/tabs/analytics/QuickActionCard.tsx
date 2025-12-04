@@ -27,9 +27,9 @@ export default function QuickActionCard({
   };
 
   return (
-    <button 
+    <button
       onClick={onClick}
-      className={`flex items-center space-x-3 p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all hover:scale-[1.02] ${className}`}
+      className={`flex items-center space-x-3 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all hover:scale-[1.02] ${className}`}
     >
       <div className={`w-10 h-10 ${colorClasses[color]} rounded-lg flex items-center justify-center`}>
         <Icon className="w-5 h-5" />

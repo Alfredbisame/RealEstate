@@ -26,16 +26,16 @@ export default function ChartsSection({ className = '' }: ChartsSectionProps) {
 
   return (
     <div className={`grid grid-cols-1 lg:grid-cols-2 gap-6 ${className}`}>
-      <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all">
-        <ChartWidget 
+      <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all">
+        <ChartWidget
           title="Revenue vs Expenses Trend"
           data={revenueData}
           type="area"
         />
       </div>
-      
-      <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl p-6 border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all">
-        <ChartWidget 
+
+      <div className="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all">
+        <ChartWidget
           title="Property Distribution"
           data={propertyData}
           type="doughnut"
