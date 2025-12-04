@@ -67,13 +67,13 @@ export default function TransportCostOptimizerView({ user }: { user: any }) {
         <label className="block font-medium mb-1">Total Distance (km)</label>
         <input type="number" value={distance} onChange={e => setDistance(Number(e.target.value))} className="px-3 py-2 rounded border w-full" />
       </div>
-      <button onClick={calculate} className="px-4 py-2 bg-green-600 text-white rounded font-semibold">Optimize Cost</button>
+      <button onClick={calculate} className="px-4 py-2 bg-blue-500 text-white rounded font-semibold">Optimize Cost</button>
       {result && (
-        <div className="mt-6 p-4 bg-green-50 dark:bg-green-900 rounded-xl border border-green-200 dark:border-green-700">
+        <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900 rounded-xl border border-blue-200 dark:border-blue-700">
           <div className="font-bold text-lg mb-2">Estimated Total Cost: GHS {result.totalCost.toLocaleString()}</div>
-          <div className="text-sm text-green-700 dark:text-green-200">{result.suggestion}</div>
+          <div className="text-sm text-blue-700 dark:text-blue-200">{result.suggestion}</div>
         </div>
       )}
     </div>
   );
-} 
+}
