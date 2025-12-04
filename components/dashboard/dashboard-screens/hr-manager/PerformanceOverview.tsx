@@ -18,7 +18,7 @@ export default function PerformanceOverview() {
       title: 'Top Performers',
       value: '12',
       icon: Award,
-      bgColor: 'bg-green-50 dark:bg-green-900/20',
+      bgColor: 'bg-green-50 dark:bg-green-900',
       textColor: 'text-green-600'
     },
     {
@@ -26,7 +26,7 @@ export default function PerformanceOverview() {
       title: 'Avg Performance',
       value: '84%',
       icon: TrendingUp,
-      bgColor: 'bg-blue-50 dark:bg-blue-900/20',
+      bgColor: 'bg-blue-50 dark:bg-blue-900',
       textColor: 'text-blue-600'
     },
     {
@@ -34,7 +34,7 @@ export default function PerformanceOverview() {
       title: 'Need Improvement',
       value: '3',
       icon: AlertCircle,
-      bgColor: 'bg-orange-50 dark:bg-orange-900/20',
+      bgColor: 'bg-orange-50 dark:bg-orange-900',
       textColor: 'text-orange-600'
     }
   ];
@@ -44,7 +44,7 @@ export default function PerformanceOverview() {
       <h3 className="font-semibold text-gray-800 dark:text-white mb-4">Performance Overview</h3>
       <div className="space-y-4">
         {metrics.map((metric) => (
-          <div 
+          <div
             key={metric.id}
             className={`flex items-center justify-between p-3 ${metric.bgColor} rounded-lg hover:shadow-sm transition-shadow duration-200`}
           >

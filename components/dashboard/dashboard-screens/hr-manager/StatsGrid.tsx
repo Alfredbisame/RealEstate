@@ -1,6 +1,6 @@
 'use client';
 
-import { 
+import {
   Users, UserCheck, DollarSign, Calendar, TrendingUp, Building, Clock
 } from 'lucide-react';
 import StatsCard from '../../widgets/StatsCard';
@@ -86,23 +86,23 @@ export default function StatsGrid() {
             <AreaChart data={employeeTrendData}>
               <defs>
                 <linearGradient id="colorEmployees" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.3}/>
-                  <stop offset="95%" stopColor="#3B82F6" stopOpacity={0.1}/>
+                  <stop offset="5%" stopColor="#3B82F6" />
+                  <stop offset="95%" stopColor="#3B82F6" />
                 </linearGradient>
               </defs>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" className="dark:stroke-gray-600" />
-              <XAxis 
-                dataKey="month" 
-                stroke="#6b7280" 
+              <XAxis
+                dataKey="month"
+                stroke="#6b7280"
                 className="dark:stroke-gray-400"
                 fontSize={12}
               />
-              <YAxis 
-                stroke="#6b7280" 
+              <YAxis
+                stroke="#6b7280"
                 className="dark:stroke-gray-400"
                 fontSize={12}
               />
-              <Tooltip 
+              <Tooltip
                 contentStyle={{
                   backgroundColor: 'white',
                   border: '1px solid #e5e7eb',
@@ -111,12 +111,12 @@ export default function StatsGrid() {
                 }}
                 labelStyle={{ color: '#374151' }}
               />
-              <Area 
-                type="monotone" 
-                dataKey="employees" 
-                stroke="#3B82F6" 
+              <Area
+                type="monotone"
+                dataKey="employees"
+                stroke="#3B82F6"
                 strokeWidth={2}
-                fill="url(#colorEmployees)" 
+                fill="url(#colorEmployees)"
               />
             </AreaChart>
           </ResponsiveContainer>
@@ -128,18 +128,18 @@ export default function StatsGrid() {
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={departmentData}>
               <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" className="dark:stroke-gray-600" />
-              <XAxis 
-                dataKey="department" 
-                stroke="#6b7280" 
+              <XAxis
+                dataKey="department"
+                stroke="#6b7280"
                 className="dark:stroke-gray-400"
                 fontSize={12}
               />
-              <YAxis 
-                stroke="#6b7280" 
+              <YAxis
+                stroke="#6b7280"
                 className="dark:stroke-gray-400"
                 fontSize={12}
               />
-              <Tooltip 
+              <Tooltip
                 contentStyle={{
                   backgroundColor: 'white',
                   border: '1px solid #e5e7eb',
@@ -172,7 +172,7 @@ export default function StatsGrid() {
                   <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                 ))}
               </Pie>
-              <Tooltip 
+              <Tooltip
                 contentStyle={{
                   backgroundColor: 'white',
                   border: '1px solid #e5e7eb',
