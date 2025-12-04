@@ -40,7 +40,7 @@ export default function AuditTrailView({ auditTrail }: AuditTrailViewProps) {
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold">Audit Trail</h2>
         <button
-          className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all"
+          className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all"
           onClick={handleExport}
         >
           <Download className="w-4 h-4" /> Export
@@ -77,20 +77,20 @@ export default function AuditTrailView({ auditTrail }: AuditTrailViewProps) {
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white dark:bg-gray-900 rounded-lg shadow">
           <thead>
-            <tr>
-              <th className="px-4 py-2 text-left">Action</th>
-              <th className="px-4 py-2 text-left">User</th>
-              <th className="px-4 py-2 text-left">Timestamp</th>
-              <th className="px-4 py-2 text-left">Details</th>
-              <th className="px-4 py-2 text-left">Actions</th>
+            <tr className="bg-gray-50 dark:bg-gray-800">
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700 dark:text-gray-300">Action</th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700 dark:text-gray-300">User</th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700 dark:text-gray-300">Timestamp</th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700 dark:text-gray-300">Details</th>
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-700 dark:text-gray-300">Actions</th>
             </tr>
           </thead>
           <tbody>
             {filteredAuditTrail.map((audit) => (
               <tr key={audit.id} className="border-t border-gray-200 dark:border-gray-700">
-                <td className="px-4 py-2 font-medium">{audit.action}</td>
-                <td className="px-4 py-2">{audit.user}</td>
-                <td className="px-4 py-2">{audit.timestamp}</td>
+                <td className="px-4 py-2 font-medium text-gray-900 dark:text-white">{audit.action}</td>
+                <td className="px-4 py-2 text-gray-700 dark:text-gray-300">{audit.user}</td>
+                <td className="px-4 py-2 text-gray-700 dark:text-gray-300">{audit.timestamp}</td>
                 <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-400">{audit.details}</td>
                 <td className="px-4 py-2">
                   <button className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 text-sm flex items-center gap-1">
@@ -102,38 +102,6 @@ export default function AuditTrailView({ auditTrail }: AuditTrailViewProps) {
           </tbody>
         </table>
       </div>
-
-      {filteredAuditTrail.length === 0 && (
-        <div className="text-center py-8 text-gray-500 dark:text-gray-400">
-          No audit trail entries found matching your search criteria.
-        </div>
-      )}
-
-      {/* Summary Statistics */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
-        <div className="bg-blue-50 dark:bg-blue-900/10 rounded-lg p-4 text-center">
-          <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">{auditTrail.length}</div>
-          <div className="text-sm text-blue-800 dark:text-blue-200">Total Entries</div>
-        </div>
-        <div className="bg-green-50 dark:bg-green-900/10 rounded-lg p-4 text-center">
-          <div className="text-2xl font-bold text-green-700 dark:text-green-300">
-            {auditTrail.filter(item => item.user.includes('HR')).length}
-          </div>
-          <div className="text-sm text-green-800 dark:text-green-200">HR Actions</div>
-        </div>
-        <div className="bg-yellow-50 dark:bg-yellow-900/10 rounded-lg p-4 text-center">
-          <div className="text-2xl font-bold text-yellow-700 dark:text-yellow-300">
-            {auditTrail.filter(item => item.action.includes('Safety')).length}
-          </div>
-          <div className="text-sm text-yellow-800 dark:text-yellow-200">Safety Actions</div>
-        </div>
-        <div className="bg-purple-50 dark:bg-purple-900/10 rounded-lg p-4 text-center">
-          <div className="text-2xl font-bold text-purple-700 dark:text-purple-300">
-            {auditTrail.filter(item => item.action.includes('Tax')).length}
-          </div>
-          <div className="text-sm text-purple-800 dark:text-purple-200">Tax Actions</div>
-        </div>
-      </div>
     </div>
   );
-} 
+}
