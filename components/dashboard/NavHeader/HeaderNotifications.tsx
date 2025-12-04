@@ -1,6 +1,7 @@
 import { Bell } from 'lucide-react';
 import React, { useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import { useTheme } from '@/app/components/useTheme';
 
 interface Notification {
   id: number;
@@ -17,6 +18,7 @@ interface HeaderNotificationsProps {
 
 export default function HeaderNotifications({ notificationsOpen, setNotificationsOpen, notifications }: HeaderNotificationsProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const { isDarkMode } = useTheme();
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -48,7 +50,7 @@ export default function HeaderNotifications({ notificationsOpen, setNotification
         ))}
       </div>
       <div className="p-3 border-t border-gray-200 dark:border-gray-700">
-        <button className="w-full text-center text-sm text-green-600 hover:text-green-700 font-medium">
+        <button className={`w-full text-center text-sm ${isDarkMode ? 'text-red-400 hover:text-red-300' : 'text-red-600 hover:text-red-700'} font-medium`}>
           View All Notifications
         </button>
       </div>
@@ -59,7 +61,7 @@ export default function HeaderNotifications({ notificationsOpen, setNotification
     <div className="relative">
       <button 
         onClick={() => setNotificationsOpen(!notificationsOpen)}
-        className="relative p-2.5 rounded-xl bg-gray-100/80 dark:bg-gray-700/80 hover:bg-gray-200 dark:hover:bg-gray-600 transition-all backdrop-blur-sm"
+        className={`relative p-2.5 rounded-xl ${isDarkMode ? 'bg-gray-700/80 hover:bg-gray-600' : 'bg-gray-100/80 hover:bg-gray-200'} transition-all backdrop-blur-sm`}
       >
         <Bell size={20} />
         <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
