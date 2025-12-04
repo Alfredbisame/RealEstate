@@ -22,7 +22,7 @@ export default function CashOnCashView() {
     return (
         <div className="space-y-6">
             <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
                     <DollarSign className="w-5 h-5 text-blue-600 dark:text-blue-400" />
                 </div>
                 <div>
@@ -32,7 +32,7 @@ export default function CashOnCashView() {
             </div>
 
             {/* Definition Card */}
-            <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 rounded-xl p-4 flex items-start space-x-3">
+            <div className="bg-blue-50 dark:bg-blue-900 rounded-xl p-4 border border-blue-100 dark:border-blue-800 flex items-start space-x-3">
                 <Info className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
                 <div>
                     <h4 className="font-semibold text-blue-900 dark:text-blue-100">What is Cash on Cash Return?</h4>
@@ -40,7 +40,7 @@ export default function CashOnCashView() {
                         A rate of return ratio that calculates the total cash earned on the total cash invested in a property.
                         It measures the annual return the investor made on the property in relation to the amount of mortgage paid during the same year.
                     </p>
-                    <p className="text-xs font-mono text-blue-600 dark:text-blue-400 mt-2 bg-blue-100 dark:bg-blue-900/40 inline-block px-2 py-1 rounded">
+                    <p className="text-xs font-mono text-blue-600 dark:text-blue-400 mt-2 bg-blue-100 dark:bg-blue-900 inline-block px-2 py-1 rounded">
                         Formula: (Annual Pre-Tax Cash Flow / Total Cash Invested) × 100
                     </p>
                 </div>
@@ -72,7 +72,7 @@ export default function CashOnCashView() {
                         const percentage = (property.value / maxValue) * 100;
 
                         return (
-                            <div key={index} className="p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:shadow-md transition-shadow">
+                            <div key={index} className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:shadow-md transition-shadow">
                                 <div className="flex items-center justify-between mb-2">
                                     <span className="font-medium text-gray-900 dark:text-white">{property.name}</span>
                                     <span className="text-sm text-gray-500 dark:text-gray-400">
@@ -97,7 +97,7 @@ export default function CashOnCashView() {
             </div>
 
             {/* Insights */}
-            <div className="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 border border-blue-200 dark:border-gray-600">
+            <div className="bg-blue-50 dark:bg-gray-800 rounded-xl p-6 border border-blue-200 dark:border-gray-600">
                 <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-4">Cash Flow Insights</h4>
                 <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
                     <li className="flex items-start">

@@ -9,7 +9,7 @@ export default function InvestmentROIStats() {
             value: '22.5%',
             change: '+3.2%',
             icon: Percent,
-            color: 'green',
+            color: 'blue',
             description: 'Across all properties'
         },
         {
@@ -25,7 +25,7 @@ export default function InvestmentROIStats() {
             value: 'GHS 630K',
             change: '+15.8%',
             icon: TrendingUp,
-            color: 'purple',
+            color: 'blue',
             description: 'Year-to-date'
         },
         {
@@ -33,31 +33,16 @@ export default function InvestmentROIStats() {
             value: '18.2%',
             change: '+2.1%',
             icon: Target,
-            color: 'orange',
+            color: 'blue',
             description: 'Actual cash return'
         }
     ];
 
     const colorClasses: Record<string, { bg: string; icon: string; badge: string }> = {
-        green: {
-            bg: 'bg-green-100 dark:bg-green-900/30',
-            icon: 'text-green-600 dark:text-green-400',
-            badge: 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300'
-        },
         blue: {
-            bg: 'bg-blue-100 dark:bg-blue-900/30',
+            bg: 'bg-blue-100 dark:bg-blue-900',
             icon: 'text-blue-600 dark:text-blue-400',
             badge: 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'
-        },
-        purple: {
-            bg: 'bg-purple-100 dark:bg-purple-900/30',
-            icon: 'text-purple-600 dark:text-purple-400',
-            badge: 'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300'
-        },
-        orange: {
-            bg: 'bg-orange-100 dark:bg-orange-900/30',
-            icon: 'text-orange-600 dark:text-orange-400',
-            badge: 'bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300'
         }
     };
 
@@ -70,7 +55,7 @@ export default function InvestmentROIStats() {
                 return (
                     <div
                         key={index}
-                        className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-5 border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-200 group"
+                        className="bg-white dark:bg-gray-800 rounded-xl p-5 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-200 group"
                     >
                         <div className="flex items-start justify-between mb-3">
                             <div className={`w-12 h-12 ${colors.bg} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200`}>

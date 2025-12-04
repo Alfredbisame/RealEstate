@@ -41,7 +41,7 @@ export default function ROICalculatorView() {
     return (
         <div className="space-y-6">
             <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
                     <Calculator className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -147,19 +147,19 @@ export default function ROICalculatorView() {
                     </h4>
 
                     {/* Cash Flow */}
-                    <div className="bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-xl p-4 border border-green-200 dark:border-green-700">
+                    <div className="bg-blue-50 dark:bg-gray-800 rounded-xl p-4 border border-blue-200 dark:border-blue-700">
                         <div className="flex items-center justify-between mb-2">
-                            <span className="text-sm font-medium text-green-700 dark:text-green-300">Annual Cash Flow</span>
-                            <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
+                            <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Annual Cash Flow</span>
+                            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
                                 <DollarSign className="w-4 h-4 text-white" />
                             </div>
                         </div>
-                        <p className="text-2xl font-bold text-green-900 dark:text-green-100">GHS {metrics.annualCashFlow}</p>
-                        <p className="text-sm text-green-600 dark:text-green-400">GHS {metrics.monthlyProfit}/month</p>
+                        <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">GHS {metrics.annualCashFlow}</p>
+                        <p className="text-sm text-blue-600 dark:text-blue-400">GHS {metrics.monthlyProfit}/month</p>
                     </div>
 
                     {/* Cash on Cash Return */}
-                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-xl p-4 border border-blue-200 dark:border-blue-700">
+                    <div className="bg-blue-50 dark:bg-gray-800 rounded-xl p-4 border border-blue-200 dark:border-blue-700">
                         <div className="flex items-center justify-between mb-2">
                             <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Cash-on-Cash Return</span>
                             <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
@@ -171,27 +171,27 @@ export default function ROICalculatorView() {
                     </div>
 
                     {/* Cap Rate */}
-                    <div className="bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl p-4 border border-purple-200 dark:border-purple-700">
+                    <div className="bg-blue-50 dark:bg-gray-800 rounded-xl p-4 border border-blue-200 dark:border-blue-700">
                         <div className="flex items-center justify-between mb-2">
-                            <span className="text-sm font-medium text-purple-700 dark:text-purple-300">Capitalization Rate</span>
-                            <div className="w-8 h-8 bg-purple-500 rounded-lg flex items-center justify-center">
+                            <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Capitalization Rate</span>
+                            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
                                 <TrendingUp className="w-4 h-4 text-white" />
                             </div>
                         </div>
-                        <p className="text-2xl font-bold text-purple-900 dark:text-purple-100">{metrics.capRate}%</p>
-                        <p className="text-sm text-purple-600 dark:text-purple-400">Property performance metric</p>
+                        <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">{metrics.capRate}%</p>
+                        <p className="text-sm text-blue-600 dark:text-blue-400">Property performance metric</p>
                     </div>
 
                     {/* Total Return */}
-                    <div className="bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900/20 dark:to-orange-800/20 rounded-xl p-4 border border-orange-200 dark:border-orange-700">
+                    <div className="bg-blue-50 dark:bg-gray-800 rounded-xl p-4 border border-blue-200 dark:border-blue-700">
                         <div className="flex items-center justify-between mb-2">
-                            <span className="text-sm font-medium text-orange-700 dark:text-orange-300">Total Return (with appreciation)</span>
-                            <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center">
+                            <span className="text-sm font-medium text-blue-700 dark:text-blue-300">Total Return (with appreciation)</span>
+                            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
                                 <Calculator className="w-4 h-4 text-white" />
                             </div>
                         </div>
-                        <p className="text-2xl font-bold text-orange-900 dark:text-orange-100">{metrics.totalReturn}%</p>
-                        <p className="text-sm text-orange-600 dark:text-orange-400">Cash flow + appreciation</p>
+                        <p className="text-2xl font-bold text-blue-900 dark:text-blue-100">{metrics.totalReturn}%</p>
+                        <p className="text-sm text-blue-600 dark:text-blue-400">Cash flow + appreciation</p>
                     </div>
                 </div>
             </div>

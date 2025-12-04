@@ -86,16 +86,16 @@ export default function ROIComparisonView() {
     };
 
     const getPerformanceBadge = (roi: number) => {
-        if (roi >= 20) return { label: 'Excellent', color: 'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300' };
+        if (roi >= 20) return { label: 'Excellent', color: 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300' };
         if (roi >= 15) return { label: 'Good', color: 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300' };
-        if (roi >= 10) return { label: 'Average', color: 'bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300' };
+        if (roi >= 10) return { label: 'Average', color: 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300' };
         return { label: 'Below Average', color: 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300' };
     };
 
     return (
         <div className="space-y-6">
             <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
                     <TrendingUp className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -105,12 +105,12 @@ export default function ROIComparisonView() {
             </div>
 
             {/* Sort Options */}
-            <div className="flex flex-wrap items-center gap-2 p-4 bg-gray-50 dark:bg-gray-700/50 rounded-xl">
+            <div className="flex flex-wrap items-center gap-2 p-4 bg-gray-50 dark:bg-gray-700 rounded-xl">
                 <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Sort by:</span>
                 <button
                     onClick={() => handleSort('roi')}
                     className={`flex items-center space-x-1 px-3 py-1.5 rounded-lg transition-all ${sortBy === 'roi'
-                        ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-md'
+                        ? 'bg-blue-500 text-white shadow-md'
                         : 'bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-500'
                         }`}
                 >
@@ -120,7 +120,7 @@ export default function ROIComparisonView() {
                 <button
                     onClick={() => handleSort('cashOnCash')}
                     className={`flex items-center space-x-1 px-3 py-1.5 rounded-lg transition-all ${sortBy === 'cashOnCash'
-                        ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-md'
+                        ? 'bg-blue-500 text-white shadow-md'
                         : 'bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-500'
                         }`}
                 >
@@ -130,7 +130,7 @@ export default function ROIComparisonView() {
                 <button
                     onClick={() => handleSort('capRate')}
                     className={`flex items-center space-x-1 px-3 py-1.5 rounded-lg transition-all ${sortBy === 'capRate'
-                        ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-md'
+                        ? 'bg-blue-500 text-white shadow-md'
                         : 'bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-500'
                         }`}
                 >
@@ -182,7 +182,7 @@ export default function ROIComparisonView() {
                                 </div>
                                 <div>
                                     <p className="text-xs text-gray-500 dark:text-gray-400 mb-1">Annual Cash Flow</p>
-                                    <p className="font-semibold text-green-600 dark:text-green-400">
+                                    <p className="font-semibold text-blue-600 dark:text-blue-400">
                                         GHS {annualCashFlow.toLocaleString()}
                                     </p>
                                 </div>
@@ -194,17 +194,17 @@ export default function ROIComparisonView() {
 
                             {/* ROI Metrics */}
                             <div className="grid grid-cols-3 gap-3 pt-4 border-t border-gray-200 dark:border-gray-700">
-                                <div className="text-center p-3 bg-green-50 dark:bg-green-900/20 rounded-lg">
+                                <div className="text-center p-3 bg-blue-50 dark:bg-blue-900 rounded-lg">
                                     <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">Total ROI</p>
-                                    <p className="text-xl font-bold text-green-600 dark:text-green-400">{property.roi}%</p>
+                                    <p className="text-xl font-bold text-blue-600 dark:text-blue-400">{property.roi}%</p>
                                 </div>
-                                <div className="text-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
+                                <div className="text-center p-3 bg-blue-50 dark:bg-blue-900 rounded-lg">
                                     <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">Cash-on-Cash</p>
                                     <p className="text-xl font-bold text-blue-600 dark:text-blue-400">{property.cashOnCash}%</p>
                                 </div>
-                                <div className="text-center p-3 bg-purple-50 dark:bg-purple-900/20 rounded-lg">
+                                <div className="text-center p-3 bg-blue-50 dark:bg-blue-900 rounded-lg">
                                     <p className="text-xs text-gray-600 dark:text-gray-400 mb-1">Cap Rate</p>
-                                    <p className="text-xl font-bold text-purple-600 dark:text-purple-400">{property.capRate}%</p>
+                                    <p className="text-xl font-bold text-blue-600 dark:text-blue-400">{property.capRate}%</p>
                                 </div>
                             </div>
                         </div>
@@ -213,7 +213,7 @@ export default function ROIComparisonView() {
             </div>
 
             {/* Summary Stats */}
-            <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 border border-gray-200 dark:border-gray-600">
+            <div className="bg-blue-50 dark:bg-gray-800 rounded-xl p-6 border border-blue-200 dark:border-gray-600">
                 <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-4">Portfolio Summary</h4>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div>
@@ -224,7 +224,7 @@ export default function ROIComparisonView() {
                     </div>
                     <div>
                         <p className="text-sm text-gray-600 dark:text-gray-400 mb-1">Best Performer</p>
-                        <p className="text-2xl font-bold text-green-600 dark:text-green-400">
+                        <p className="text-2xl font-bold text-blue-600 dark:text-blue-400">
                             {Math.max(...properties.map(p => p.roi))}%
                         </p>
                     </div>

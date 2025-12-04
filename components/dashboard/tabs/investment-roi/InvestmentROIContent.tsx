@@ -25,7 +25,7 @@ export default function InvestmentROIContent({ activeView, onViewChange }: Inves
     return (
         <div className="space-y-4">
             {/* View Tabs */}
-            <div className="flex items-center space-x-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-2 border border-gray-200/50 dark:border-gray-700/50 overflow-x-auto">
+            <div className="flex items-center space-x-2 bg-white dark:bg-gray-800 rounded-xl p-2 border border-gray-200 dark:border-gray-700 overflow-x-auto">
                 {views.map((view) => {
                     const Icon = view.icon;
                     return (
@@ -33,7 +33,7 @@ export default function InvestmentROIContent({ activeView, onViewChange }: Inves
                             key={view.id}
                             onClick={() => onViewChange(view.id)}
                             className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-200 whitespace-nowrap ${activeView === view.id
-                                ? 'bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-md'
+                                ? 'bg-blue-500 text-white shadow-md'
                                 : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
                                 }`}
                         >
@@ -45,7 +45,7 @@ export default function InvestmentROIContent({ activeView, onViewChange }: Inves
             </div>
 
             {/* View Content */}
-            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 dark:border-gray-700/50">
+            <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
                 {activeView === 'calculator' && <ROICalculatorView />}
                 {activeView === 'analytics' && <ROIAnalyticsView />}
                 {activeView === 'cash-on-cash' && <CashOnCashView />}
@@ -55,4 +55,3 @@ export default function InvestmentROIContent({ activeView, onViewChange }: Inves
         </div>
     );
 }
-

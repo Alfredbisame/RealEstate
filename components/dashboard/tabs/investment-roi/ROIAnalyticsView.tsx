@@ -32,7 +32,7 @@ export default function ROIAnalyticsView() {
     return (
         <div className="space-y-6">
             <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center">
+                <div className="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center">
                     <BarChart3 className="w-5 h-5 text-white" />
                 </div>
                 <div>
@@ -44,7 +44,7 @@ export default function ROIAnalyticsView() {
             {/* ROI Trend Chart */}
             <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
                 <div className="flex items-center space-x-2 mb-4">
-                    <TrendingUp className="w-5 h-5 text-green-500" />
+                    <TrendingUp className="w-5 h-5 text-blue-500" />
                     <h4 className="font-semibold text-gray-800 dark:text-gray-200">Portfolio ROI Trend</h4>
                 </div>
                 <ChartWidget
@@ -63,7 +63,7 @@ export default function ROIAnalyticsView() {
 
                 <div className="space-y-3">
                     {propertyROIData.map((property, index) => (
-                        <div key={index} className="p-4 bg-gray-50 dark:bg-gray-700/50 rounded-lg hover:shadow-md transition-shadow">
+                        <div key={index} className="p-4 bg-gray-50 dark:bg-gray-700 rounded-lg hover:shadow-md transition-shadow">
                             <div className="flex items-center justify-between mb-2">
                                 <span className="font-medium text-gray-900 dark:text-white">{property.name}</span>
                                 <span className="text-sm text-gray-500 dark:text-gray-400">
@@ -73,13 +73,13 @@ export default function ROIAnalyticsView() {
                             <div className="flex items-center space-x-3">
                                 <div className="flex-1 bg-gray-200 dark:bg-gray-600 rounded-full h-2">
                                     <div
-                                        className="bg-gradient-to-r from-green-500 to-blue-500 h-2 rounded-full transition-all duration-500"
+                                        className="bg-blue-500 h-2 rounded-full transition-all duration-500"
                                         style={{ width: `${Math.min((property.roi / 25) * 100, 100)}%` }}
                                     ></div>
                                 </div>
-                                <span className={`font-bold ${property.roi >= 20 ? 'text-green-600 dark:text-green-400' :
+                                <span className={`font-bold ${property.roi >= 20 ? 'text-blue-600 dark:text-blue-400' :
                                     property.roi >= 15 ? 'text-blue-600 dark:text-blue-400' :
-                                        'text-orange-600 dark:text-orange-400'
+                                        'text-blue-600 dark:text-blue-400'
                                     }`}>
                                     {property.roi}%
                                 </span>
@@ -93,7 +93,7 @@ export default function ROIAnalyticsView() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
                     <div className="flex items-center space-x-2 mb-4">
-                        <PieChart className="w-5 h-5 text-purple-500" />
+                        <PieChart className="w-5 h-5 text-blue-500" />
                         <h4 className="font-semibold text-gray-800 dark:text-gray-200">Investment Allocation</h4>
                     </div>
 
@@ -101,7 +101,7 @@ export default function ROIAnalyticsView() {
                         {allocationData.map((item, index) => {
                             const total = allocationData.reduce((sum, d) => sum + d.value, 0);
                             const percentage = ((item.value / total) * 100).toFixed(1);
-                            const colors = ['from-green-500 to-green-600', 'from-blue-500 to-blue-600', 'from-purple-500 to-purple-600'];
+                            const colors = ['bg-blue-500', 'bg-blue-500', 'bg-blue-500'];
 
                             return (
                                 <div key={index}>
@@ -111,7 +111,7 @@ export default function ROIAnalyticsView() {
                                     </div>
                                     <div className="bg-gray-200 dark:bg-gray-600 rounded-full h-2">
                                         <div
-                                            className={`bg-gradient-to-r ${colors[index]} h-2 rounded-full transition-all duration-500`}
+                                            className={`${colors[index]} h-2 rounded-full transition-all duration-500`}
                                             style={{ width: `${percentage}%` }}
                                         ></div>
                                     </div>
@@ -125,12 +125,12 @@ export default function ROIAnalyticsView() {
                 </div>
 
                 {/* Key Insights */}
-                <div className="bg-gradient-to-br from-green-50 to-blue-50 dark:from-gray-800 dark:to-gray-700 rounded-xl p-6 border border-green-200 dark:border-gray-600">
+                <div className="bg-blue-50 dark:bg-gray-800 rounded-xl p-6 border border-blue-200 dark:border-gray-600">
                     <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-4">Key Insights</h4>
 
                     <div className="space-y-3">
                         <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
+                            <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
                             <div>
                                 <p className="font-medium text-gray-900 dark:text-white">Top Performer</p>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">Tema Industrial with 22.1% ROI</p>
@@ -146,7 +146,7 @@ export default function ROIAnalyticsView() {
                         </div>
 
                         <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-purple-500 rounded-full mt-2"></div>
+                            <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
                             <div>
                                 <p className="font-medium text-gray-900 dark:text-white">Diversification</p>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">Well-balanced across 3 property types</p>
@@ -154,7 +154,7 @@ export default function ROIAnalyticsView() {
                         </div>
 
                         <div className="flex items-start space-x-3">
-                            <div className="w-2 h-2 bg-orange-500 rounded-full mt-2"></div>
+                            <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
                             <div>
                                 <p className="font-medium text-gray-900 dark:text-white">Opportunity</p>
                                 <p className="text-sm text-gray-600 dark:text-gray-400">Consider increasing industrial allocation</p>
