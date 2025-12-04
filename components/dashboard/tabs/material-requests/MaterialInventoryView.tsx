@@ -92,26 +92,26 @@ export default function MaterialInventoryView() {
   const getStockStatusColor = (status: string) => {
     switch (status) {
       case 'critical':
-        return 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200';
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
       case 'low':
-        return 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-200';
+        return 'bg-blue-50 text-blue-700 dark:bg-blue-800 dark:text-blue-200';
       case 'good':
-        return 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200';
+        return 'bg-blue-50 text-blue-700 dark:bg-blue-900 dark:text-blue-200';
       default:
-        return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
+        return 'bg-blue-50 text-blue-700 dark:bg-blue-900 dark:text-blue-200';
     }
   };
 
   const getStockStatusIcon = (status: string) => {
     switch (status) {
       case 'critical':
-        return <AlertTriangle className="h-4 w-4 text-red-600" />;
+        return <AlertTriangle className="h-4 w-4 text-blue-600" />;
       case 'low':
-        return <AlertTriangle className="h-4 w-4 text-orange-600" />;
+        return <AlertTriangle className="h-4 w-4 text-blue-500" />;
       case 'good':
-        return <CheckCircle className="h-4 w-4 text-green-600" />;
+        return <CheckCircle className="h-4 w-4 text-blue-600" />;
       default:
-        return <Package className="h-4 w-4 text-gray-600" />;
+        return <Package className="h-4 w-4 text-blue-600" />;
     }
   };
 
