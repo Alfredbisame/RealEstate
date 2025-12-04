@@ -28,7 +28,7 @@ export default function InvoiceTableView({ user }: { user: any }) {
               <td className="px-4 py-2">{inv.project}</td>
               <td className="px-4 py-2">{inv.amount.toLocaleString()}</td>
               <td className="px-4 py-2">
-                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${inv.status === 'Paid' ? 'bg-green-200 text-green-800' : 'bg-yellow-200 text-yellow-800'}`}>{inv.status}</span>
+                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${inv.status === 'Paid' ? 'bg-blue-200 text-blue-800' : 'bg-blue-200 text-blue-800'}`}>{inv.status}</span>
               </td>
               <td className="px-4 py-2">{inv.date}</td>
             </tr>
@@ -37,4 +37,4 @@ export default function InvoiceTableView({ user }: { user: any }) {
       </table>
     </div>
   );
-} 
+}
