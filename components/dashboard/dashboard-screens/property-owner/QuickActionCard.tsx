@@ -29,19 +29,19 @@ const colorClasses = {
   }
 };
 
-export default function QuickActionCard({ 
-  icon: Icon, 
-  title, 
-  description, 
-  color, 
-  onClick 
+export default function QuickActionCard({
+  icon: Icon,
+  title,
+  description,
+  color,
+  onClick
 }: QuickActionCardProps) {
   const colors = colorClasses[color];
 
   return (
-    <button 
+    <button
       onClick={onClick}
-      className="flex items-center space-x-3 p-4 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg hover:scale-105 transition-all duration-200 group"
+      className="flex items-center space-x-3 p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-200 group"
     >
       <div className={`w-10 h-10 ${colors.bg} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200`}>
         <Icon className={`w-5 h-5 ${colors.icon}`} />
