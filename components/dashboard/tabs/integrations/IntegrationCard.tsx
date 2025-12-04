@@ -23,19 +23,19 @@ interface IntegrationCardProps {
 export default function IntegrationCard({ integration, onConnect, onConfigure, onView }: IntegrationCardProps) {
   const getStatusIcon = (status: string) => {
     switch (status) {
-      case 'connected': return <CheckCircle className="w-5 h-5 text-green-600" />;
+      case 'connected': return <CheckCircle className="w-5 h-5 text-blue-600" />;
       case 'available': return <Plus className="w-5 h-5 text-blue-600" />;
-      case 'coming-soon': return <AlertCircle className="w-5 h-5 text-orange-600" />;
-      default: return <Settings className="w-5 h-5 text-gray-600" />;
+      case 'coming-soon': return <AlertCircle className="w-5 h-5 text-blue-600" />;
+      default: return <Settings className="w-5 h-5 text-blue-600" />;
     }
   };
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'connected': return 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400 border-green-200 dark:border-green-800';
-      case 'available': return 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400 border-blue-200 dark:border-blue-800';
-      case 'coming-soon': return 'bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400 border-orange-200 dark:border-orange-800';
-      default: return 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400 border-gray-200 dark:border-gray-800';
+      case 'connected': return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-400 border-blue-200 dark:border-blue-800';
+      case 'available': return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-400 border-blue-200 dark:border-blue-800';
+      case 'coming-soon': return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-400 border-gray-200 dark:border-gray-800';
+      default: return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-400 border-gray-200 dark:border-gray-800';
     }
   };
 
@@ -55,7 +55,7 @@ export default function IntegrationCard({ integration, onConnect, onConfigure, o
         return (
           <button 
             onClick={() => onConnect?.(integration)}
-            className="flex items-center space-x-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all duration-300 hover:scale-105"
+            className="flex items-center space-x-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all duration-300 hover:scale-105"
           >
             <Plus size={16} />
             <span>Connect</span>
@@ -73,7 +73,7 @@ export default function IntegrationCard({ integration, onConnect, onConfigure, o
   };
 
   return (
-    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300 group">
+    <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 group">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center space-x-3">
           <div className="text-3xl group-hover:scale-110 transition-transform duration-300">{integration.icon}</div>
@@ -98,7 +98,7 @@ export default function IntegrationCard({ integration, onConnect, onConfigure, o
         <ul className="space-y-1">
           {integration.features.map((feature, index) => (
             <li key={index} className="flex items-center space-x-2 text-sm text-gray-600 dark:text-gray-400">
-              <CheckCircle size={14} className="text-green-600" />
+              <CheckCircle size={14} className="text-blue-600" />
               <span>{feature}</span>
             </li>
           ))}
@@ -118,4 +118,4 @@ export default function IntegrationCard({ integration, onConnect, onConfigure, o
       </div>
     </div>
   );
-} 
+}
