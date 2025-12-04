@@ -45,19 +45,19 @@ export default function WellnessProgramsView({ wellnessPrograms }: WellnessProgr
     <div className="space-y-4">
       {/* Analytics Section */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
-        <div className="bg-purple-50 dark:bg-purple-900/10 rounded-lg p-4 text-center">
+        <div className="bg-purple-50 dark:bg-purple-900 rounded-lg p-4 text-center">
           <div className="text-2xl font-bold text-purple-700 dark:text-purple-300">{totalPrograms}</div>
           <div className="text-sm text-purple-800 dark:text-purple-200">Total Programs</div>
         </div>
-        <div className="bg-green-50 dark:bg-green-900/10 rounded-lg p-4 text-center">
+        <div className="bg-green-50 dark:bg-green-900 rounded-lg p-4 text-center">
           <div className="text-2xl font-bold text-green-700 dark:text-green-300">{totalParticipants}</div>
           <div className="text-sm text-green-800 dark:text-green-200">Total Participants</div>
         </div>
-        <div className="bg-blue-50 dark:bg-blue-900/10 rounded-lg p-4 text-center">
+        <div className="bg-blue-50 dark:bg-blue-900 rounded-lg p-4 text-center">
           <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">GHS {totalCost.toLocaleString()}</div>
           <div className="text-sm text-blue-800 dark:text-blue-200">Total Monthly Cost</div>
         </div>
-        <div className="bg-orange-50 dark:bg-orange-900/10 rounded-lg p-4 text-center">
+        <div className="bg-orange-50 dark:bg-orange-900 rounded-lg p-4 text-center">
           <div className="text-2xl font-bold text-orange-700 dark:text-orange-300">{avgParticipation.toFixed(1)}</div>
           <div className="text-sm text-orange-800 dark:text-orange-200">Avg. Participation</div>
         </div>
@@ -80,7 +80,7 @@ export default function WellnessProgramsView({ wellnessPrograms }: WellnessProgr
         </div>
       </div>
       {showEmployeePortal && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
           <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 w-full max-w-2xl relative max-h-[80vh] overflow-y-auto">
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 dark:hover:text-white"

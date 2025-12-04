@@ -17,21 +17,21 @@ interface LeaveBenefitsViewProps {
 }
 
 export default function LeaveBenefitsView({ leaveBenefits }: LeaveBenefitsViewProps) {
-  const [benefits, setBenefits] = useState<LeaveBenefit[]>(leaveBenefits.map(b => ({ 
-    ...b, 
+  const [benefits, setBenefits] = useState<LeaveBenefit[]>(leaveBenefits.map(b => ({
+    ...b,
     requestStatus: b.requestStatus || 'Pending',
     requestDate: b.requestDate || '2024-05-15'
   })));
   const [showPolicy, setShowPolicy] = useState(false);
 
   const handleApprove = (benefitId: string) => {
-    setBenefits(prev => prev.map(b => 
+    setBenefits(prev => prev.map(b =>
       b.id === benefitId ? { ...b, requestStatus: 'Approved' } : b
     ));
   };
 
   const handleReject = (benefitId: string) => {
-    setBenefits(prev => prev.map(b => 
+    setBenefits(prev => prev.map(b =>
       b.id === benefitId ? { ...b, requestStatus: 'Rejected' } : b
     ));
   };
@@ -56,7 +56,7 @@ export default function LeaveBenefitsView({ leaveBenefits }: LeaveBenefitsViewPr
         </button>
       </div>
       {showPolicy && (
-        <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
           <div className="bg-white dark:bg-gray-900 rounded-lg shadow-lg p-8 w-full max-w-md relative">
             <button
               className="absolute top-2 right-2 text-gray-500 hover:text-gray-800 dark:hover:text-white"
@@ -117,8 +117,8 @@ export default function LeaveBenefitsView({ leaveBenefits }: LeaveBenefitsViewPr
                 <td className="px-4 py-2">
                   <span className={
                     benefit.requestStatus === 'Approved' ? 'text-green-600' :
-                    benefit.requestStatus === 'Rejected' ? 'text-red-600' :
-                    'text-yellow-600'
+                      benefit.requestStatus === 'Rejected' ? 'text-red-600' :
+                        'text-yellow-600'
                   }>
                     {benefit.requestStatus}
                   </span>
