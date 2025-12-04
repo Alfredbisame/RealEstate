@@ -25,7 +25,7 @@ export default function CandidatePipelineView({ pipeline }: CandidatePipelineVie
             <span className="text-lg font-semibold text-gray-700 dark:text-gray-200">{stage.count}</span>
             <span className="text-sm text-gray-500 dark:text-gray-400 mt-1">{stage.stage}</span>
             {idx < pipeline.length - 1 && (
-              <span className="hidden md:block w-8 h-1 bg-gradient-to-r from-green-400 to-blue-400 my-2 rounded-full"></span>
+              <span className="hidden md:block w-8 h-1 bg-blue-400 my-2 rounded-full"></span>
             )}
           </div>
         ))}
@@ -36,13 +36,13 @@ export default function CandidatePipelineView({ pipeline }: CandidatePipelineVie
           <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">{totalCandidates}</div>
           <div className="text-sm text-blue-800 dark:text-blue-200">Total Candidates</div>
         </div>
-        <div className="bg-green-50 dark:bg-green-900/10 rounded-lg p-4 text-center">
-          <div className="text-2xl font-bold text-green-700 dark:text-green-300">{avgTimeToHire}</div>
-          <div className="text-sm text-green-800 dark:text-green-200">Avg. Time to Hire</div>
+        <div className="bg-blue-50 dark:bg-blue-900/10 rounded-lg p-4 text-center">
+          <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">{avgTimeToHire}</div>
+          <div className="text-sm text-blue-800 dark:text-blue-200">Avg. Time to Hire</div>
         </div>
-        <div className="bg-purple-50 dark:bg-purple-900/10 rounded-lg p-4 text-center">
-          <div className="text-2xl font-bold text-purple-700 dark:text-purple-300">{conversionRate}</div>
-          <div className="text-sm text-purple-800 dark:text-purple-200">Offer Conversion Rate</div>
+        <div className="bg-blue-50 dark:bg-blue-900/10 rounded-lg p-4 text-center">
+          <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">{conversionRate}</div>
+          <div className="text-sm text-blue-800 dark:text-blue-200">Offer Conversion Rate</div>
         </div>
       </div>
     </div>

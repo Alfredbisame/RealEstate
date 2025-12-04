@@ -39,7 +39,12 @@ export default function ApplicationsView({ applications }: ApplicationsViewProps
 
   const handleGenerateOffer = (app: Application) => {
     // Simulate offer letter generation as a text file
-    const content = `Dear ${app.name},\n\nWe are pleased to offer you the position of ${app.position} at our company.\n\nBest regards,\nHR Department`;
+    const content = `Dear ${app.name},
+
+We are pleased to offer you the position of ${app.position} at our company.
+
+Best regards,
+HR Department`;
     const blob = new Blob([content], { type: 'text/plain' });
     const url = URL.createObjectURL(blob);
     setOfferLetters((prev) => ({ ...prev, [app.id]: { name: `${app.name}-OfferLetter.txt`, url } }));
@@ -68,7 +73,7 @@ export default function ApplicationsView({ applications }: ApplicationsViewProps
                 <td className="px-4 py-2">{app.position}</td>
                 <td className="px-4 py-2">
                   <span className={
-                    app.status === 'Interview Scheduled' ? 'text-blue-600' : 'text-gray-500 dark:text-gray-400'
+                    app.status === 'Interview Scheduled' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-500 dark:text-gray-400'
                   }>
                     {app.status}
                   </span>
@@ -76,12 +81,12 @@ export default function ApplicationsView({ applications }: ApplicationsViewProps
                 <td className="px-4 py-2">{app.applied}</td>
                 <td className="px-4 py-2">
                   <button
-                    className="flex items-center gap-1 px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition-all mb-2"
+                    className="flex items-center gap-1 px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all mb-2"
                     onClick={() => handleReview(app)}
                   >
                     <Eye className="w-4 h-4" /> Review
                   </button>
-                  <label className="flex items-center gap-1 px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 transition-all cursor-pointer mb-2">
+                  <label className="flex items-center gap-1 px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all cursor-pointer mb-2">
                     <UploadCloud className="w-4 h-4" /> Upload
                     <input
                       type="file"
@@ -91,7 +96,7 @@ export default function ApplicationsView({ applications }: ApplicationsViewProps
                     />
                   </label>
                   <button
-                    className="flex items-center gap-1 px-3 py-1 bg-purple-600 text-white rounded hover:bg-purple-700 transition-all"
+                    className="flex items-center gap-1 px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition-all"
                     onClick={() => handleGenerateOffer(app)}
                   >
                     <FileText className="w-4 h-4" /> Generate Offer

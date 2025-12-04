@@ -24,7 +24,7 @@ export default function InterviewScheduleView({ interviews }: InterviewScheduleV
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold">Interview Schedule</h2>
         <button
-          className="flex items-center gap-2 px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-all"
+          className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all"
           onClick={handleSchedule}
         >
           <CalendarPlus className="w-4 h-4" /> Schedule Interview

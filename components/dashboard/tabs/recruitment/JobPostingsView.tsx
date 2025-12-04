@@ -23,7 +23,7 @@ export default function JobPostingsView({ jobPostings }: JobPostingsViewProps) {
       <div className="flex items-center justify-between">
         <h2 className="text-xl font-bold">Job Postings</h2>
         <button
-          className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all"
+          className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all"
           onClick={handleAddJob}
         >
           <Plus className="w-4 h-4" /> Add Job
@@ -46,7 +46,7 @@ export default function JobPostingsView({ jobPostings }: JobPostingsViewProps) {
                 <td className="px-4 py-2">{job.department}</td>
                 <td className="px-4 py-2">
                   <span className={
-                    job.status === 'Open' ? 'text-green-600' : 'text-gray-500 dark:text-gray-400'
+                    job.status === 'Open' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-500 dark:text-gray-400'
                   }>
                     {job.status}
                   </span>
@@ -59,4 +59,4 @@ export default function JobPostingsView({ jobPostings }: JobPostingsViewProps) {
       </div>
     </div>
   );
-} 
+}
