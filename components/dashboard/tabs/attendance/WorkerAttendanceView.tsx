@@ -1,13 +1,13 @@
 'use client';
 
 import { useState } from 'react';
-import { 
-  Clock, 
-  CheckCircle, 
-  XCircle, 
-  AlertTriangle, 
-  Search, 
-  Filter, 
+import {
+  Clock,
+  CheckCircle,
+  XCircle,
+  AlertTriangle,
+  Search,
+  Filter,
   Download,
   Calendar,
   TrendingUp,
@@ -153,19 +153,19 @@ export default function WorkerAttendanceView() {
 
   const getStatusBadge = (status: string) => {
     const variants = {
-      present: 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400',
-      absent: 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400',
-      late: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400',
-      'half-day': 'bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400',
-      leave: 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400'
+      present: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-400',
+      absent: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-400',
+      late: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-400',
+      'half-day': 'bg-orange-100 text-orange-800 dark:bg-orange-900 dark:text-orange-400',
+      leave: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-400'
     };
-    return variants[status as keyof typeof variants] || 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400';
+    return variants[status as keyof typeof variants] || 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-400';
   };
 
   const filteredWorkers = workers.filter(worker => {
     const matchesSearch = worker.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         worker.position.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         worker.project.toLowerCase().includes(searchTerm.toLowerCase());
+      worker.position.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      worker.project.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesStatus = statusFilter === 'all' || worker.status === statusFilter;
     const matchesDepartment = departmentFilter === 'all' || worker.department === departmentFilter;
     return matchesSearch && matchesStatus && matchesDepartment;
@@ -248,7 +248,7 @@ export default function WorkerAttendanceView() {
             </div>
           </CardContent>
         </Card>
-        
+
         <Card className="border-0 shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer group">
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
@@ -260,7 +260,7 @@ export default function WorkerAttendanceView() {
             </div>
           </CardContent>
         </Card>
-        
+
         <Card className="border-0 shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer group">
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
@@ -272,7 +272,7 @@ export default function WorkerAttendanceView() {
             </div>
           </CardContent>
         </Card>
-        
+
         <Card className="border-0 shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer group">
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
@@ -284,7 +284,7 @@ export default function WorkerAttendanceView() {
             </div>
           </CardContent>
         </Card>
-        
+
         <Card className="border-0 shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer group">
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
@@ -296,7 +296,7 @@ export default function WorkerAttendanceView() {
             </div>
           </CardContent>
         </Card>
-        
+
         <Card className="border-0 shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer group">
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
@@ -339,7 +339,7 @@ export default function WorkerAttendanceView() {
               </TableHeader>
               <TableBody>
                 {filteredWorkers.map((worker) => (
-                  <TableRow key={worker.id} className="dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                  <TableRow key={worker.id} className="dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
                     <TableCell>
                       <div className="flex items-center space-x-3">
                         <Avatar className="w-8 h-8">
@@ -382,8 +382,8 @@ export default function WorkerAttendanceView() {
                     <TableCell>
                       <div className="flex items-center space-x-2">
                         <div className="w-16 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
-                          <div 
-                            className="bg-green-500 h-2 rounded-full" 
+                          <div
+                            className="bg-green-500 h-2 rounded-full"
                             style={{ width: `${worker.productivity}%` }}
                           />
                         </div>

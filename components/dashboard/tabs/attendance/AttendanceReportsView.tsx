@@ -1,12 +1,12 @@
 'use client';
 
 import { useState } from 'react';
-import { 
-  Calendar, 
-  BarChart3, 
-  TrendingUp, 
-  Search, 
-  Filter, 
+import {
+  Calendar,
+  BarChart3,
+  TrendingUp,
+  Search,
+  Filter,
   Download,
   Eye,
   FileText,
@@ -187,7 +187,7 @@ export default function AttendanceReportsView() {
             </div>
           </CardContent>
         </Card>
-        
+
         <Card className="border-0 shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer group">
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
@@ -199,7 +199,7 @@ export default function AttendanceReportsView() {
             </div>
           </CardContent>
         </Card>
-        
+
         <Card className="border-0 shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer group">
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
@@ -211,7 +211,7 @@ export default function AttendanceReportsView() {
             </div>
           </CardContent>
         </Card>
-        
+
         <Card className="border-0 shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer group">
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
@@ -253,7 +253,7 @@ export default function AttendanceReportsView() {
               </TableHeader>
               <TableBody>
                 {filteredReports.map((report) => (
-                  <TableRow key={report.id} className="dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors">
+                  <TableRow key={report.id} className="dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
                     <TableCell>
                       <div className="flex items-center space-x-3">
                         <div className="w-8 h-8 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center">
@@ -278,7 +278,7 @@ export default function AttendanceReportsView() {
                       <span className="text-sm text-orange-600 dark:text-orange-400 font-medium">{report.lateDays}</span>
                     </TableCell>
                     <TableCell>
-                      <Badge className={`${getAttendanceColor(report.attendanceRate)} bg-green-50 dark:bg-green-900/20`}>
+                      <Badge className={`${getAttendanceColor(report.attendanceRate)} bg-green-50 dark:bg-green-900`}>
                         {report.attendanceRate}%
                       </Badge>
                     </TableCell>
@@ -286,7 +286,7 @@ export default function AttendanceReportsView() {
                       <span className="text-sm font-medium dark:text-gray-300">{report.averageHours}h</span>
                     </TableCell>
                     <TableCell>
-                      <Badge className={`${getProductivityColor(report.productivity)} bg-blue-50 dark:bg-blue-900/20`}>
+                      <Badge className={`${getProductivityColor(report.productivity)} bg-blue-50 dark:bg-blue-900`}>
                         {report.productivity}%
                       </Badge>
                     </TableCell>
