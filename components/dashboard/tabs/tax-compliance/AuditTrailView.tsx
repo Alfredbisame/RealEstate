@@ -26,7 +26,7 @@ export default function AuditTrailView({ user }: { user: any }) {
               <td className="px-4 py-2">{trail.date}</td>
               <td className="px-4 py-2">{trail.user}</td>
               <td className="px-4 py-2">
-                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${trail.status === 'Completed' ? 'bg-green-200 text-green-800' : 'bg-yellow-200 text-yellow-800'}`}>{trail.status}</span>
+                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${trail.status === 'Completed' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400' : 'bg-blue-50 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400'}`}>{trail.status}</span>
               </td>
             </tr>
           ))}
@@ -34,4 +34,4 @@ export default function AuditTrailView({ user }: { user: any }) {
       </table>
     </div>
   );
-} 
+}

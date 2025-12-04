@@ -29,7 +29,7 @@ export default function SocialSecurityView({ user }: { user: any }) {
               <td className="px-4 py-2">{contribution.total.toLocaleString()}</td>
               <td className="px-4 py-2">{contribution.due}</td>
               <td className="px-4 py-2">
-                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${contribution.status === 'Paid' ? 'bg-green-200 text-green-800' : 'bg-yellow-200 text-yellow-800'}`}>{contribution.status}</span>
+                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${contribution.status === 'Paid' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400' : 'bg-blue-50 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400'}`}>{contribution.status}</span>
               </td>
             </tr>
           ))}
@@ -37,4 +37,4 @@ export default function SocialSecurityView({ user }: { user: any }) {
       </table>
     </div>
   );
-} 
+}
