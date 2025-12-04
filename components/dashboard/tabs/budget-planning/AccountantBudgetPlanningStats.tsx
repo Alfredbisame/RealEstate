@@ -36,7 +36,7 @@ export default function AccountantBudgetPlanningStats() {
           <stat.icon className="w-6 h-6 mr-3" />
           <div>
             <div className="text-lg font-bold">{stat.value}</div>
-            <div className="text-xs font-medium opacity-80">{stat.label}</div>
+            <div className="text-xs font-medium">{stat.label}</div>
           </div>
         </div>
       ))}
