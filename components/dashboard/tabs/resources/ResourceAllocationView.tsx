@@ -36,7 +36,7 @@ export default function ResourceAllocationView() {
                         {alloc ? (
                           <div className="flex flex-col items-center">
                             <span className="text-blue-700 dark:text-blue-300 font-semibold">{alloc.allocated} {alloc.unit}</span>
-                            <span className="text-xs text-green-600 dark:text-green-400">Available: {alloc.available}</span>
+                            <span className="text-xs text-blue-600 dark:text-blue-400">Available: {alloc.available}</span>
                           </div>
                         ) : (
                           <span className="text-gray-400">-</span>
@@ -68,7 +68,7 @@ export default function ResourceAllocationView() {
                 <tr key={idx} className="border-t border-gray-200 dark:border-gray-700">
                   <td className="px-4 py-2 text-sm text-gray-800 dark:text-gray-100">{alloc.resource}</td>
                   <td className="px-4 py-2 text-sm text-blue-700 dark:text-blue-300 font-semibold">{alloc.allocated}</td>
-                  <td className="px-4 py-2 text-sm text-green-700 dark:text-green-300 font-semibold">{alloc.available}</td>
+                  <td className="px-4 py-2 text-sm text-blue-700 dark:text-blue-300 font-semibold">{alloc.available}</td>
                   <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300">{alloc.unit}</td>
                   <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300">{alloc.week}</td>
                 </tr>

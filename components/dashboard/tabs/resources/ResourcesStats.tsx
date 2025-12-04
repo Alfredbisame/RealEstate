@@ -11,19 +11,19 @@ const stats = [
     label: 'Allocated',
     value: '85',
     icon: CheckCircle,
-    color: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-200'
+    color: 'bg-blue-50 text-blue-700 dark:bg-blue-800 dark:text-blue-200'
   },
   {
     label: 'Available',
     value: '35',
     icon: Users,
-    color: 'bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-200'
+    color: 'bg-blue-50 text-blue-700 dark:bg-blue-900 dark:text-blue-200'
   },
   {
     label: 'Critical Shortage',
     value: '3',
     icon: AlertTriangle,
-    color: 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-200'
+    color: 'bg-blue-50 text-blue-700 dark:bg-blue-900 dark:text-blue-200'
   }
 ];
 
@@ -35,10 +35,10 @@ export default function ResourcesStats() {
           <stat.icon className="w-6 h-6 mr-3" />
           <div>
             <div className="text-lg font-bold">{stat.value}</div>
-            <div className="text-xs font-medium opacity-80">{stat.label}</div>
+            <div className="text-xs font-medium text-blue-600 dark:text-blue-400">{stat.label}</div>
           </div>
         </div>
       ))}
     </div>
   );
-} 
+}
