@@ -25,7 +25,7 @@ export default function PaymentTableView({ user }: { user: any }) {
               <td className="px-4 py-2">{pay.method}</td>
               <td className="px-4 py-2">{pay.amount.toLocaleString()}</td>
               <td className="px-4 py-2">
-                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${pay.status === 'Successful' ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}`}>{pay.status}</span>
+                <span className={`px-3 py-1 rounded-full text-xs font-semibold ${pay.status === 'Successful' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200' : 'bg-blue-50 text-blue-700 dark:bg-blue-900 dark:text-blue-200'}`}>{pay.status}</span>
               </td>
               <td className="px-4 py-2">{pay.date}</td>
             </tr>
@@ -34,4 +34,4 @@ export default function PaymentTableView({ user }: { user: any }) {
       </table>
     </div>
   );
-} 
+}

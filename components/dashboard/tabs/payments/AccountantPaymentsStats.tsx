@@ -6,7 +6,7 @@ const stats = [
     label: 'Total Payments',
     value: '210',
     icon: CreditCard,
-    color: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-200'
+    color: 'bg-blue-50 text-blue-700 dark:bg-blue-900 dark:text-blue-200'
   },
   {
     label: 'Successful',
@@ -18,13 +18,13 @@ const stats = [
     label: 'Failed',
     value: '5',
     icon: AlertTriangle,
-    color: 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-200'
+    color: 'bg-blue-50 text-blue-700 dark:bg-blue-900 dark:text-blue-200'
   },
   {
     label: 'Total Amount',
     value: 'GHS 980,000',
     icon: FaCediSign,
-    color: 'bg-purple-100 text-purple-700 dark:bg-purple-900 dark:text-purple-200'
+    color: 'bg-blue-50 text-blue-700 dark:bg-blue-900 dark:text-blue-200'
   }
 ];
 
@@ -36,10 +36,10 @@ export default function AccountantPaymentsStats() {
           <stat.icon className="w-6 h-6 mr-3" />
           <div>
             <div className="text-lg font-bold">{stat.value}</div>
-            <div className="text-xs font-medium opacity-80">{stat.label}</div>
+            <div className="text-xs font-medium text-gray-600 dark:text-gray-400">{stat.label}</div>
           </div>
         </div>
       ))}
     </div>
   );
-} 
+}
