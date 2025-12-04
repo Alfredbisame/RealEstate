@@ -13,11 +13,11 @@ export default function RadarPerformanceChart({ reviews, employees }: { reviews:
           <PolarGrid />
           <PolarAngleAxis dataKey="employee" />
           <PolarRadiusAxis angle={30} domain={[0, 5]} />
-          <Radar name="Avg Rating" dataKey="rating" stroke="#6366f1" fill="#6366f1" fillOpacity={0.4} />
+          <Radar name="Avg Rating" dataKey="rating" stroke="#3b82f6" fill="#3b82f6" fillOpacity={0.4} />
           <Legend />
           <Tooltip />
         </RadarChart>
       </ResponsiveContainer>
     </div>
   );
-} 
+}

@@ -1,6 +1,6 @@
 import { ResponsiveContainer, PieChart, Pie, Cell, Tooltip, Legend } from 'recharts';
 
-const COLORS = ['#6366f1', '#f59e42', '#10b981'];
+const COLORS = ['#3b82f6', '#60a5fa', '#93c5fd'];
 
 export default function PieTrainingStatusChart({ training }: { training: any[] }) {
   const statusCounts = [

@@ -10,9 +10,9 @@ export default function LineGoalProgressChart({ goals }: { goals: any[] }) {
           <XAxis dataKey="deadline" />
           <YAxis domain={[0, 100]} />
           <Tooltip />
-          <Line type="monotone" dataKey="progress" stroke="#10b981" strokeWidth={3} dot={{ r: 5 }} />
+          <Line type="monotone" dataKey="progress" stroke="#3b82f6" strokeWidth={3} dot={{ r: 5 }} />
         </LineChart>
       </ResponsiveContainer>
     </div>
   );
-} 
+}

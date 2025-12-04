@@ -1,6 +1,6 @@
 import { ResponsiveContainer, BarChart as ReBarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid } from 'recharts';
 
-export default function BarChart({ data, color = '#fbbf24' }: { data: { label: string; value: number }[]; color?: string }) {
+export default function BarChart({ data, color = '#3b82f6' }: { data: { label: string; value: number }[]; color?: string }) {
   return (
     <div style={{ width: '100%', height: 200 }}>
       <ResponsiveContainer width="100%" height="100%">
@@ -14,4 +14,4 @@ export default function BarChart({ data, color = '#fbbf24' }: { data: { label: s
       </ResponsiveContainer>
     </div>
   );
-} 
+}
