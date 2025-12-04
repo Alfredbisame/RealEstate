@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Calculator, DollarSign, Percent, TrendingUp, Home } from 'lucide-react';
 
+// ROI Calculator View Component
 export default function ROICalculatorView() {
     const [purchasePrice, setPurchasePrice] = useState('500000');
     const [downPayment, setDownPayment] = useState('100000');

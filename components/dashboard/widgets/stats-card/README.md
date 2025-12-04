@@ -310,6 +310,3 @@ function CustomMetrics() {
     />
   );
 }
-```
-
-## Styling
