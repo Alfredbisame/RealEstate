@@ -35,9 +35,8 @@ export default function AuthInput({
         name={name}
         value={value}
         onChange={onChange}
-        className={`w-full border border-gray-300 dark:border-gray-600 rounded-xl bg-white/50 dark:bg-gray-700/50 text-gray-900 dark:text-white placeholder-gray-500 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all ${
-          Icon ? 'pl-10' : 'pl-4'
-        } ${rightElement ? 'pr-12' : 'pr-4'} py-3`}
+        className={`w-full border border-gray-300 dark:border-gray-600 rounded-xl bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all ${Icon ? 'pl-10' : 'pl-4'
+          } ${rightElement ? 'pr-12' : 'pr-4'} py-3`}
         placeholder={placeholder}
         required={required}
       />

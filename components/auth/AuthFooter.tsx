@@ -14,7 +14,7 @@ export default function AuthFooter({ isSignUp, onToggleMode, className = '' }: A
           {isSignUp ? 'Already have an account?' : "Don't have an account?"}
           <button
             onClick={onToggleMode}
-            className="ml-2 text-green-600 hover:text-green-700 font-semibold transition-colors"
+            className="ml-2 text-blue-500 hover:text-blue-600 font-semibold transition-colors"
           >
             {isSignUp ? 'Sign In' : 'Sign Up'}
           </button>

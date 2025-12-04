@@ -65,10 +65,10 @@ export default function AuthScreen({ onLogin }: AuthScreenProps) {
   const handleRoleSelection = async (selectedRole: UserRole) => {
     setIsLoading(true);
     setShowRoleSelector(false);
-    
+
     // Simulate social login with selected role
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     const user: User = {
       id: Math.random().toString(36).substr(2, 9),
       email: `user@${selectedSocialProvider}.com`,
@@ -98,21 +98,21 @@ export default function AuthScreen({ onLogin }: AuthScreenProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-orange-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-blue-50 dark:bg-gray-900 flex items-center justify-center p-4">
       <div className="w-full max-w-6xl grid lg:grid-cols-2 gap-8 items-center">
-        
+
         {/* Left Side - Branding & Features */}
         <AuthBranding />
 
         {/* Right Side - Auth Form */}
         <div className="w-full max-w-md mx-auto">
-          <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-8">
-            
+          <div className="bg-white dark:bg-gray-800 rounded-3xl shadow-2xl border border-gray-200 dark:border-gray-700 p-8">
+
             {/* Header */}
             <AuthHeader isSignUp={isSignUp} />
 
             {/* Social Login Buttons */}
-            <SocialLoginButtons 
+            <SocialLoginButtons
               onSocialLogin={handleSocialLogin}
               isLoading={isLoading}
               className="mb-6"

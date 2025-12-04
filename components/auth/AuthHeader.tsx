@@ -12,7 +12,7 @@ export default function AuthHeader({ isSignUp, className = '' }: AuthHeaderProps
     <div className={className}>
       {/* Mobile Logo */}
       <div className="lg:hidden flex items-center justify-center space-x-3 mb-8">
-        <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-md flex items-center justify-center overflow-hidden p-1">
+        <div className="w-12 h-12 bg-blue-500 rounded-md flex items-center justify-center overflow-hidden p-1">
           <Image
             src="/logo.webp"
             alt="Ghana Real Estate Logo"
@@ -22,7 +22,7 @@ export default function AuthHeader({ isSignUp, className = '' }: AuthHeaderProps
           />
         </div>
         <div>
-          <h1 className="text-xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+          <h1 className="text-xl font-bold text-blue-500">
             Ghana Real Estate
           </h1>
         </div>
@@ -33,8 +33,8 @@ export default function AuthHeader({ isSignUp, className = '' }: AuthHeaderProps
           {isSignUp ? 'Create Account' : 'Welcome Back'}
         </h2>
         <p className="text-gray-600 dark:text-gray-400">
-          {isSignUp 
-            ? 'Join Ghana\'s leading real estate platform' 
+          {isSignUp
+            ? 'Join Ghana\'s leading real estate platform'
             : 'Sign in to your dashboard'
           }
         </p>

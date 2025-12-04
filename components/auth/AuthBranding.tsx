@@ -43,7 +43,7 @@ export default function AuthBranding({ className = '' }: AuthBrandingProps) {
     <div className={`hidden lg:block space-y-8 ${className}`}>
       <div className="text-center lg:text-left">
         <div className="flex items-center justify-center lg:justify-start space-x-3 mb-6">
-          <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-md flex items-center justify-center overflow-hidden p-1">
+          <div className="w-12 h-12 bg-blue-500 rounded-md flex items-center justify-center overflow-hidden p-1">
             <Image
               src="/logo.webp"
               alt="Ghana Real Estate Logo"
@@ -53,13 +53,13 @@ export default function AuthBranding({ className = '' }: AuthBrandingProps) {
             />
           </div>
           <div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+            <h1 className="text-3xl font-bold text-blue-500">
               Ghana Real Estate
             </h1>
             <p className="text-sm text-gray-600 dark:text-gray-400">Business Analytics Platform</p>
           </div>
         </div>
-        
+
         <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
           Transform Your Real Estate Business
         </h2>
@@ -71,7 +71,7 @@ export default function AuthBranding({ className = '' }: AuthBrandingProps) {
       {/* Features Grid */}
       <div className="grid grid-cols-2 gap-6">
         {features.map((feature, index) => (
-          <div key={index} className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
+          <div key={index} className="bg-white dark:bg-gray-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 hover:scale-[1.02]">
             <div className={`w-10 h-10 ${feature.color} rounded-lg flex items-center justify-center mb-4`}>
               <feature.icon className={`w-5 h-5 ${feature.iconColor}`} />
             </div>

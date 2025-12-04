@@ -21,7 +21,7 @@ export default function RoleSelectorModal({
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black backdrop-blur-sm">
       <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
         <div className="flex items-center justify-between mb-6">
           <div>
@@ -44,14 +44,14 @@ export default function RoleSelectorModal({
               key={key}
               onClick={() => onRoleSelect(key as UserRole)}
               disabled={isLoading}
-              className="text-left p-6 border-2 border-gray-200 dark:border-gray-700 rounded-xl hover:border-green-500 hover:bg-green-50 dark:hover:bg-green-900/20 transition-all disabled:opacity-50 disabled:cursor-not-allowed group hover:shadow-lg"
+              className="text-left p-6 border-2 border-gray-200 dark:border-gray-700 rounded-xl hover:border-blue-500 hover:bg-blue-50 dark:hover:bg-blue-900 transition-all disabled:opacity-50 disabled:cursor-not-allowed group hover:shadow-lg"
             >
               <div className="flex items-center space-x-3 mb-3">
                 <div className={`w-10 h-10 ${config.color} rounded-lg flex items-center justify-center`}>
                   <User className="w-5 h-5 text-white" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-green-600 dark:group-hover:text-green-400">
+                  <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-500 dark:group-hover:text-blue-400">
                     {config.name}
                   </h4>
                 </div>
@@ -81,7 +81,7 @@ export default function RoleSelectorModal({
         {isLoading && (
           <div className="mt-6 flex items-center justify-center">
             <div className="flex items-center space-x-2 text-gray-600 dark:text-gray-400">
-              <div className="w-5 h-5 border-2 border-green-500 border-t-transparent rounded-full animate-spin"></div>
+              <div className="w-5 h-5 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
               <span>Setting up your {selectedProvider} account...</span>
             </div>
           </div>
