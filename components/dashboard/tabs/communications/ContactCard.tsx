@@ -21,14 +21,14 @@ interface ContactCardProps {
 
 export default function ContactCard({ contact, onCall, onEmail, onMessage, className = '' }: ContactCardProps) {
   return (
-    <div className={`flex items-center justify-between p-4 bg-white/50 dark:bg-gray-700/50 rounded-lg border border-gray-200/50 dark:border-gray-600/50 hover:shadow-lg transition-all hover:scale-[1.01] ${className}`}>
+    <div className={`flex items-center justify-between p-4 bg-white dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600 hover:shadow-lg transition-all hover:scale-[1.01] ${className}`}>
       <div className="flex items-center space-x-4">
         <div className="relative">
-          <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white font-semibold">
+          <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold">
             {contact.name.charAt(0)}
           </div>
           <div className={`absolute -bottom-1 -right-1 w-4 h-4 rounded-full border-2 border-white ${
-            contact.status === 'online' ? 'bg-green-500' : 'bg-gray-400'
+            contact.status === 'online' ? 'bg-blue-500' : 'bg-gray-400'
           }`}></div>
         </div>
         <div>
@@ -40,7 +40,7 @@ export default function ContactCard({ contact, onCall, onEmail, onMessage, class
       <div className="flex space-x-2">
         <button 
           onClick={() => onCall?.(contact)}
-          className="p-2 bg-green-100 text-green-600 rounded-lg hover:bg-green-200 transition-colors hover:scale-110"
+          className="p-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-colors hover:scale-110"
         >
           <Phone size={16} />
         </button>
@@ -52,11 +52,11 @@ export default function ContactCard({ contact, onCall, onEmail, onMessage, class
         </button>
         <button 
           onClick={() => onMessage?.(contact)}
-          className="p-2 bg-purple-100 text-purple-600 rounded-lg hover:bg-purple-200 transition-colors hover:scale-110"
+          className="p-2 bg-blue-100 text-blue-600 rounded-lg hover:bg-blue-200 transition-colors hover:scale-110"
         >
           <MessageCircle size={16} />
         </button>
       </div>
     </div>
   );
-} 
+}

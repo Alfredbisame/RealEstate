@@ -97,8 +97,8 @@ export default function CommunicationsTabs({
   };
 
   return (
-    <div className={`bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl border border-gray-200/50 dark:border-gray-700/50 ${className}`}>
-      <div className="flex border-b border-gray-200/50 dark:border-gray-700/50">
+    <div className={`bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 ${className}`}>
+      <div className="flex border-b border-gray-200 dark:border-gray-700">
         {tabs.map((tab) => (
           <button
             key={tab.id}
@@ -120,4 +120,4 @@ export default function CommunicationsTabs({
       </div>
     </div>
   );
-} 
+}
