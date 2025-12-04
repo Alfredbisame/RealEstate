@@ -18,38 +18,38 @@ interface DashboardGridProps {
   renderWidget: (widget: Widget) => React.ReactNode;
 }
 
-export default function DashboardGrid({ 
-  widgets, 
-  onWidgetsChange, 
-  renderWidget 
+export default function DashboardGrid({
+  widgets,
+  onWidgetsChange,
+  renderWidget
 }: DashboardGridProps) {
   const [draggedWidget, setDraggedWidget] = useState<string | null>(null);
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const gridRef = useRef<HTMLDivElement>(null);
 
-  const GRID_COLS = 1; 
-  const GRID_ROW_HEIGHT = 400; 
+  const GRID_COLS = 1;
+  const GRID_ROW_HEIGHT = 400;
   const GRID_GAP = 24;
 
   const handleMouseDown = useCallback((e: React.MouseEvent, widgetId: string) => {
     // Don't start drag if clicking on input elements
     const target = e.target as HTMLElement;
-    if (target.tagName === 'INPUT' || 
-        target.tagName === 'TEXTAREA' || 
-        target.tagName === 'SELECT' || 
-        target.tagName === 'BUTTON' ||
-        target.closest('input') ||
-        target.closest('textarea') ||
-        target.closest('select') ||
-        target.closest('button') ||
-        target.closest('[role="button"]') ||
-        target.closest('.recharts-wrapper')) {
+    if (target.tagName === 'INPUT' ||
+      target.tagName === 'TEXTAREA' ||
+      target.tagName === 'SELECT' ||
+      target.tagName === 'BUTTON' ||
+      target.closest('input') ||
+      target.closest('textarea') ||
+      target.closest('select') ||
+      target.closest('button') ||
+      target.closest('[role="button"]') ||
+      target.closest('.recharts-wrapper')) {
       return;
     }
 
     if (e.button !== 0) return;
-    
+
     const widget = widgets.find(w => w.id === widgetId);
     if (!widget) return;
 
@@ -68,7 +68,7 @@ export default function DashboardGrid({
     if (!draggedWidget || !gridRef.current || !isDragging) return;
 
     const gridRect = gridRef.current.getBoundingClientRect();
-    
+
     // Calculate new Y position (vertical stacking)
     const y = Math.max(0, Math.floor(
       (e.clientY - gridRect.top - dragOffset.y) / (GRID_ROW_HEIGHT + GRID_GAP)
@@ -131,13 +131,13 @@ export default function DashboardGrid({
       onMouseLeave={handleMouseUp}
     >
       {widgets
-        .sort((a, b) => a.y - b.y) 
+        .sort((a, b) => a.y - b.y)
         .map((widget, index) => (
           <div
             key={widget.id}
             style={getWidgetStyle(widget, index)}
             className={cn(
-              "bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-xl border border-gray-200/50 dark:border-gray-700/50 shadow-lg transition-all duration-200",
+              "bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg transition-all duration-200",
               draggedWidget === widget.id ? "shadow-2xl cursor-grabbing" : "cursor-grab hover:shadow-xl",
               "overflow-hidden"
             )}

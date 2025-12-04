@@ -30,7 +30,7 @@ export default function Sidebar({ user, collapsed, onToggle, activeTab, onTabCha
 
   return (
     <div className={cn(
-      "fixed left-0 top-0 h-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border-r border-gray-200/50 dark:border-gray-700/50 transition-all duration-300 z-30 shadow-xl",
+      "fixed left-0 top-0 h-full bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 transition-all duration-300 z-30 shadow-xl",
       collapsed ? "w-16" : "w-64"
     )}>
       {/* Header */}

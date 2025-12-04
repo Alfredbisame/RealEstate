@@ -22,11 +22,11 @@ interface DashboardLayoutProps {
   onThemeToggle: () => void;
 }
 
-export default function DashboardLayout({ 
-  user, 
-  onLogout, 
-  isDarkMode, 
-  onThemeToggle 
+export default function DashboardLayout({
+  user,
+  onLogout,
+  isDarkMode,
+  onThemeToggle
 }: DashboardLayoutProps) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -38,10 +38,10 @@ export default function DashboardLayout({
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
     };
-    
+
     checkMobile();
     window.addEventListener('resize', checkMobile);
-    
+
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
@@ -74,23 +74,23 @@ export default function DashboardLayout({
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50/30 to-green-50/30 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen bg-blue-50 dark:bg-gray-900">
       <div className="flex h-screen overflow-hidden">
         {/* Mobile Overlay */}
         {isMobile && sidebarOpen && (
-          <div 
+          <div
             className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
             onClick={handleMobileMenuClose}
           />
         )}
-        
+
         {/* Sidebar */}
         {isMobile ? (
           <div className={`
             fixed left-0 top-0 h-full z-50 transition-all duration-300 ease-in-out w-64
             ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}
           `}>
-            <Sidebar 
+            <Sidebar
               user={user}
               collapsed={false}
               onToggle={handleSidebarToggle}
@@ -99,7 +99,7 @@ export default function DashboardLayout({
             />
           </div>
         ) : (
-          <Sidebar 
+          <Sidebar
             user={user}
             collapsed={sidebarCollapsed}
             onToggle={handleSidebarToggle}
@@ -107,13 +107,13 @@ export default function DashboardLayout({
             onTabChange={handleTabChange}
           />
         )}
-        
+
         {/* Main Content */}
         <div className={`
           flex-1 flex flex-col transition-all duration-300
           ${!isMobile ? (sidebarCollapsed ? 'ml-16' : 'ml-64') : ''}
         `}>
-          <Header 
+          <Header
             user={user}
             onLogout={onLogout}
             isDarkMode={isDarkMode}
@@ -122,17 +122,17 @@ export default function DashboardLayout({
             onMenuClick={handleSidebarToggle}
             isMobile={isMobile}
           />
-          
+
           <main className="flex-1 overflow-auto">
-            <DashboardContent 
-              user={user} 
+            <DashboardContent
+              user={user}
               activeTab={activeTab}
             />
           </main>
         </div>
       </div>
 
-      <SettingsPanel 
+      <SettingsPanel
         isOpen={settingsOpen}
         onClose={() => setSettingsOpen(false)}
         user={user}

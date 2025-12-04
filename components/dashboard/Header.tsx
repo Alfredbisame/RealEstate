@@ -1,10 +1,10 @@
 'use client';
 
 import { UserRole } from '@/types/roles';
-import { 
+import {
   User,
   Menu
-  } from 'lucide-react';
+} from 'lucide-react';
 import { useState } from 'react';
 import HeaderLeft from './NavHeader/HeaderLeft';
 import HeaderSearch from './NavHeader/HeaderSearch';
@@ -32,10 +32,10 @@ interface HeaderProps {
   isMobile?: boolean;
 }
 
-export default function Header({ 
-  user, 
-  onLogout, 
-  isDarkMode, 
+export default function Header({
+  user,
+  onLogout,
+  isDarkMode,
   onThemeToggle,
   onSettingsClick,
   onMenuClick,
@@ -43,8 +43,8 @@ export default function Header({
 }: HeaderProps) {
   const [userDropdownOpen, setUserDropdownOpen] = useState(false);
   const [notificationsOpen, setNotificationsOpen] = useState(false);
-  
-  const currentTime = new Date().toLocaleString('en-GB', { 
+
+  const currentTime = new Date().toLocaleString('en-GB', {
     timeZone: 'Africa/Accra',
     weekday: 'long',
     year: 'numeric',
@@ -61,7 +61,7 @@ export default function Header({
   ];
 
   return (
-    <header className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl border-b border-gray-200/50 dark:border-gray-700/50 px-4 md:px-6 py-4 shadow-sm">
+    <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-4 md:px-6 py-4 shadow-sm">
       <div className="flex items-center justify-between">
         {/* Left Section */}
         <div className="flex items-center space-x-4 md:space-x-6">
@@ -84,12 +84,12 @@ export default function Header({
             </h2>
           </div>
         </div>
-        
+
         {/* Center Section - Search - Hidden on mobile */}
         <div className="hidden md:block">
           <HeaderSearch />
         </div>
-        
+
         {/* Right Section */}
         <div className="flex items-center space-x-2 md:space-x-4">
           <div className="hidden sm:block">

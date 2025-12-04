@@ -50,11 +50,11 @@ export default function SettingsPanel({ isOpen, onClose, user }: SettingsPanelPr
   return (
     <div className="fixed inset-0 z-50 flex">
       {/* Backdrop */}
-      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
+      <div className="fixed inset-0 bg-black backdrop-blur-sm" onClick={onClose} />
       {/* Panel */}
-      <div className="ml-auto w-full max-w-md bg-white/95 dark:bg-gray-800/95 backdrop-blur-xl shadow-2xl border-l border-gray-200/50 dark:border-gray-700/50">
+      <div className="ml-auto w-full max-w-md bg-white dark:bg-gray-800 shadow-2xl border-l border-gray-200 dark:border-gray-700">
         {/* Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-200/50 dark:border-gray-700/50">
+        <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">Settings</h2>
           <button
             onClick={onClose}
@@ -77,12 +77,12 @@ export default function SettingsPanel({ isOpen, onClose, user }: SettingsPanelPr
           {activeTab === 'permissions' && <PermissionsTab role={user.role} />}
         </div>
         {/* Footer */}
-        <div className="p-6 border-t border-gray-200/50 dark:border-gray-700/50 bg-gray-50/50 dark:bg-gray-700/50">
+        <div className="p-6 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-700">
           <div className="flex space-x-3">
-            <button className="flex-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+            <button className="flex-1 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
               Save Changes
             </button>
-            <button 
+            <button
               onClick={onClose}
               className="flex-1 px-4 py-2 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
             >
