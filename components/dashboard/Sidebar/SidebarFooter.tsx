@@ -1,8 +1,12 @@
+import { useTheme } from '@/app/components/useTheme';
+
 export default function SidebarFooter() {
+  const { isDarkMode } = useTheme();
+  
   return (
     <div className="p-4 border-t border-gray-200/50 dark:border-gray-700/50">
       <div className="flex items-center justify-center space-x-1 mb-2">
-        <div className="w-6 h-2 bg-red-500 rounded-sm"></div>
+        <div className={`w-6 h-2 ${isDarkMode ? 'bg-red-600' : 'bg-red-500'} rounded-sm`}></div>
         <div className="w-6 h-2 bg-yellow-500 rounded-sm"></div>
         <div className="w-6 h-2 bg-green-500 rounded-sm"></div>
       </div>

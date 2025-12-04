@@ -1,4 +1,5 @@
 import { cn } from '@/lib/utils';
+import { useTheme } from '@/app/components/useTheme';
 
 interface MenuItem {
   id: string;
@@ -15,6 +16,8 @@ interface SidebarNavProps {
 }
 
 export default function SidebarNav({ menuItems, collapsed, activeTab, onTabChange }: SidebarNavProps) {
+  const { isDarkMode } = useTheme();
+  
   return (
     <nav className="flex-1 p-4 overflow-y-auto overflow-x-hidden">
       <ul className="space-y-1">
@@ -26,7 +29,7 @@ export default function SidebarNav({ menuItems, collapsed, activeTab, onTabChang
                 "w-full flex items-center px-3 py-2.5 rounded-xl transition-all duration-200 group relative",
                 collapsed ? "justify-center min-w-0 w-12 px-0" : "",
                 activeTab === item.id 
-                  ? "bg-gradient-to-r from-green-500 to-blue-500 text-white shadow-lg" 
+                  ? `${isDarkMode ? 'bg-red-600' : 'bg-red-500'} text-white shadow-lg` 
                   : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700/50"
               )}
             >
