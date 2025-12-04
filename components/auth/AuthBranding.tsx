@@ -43,12 +43,12 @@ export default function AuthBranding({ className = '' }: AuthBrandingProps) {
     <div className={`hidden lg:block space-y-8 ${className}`}>
       <div className="text-center lg:text-left">
         <div className="flex items-center justify-center lg:justify-start space-x-3 mb-6">
-          <div className="w-12 h-12 bg-blue-500 rounded-md flex items-center justify-center overflow-hidden p-1">
+          <div className="w-24 h-24 rounded-md flex items-center justify-center overflow-hidden p-1">
             <Image
-              src="/logo.webp"
+              src="/logo.png"
               alt="Ghana Real Estate Logo"
-              width={48}
-              height={48}
+              width={88}
+              height={88}
               className="object-cover"
             />
           </div>

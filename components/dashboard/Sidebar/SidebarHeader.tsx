@@ -1,4 +1,5 @@
-import { ChevronLeft, ChevronRight, Building2 } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
 
 interface SidebarHeaderProps {
   collapsed: boolean;
@@ -10,8 +11,14 @@ export default function SidebarHeader({ collapsed, onToggle }: SidebarHeaderProp
     <div className={"flex items-center justify-between p-4 border-b border-gray-200 dark:border-gray-700"}>
       {!collapsed && (
         <div className="flex items-center space-x-3">
-          <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-            <Building2 className="w-5 h-5 text-white" />
+          <div className="w-12 h-12 rounded-lg flex items-center justify-center">
+               <Image
+              src="/logo.png"
+              alt="Ghana Real Estate Logo"
+              width={78}
+              height={78}
+              className="object-cover"
+            />
           </div>
           <div>
             <h1 className="font-bold text-lg text-blue-500">
