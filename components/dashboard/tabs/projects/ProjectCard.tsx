@@ -26,24 +26,24 @@ interface ProjectCardProps {
 export default function ProjectCard({ project, onViewDetails, onEditProject, onGenerateReport }: ProjectCardProps) {
   const getStatusIcon = (status: string) => {
     switch (status.toLowerCase()) {
-      case 'on track': return <CheckCircle className="w-5 h-5 text-green-600" />;
-      case 'behind schedule': return <AlertTriangle className="w-5 h-5 text-red-600" />;
+      case 'on track': return <CheckCircle className="w-5 h-5 text-blue-600" />;
+      case 'behind schedule': return <AlertTriangle className="w-5 h-5 text-blue-600" />;
       case 'ahead of schedule': return <Clock className="w-5 h-5 text-blue-600" />;
-      default: return <Clock className="w-5 h-5 text-gray-600" />;
+      default: return <Clock className="w-5 h-5 text-blue-600" />;
     }
   };
 
   const getStatusColor = (status: string) => {
     switch (status.toLowerCase()) {
-      case 'on track': return 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400 border-green-200 dark:border-green-800';
-      case 'behind schedule': return 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400 border-red-200 dark:border-red-800';
+      case 'on track': return 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400 border-blue-200 dark:border-blue-800';
+      case 'behind schedule': return 'bg-blue-50 text-blue-700 dark:bg-blue-800/20 dark:text-blue-300 border-blue-100 dark:border-blue-700';
       case 'ahead of schedule': return 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400 border-blue-200 dark:border-blue-800';
-      default: return 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400 border-gray-200 dark:border-gray-800';
+      default: return 'bg-blue-50 text-blue-700 dark:bg-blue-900/20 dark:text-blue-400 border-blue-100 dark:border-blue-800';
     }
   };
 
   return (
-    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg transition-all duration-300 group">
+    <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg transition-all duration-300 group">
       <div className="flex items-start justify-between mb-4">
         <div className="flex-1">
           <div className="flex items-center space-x-3 mb-2">
