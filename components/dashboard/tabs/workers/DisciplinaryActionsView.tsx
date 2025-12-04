@@ -145,31 +145,31 @@ export default function DisciplinaryActionsView() {
   const getSeverityColor = (severity: string) => {
     const colors = {
       low: 'bg-blue-100 text-blue-800',
-      medium: 'bg-yellow-100 text-yellow-800',
-      high: 'bg-orange-100 text-orange-800',
-      critical: 'bg-red-100 text-red-800'
+      medium: 'bg-blue-100 text-blue-800',
+      high: 'bg-blue-100 text-blue-800',
+      critical: 'bg-blue-100 text-blue-800'
     };
-    return colors[severity as keyof typeof colors] || 'bg-gray-100 text-gray-800';
+    return colors[severity as keyof typeof colors] || 'bg-blue-100 text-blue-800';
   };
 
   const getActionTypeColor = (type: string) => {
     const colors = {
-      warning: 'bg-yellow-100 text-yellow-800',
-      suspension: 'bg-orange-100 text-orange-800',
-      termination: 'bg-red-100 text-red-800',
-      probation: 'bg-purple-100 text-purple-800'
+      warning: 'bg-blue-100 text-blue-800',
+      suspension: 'bg-blue-100 text-blue-800',
+      termination: 'bg-blue-100 text-blue-800',
+      probation: 'bg-blue-100 text-blue-800'
     };
-    return colors[type as keyof typeof colors] || 'bg-gray-100 text-gray-800';
+    return colors[type as keyof typeof colors] || 'bg-blue-100 text-blue-800';
   };
 
   const getStatusColor = (status: string) => {
     const colors = {
       active: 'bg-blue-100 text-blue-800',
-      resolved: 'bg-green-100 text-green-800',
-      expired: 'bg-gray-100 text-gray-800',
-      appealed: 'bg-purple-100 text-purple-800'
+      resolved: 'bg-blue-100 text-blue-800',
+      expired: 'bg-blue-100 text-blue-800',
+      appealed: 'bg-blue-100 text-blue-800'
     };
-    return colors[status as keyof typeof colors] || 'bg-gray-100 text-gray-800';
+    return colors[status as keyof typeof colors] || 'bg-blue-100 text-blue-800';
   };
 
   const filteredActions = actions.filter(action => {

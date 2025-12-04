@@ -118,13 +118,13 @@ export default function WorkerAttendanceView() {
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'present':
-        return <CheckCircle className="w-4 h-4 text-green-500" />;
+        return <CheckCircle className="w-4 h-4 text-blue-500" />;
       case 'absent':
-        return <XCircle className="w-4 h-4 text-red-500" />;
+        return <XCircle className="w-4 h-4 text-blue-500" />;
       case 'late':
-        return <AlertTriangle className="w-4 h-4 text-yellow-500" />;
+        return <AlertTriangle className="w-4 h-4 text-blue-500" />;
       case 'half-day':
-        return <Clock className="w-4 h-4 text-orange-500" />;
+        return <Clock className="w-4 h-4 text-blue-500" />;
       default:
         return <Clock className="w-4 h-4 text-gray-500" />;
     }
@@ -132,12 +132,12 @@ export default function WorkerAttendanceView() {
 
   const getStatusBadge = (status: string) => {
     const variants = {
-      present: 'bg-green-100 text-green-800',
-      absent: 'bg-red-100 text-red-800',
-      late: 'bg-yellow-100 text-yellow-800',
-      'half-day': 'bg-orange-100 text-orange-800'
+      present: 'bg-blue-100 text-blue-800',
+      absent: 'bg-blue-100 text-blue-800',
+      late: 'bg-blue-100 text-blue-800',
+      'half-day': 'bg-blue-100 text-blue-800'
     };
-    return variants[status as keyof typeof variants] || 'bg-gray-100 text-gray-800';
+    return variants[status as keyof typeof variants] || 'bg-blue-100 text-blue-800';
   };
 
   const filteredWorkers = workers.filter(worker => {
@@ -157,55 +157,16 @@ export default function WorkerAttendanceView() {
 
   return (
     <div className="space-y-6">
-      {/* Header Actions */}
-      <div className="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between">
-        <div>
-          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Daily Attendance</h2>
-          <p className="text-gray-600 dark:text-gray-300">Track worker attendance and productivity for today</p>
-        </div>
-        <div className="flex items-center space-x-3">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
-            <Input
-              placeholder="Search workers..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-10 w-64 dark:bg-gray-800 dark:border-gray-700 dark:text-white"
-            />
-          </div>
-          <Button variant="outline" size="sm" className="dark:border-gray-700 dark:text-gray-200">
-            <Filter className="w-4 h-4 mr-2" />
-            Filter
-          </Button>
-          <Button variant="outline" size="sm" className="dark:border-gray-700 dark:text-gray-200">
-            <Download className="w-4 h-4 mr-2" />
-            Export
-          </Button>
-        </div>
-      </div>
-
       {/* Attendance Stats */}
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-        <Card className="border-0 shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer group">
-          <CardContent className="p-4">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm font-medium text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Total Workers</p>
-                <p className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{attendanceStats.total}</p>
-              </div>
-              <Users className="w-8 h-8 text-blue-500 group-hover:scale-110 transition-transform duration-200" />
-            </div>
-          </CardContent>
-        </Card>
-        
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <Card className="border-0 shadow-sm dark:bg-gray-800 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer group">
           <CardContent className="p-4">
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Present</p>
-                <p className="text-2xl font-bold text-green-600 dark:text-green-400 group-hover:text-green-700 dark:group-hover:text-green-300 transition-colors">{attendanceStats.present}</p>
+                <p className="text-2xl font-bold text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">{attendanceStats.present}</p>
               </div>
-              <CheckCircle className="w-8 h-8 text-green-500 group-hover:scale-110 transition-transform duration-200" />
+              <CheckCircle className="w-8 h-8 text-blue-500 group-hover:scale-110 transition-transform duration-200" />
             </div>
           </CardContent>
         </Card>
@@ -215,9 +176,9 @@ export default function WorkerAttendanceView() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Late</p>
-                <p className="text-2xl font-bold text-yellow-600 dark:text-yellow-400 group-hover:text-yellow-700 dark:group-hover:text-yellow-300 transition-colors">{attendanceStats.late}</p>
+                <p className="text-2xl font-bold text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">{attendanceStats.late}</p>
               </div>
-              <AlertTriangle className="w-8 h-8 text-yellow-500 group-hover:scale-110 transition-transform duration-200" />
+              <AlertTriangle className="w-8 h-8 text-blue-500 group-hover:scale-110 transition-transform duration-200" />
             </div>
           </CardContent>
         </Card>
@@ -227,9 +188,9 @@ export default function WorkerAttendanceView() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Half Day</p>
-                <p className="text-2xl font-bold text-orange-600 dark:text-orange-400 group-hover:text-orange-700 dark:group-hover:text-orange-300 transition-colors">{attendanceStats.halfDay}</p>
+                <p className="text-2xl font-bold text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">{attendanceStats.halfDay}</p>
               </div>
-              <Clock className="w-8 h-8 text-orange-500 group-hover:scale-110 transition-transform duration-200" />
+              <Clock className="w-8 h-8 text-blue-500 group-hover:scale-110 transition-transform duration-200" />
             </div>
           </CardContent>
         </Card>
@@ -239,9 +200,9 @@ export default function WorkerAttendanceView() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm font-medium text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Absent</p>
-                <p className="text-2xl font-bold text-red-600 dark:text-red-400 group-hover:text-red-700 dark:group-hover:text-red-300 transition-colors">{attendanceStats.absent}</p>
+                <p className="text-2xl font-bold text-blue-600 dark:text-blue-400 group-hover:text-blue-700 dark:group-hover:text-blue-300 transition-colors">{attendanceStats.absent}</p>
               </div>
-              <XCircle className="w-8 h-8 text-red-500 group-hover:scale-110 transition-transform duration-200" />
+              <XCircle className="w-8 h-8 text-blue-500 group-hover:scale-110 transition-transform duration-200" />
             </div>
           </CardContent>
         </Card>
@@ -249,33 +210,55 @@ export default function WorkerAttendanceView() {
 
       {/* Workers Table */}
       <Card className="border-0 shadow-sm dark:bg-gray-800 dark:border-gray-700">
-        <CardHeader>
-          <CardTitle className="flex items-center justify-between">
-            <span className="dark:text-white">Worker Attendance Details</span>
-            <Badge variant="secondary" className="bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-              {filteredWorkers.length} workers
-            </Badge>
-          </CardTitle>
+        <CardHeader className="border-b border-gray-200 dark:border-gray-700">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <CardTitle className="text-xl font-bold text-gray-900 dark:text-white">Worker Attendance</CardTitle>
+              <p className="text-sm text-gray-500 dark:text-gray-400">Track daily attendance and punctuality</p>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-3">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
+                <Input
+                  placeholder="Search workers..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="pl-10 pr-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+                />
+              </div>
+              <select
+                value={statusFilter}
+                onChange={(e) => setStatusFilter(e.target.value)}
+                className="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"
+              >
+                <option value="all">All Statuses</option>
+                <option value="present">Present</option>
+                <option value="late">Late</option>
+                <option value="half-day">Half Day</option>
+                <option value="absent">Absent</option>
+              </select>
+            </div>
+          </div>
         </CardHeader>
-        <CardContent>
+        <CardContent className="p-0">
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
-                <TableRow className="dark:border-gray-700">
-                  <TableHead className="dark:text-gray-300">Worker</TableHead>
-                  <TableHead className="dark:text-gray-300">Position</TableHead>
-                  <TableHead className="dark:text-gray-300">Clock In</TableHead>
-                  <TableHead className="dark:text-gray-300">Clock Out</TableHead>
-                  <TableHead className="dark:text-gray-300">Status</TableHead>
-                  <TableHead className="dark:text-gray-300">Hours</TableHead>
-                  <TableHead className="dark:text-gray-300">Productivity</TableHead>
-                  <TableHead className="dark:text-gray-300">Location</TableHead>
+                <TableRow className="bg-gray-50 dark:bg-gray-700">
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Worker</TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Position</TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Clock In</TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Clock Out</TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Status</TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Hours</TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Productivity</TableHead>
+                  <TableHead className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Location</TableHead>
                 </TableRow>
               </TableHeader>
-              <TableBody>
+              <TableBody className="divide-y divide-gray-200 dark:divide-gray-700">
                 {filteredWorkers.map((worker) => (
-                  <TableRow key={worker.id} className="dark:border-gray-700">
-                    <TableCell>
+                  <TableRow key={worker.id} className="hover:bg-gray-50 dark:hover:bg-gray-700">
+                    <TableCell className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center space-x-3">
                         <Avatar className="w-8 h-8">
                           <AvatarImage src={worker.avatar} />
@@ -313,7 +296,7 @@ export default function WorkerAttendanceView() {
                       <div className="flex items-center space-x-2">
                         <div className="w-16 bg-gray-200 dark:bg-gray-700 rounded-full h-2">
                           <div 
-                            className="bg-green-500 h-2 rounded-full" 
+                            className="bg-blue-500 h-2 rounded-full" 
                             style={{ width: `${worker.productivity}%` }}
                           />
                         </div>
@@ -332,4 +315,4 @@ export default function WorkerAttendanceView() {
       </Card>
     </div>
   );
-} 
+}

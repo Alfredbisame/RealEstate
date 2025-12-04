@@ -24,8 +24,8 @@ export default function WorkersStats({
       change: '+2.1%',
       trend: 'up',
       icon: Clock,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-50',
       progress: attendanceRate
     },
     {
@@ -44,8 +44,8 @@ export default function WorkersStats({
       change: '-1',
       trend: 'down',
       icon: AlertTriangle,
-      color: 'text-orange-600',
-      bgColor: 'bg-orange-50',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-50',
       progress: 100 - (safetyIncidents * 10)
     },
     {
@@ -54,8 +54,8 @@ export default function WorkersStats({
       change: '+3.2%',
       trend: 'up',
       icon: Award,
-      color: 'text-purple-600',
-      bgColor: 'bg-purple-50',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-50',
       progress: recognitionRate
     }
   ];
@@ -80,7 +80,7 @@ export default function WorkersStats({
                 {stat.value}
               </span>
               <div className={`flex items-center text-xs font-medium ${
-                stat.trend === 'up' ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
+                stat.trend === 'up' ? 'text-blue-600 dark:text-blue-400' : 'text-blue-600 dark:text-blue-400'
               }`}>
                 {stat.trend === 'up' ? (
                   <TrendingUp className="w-3 h-3 mr-1" />
@@ -99,4 +99,4 @@ export default function WorkersStats({
       ))}
     </div>
   );
-} 
+}

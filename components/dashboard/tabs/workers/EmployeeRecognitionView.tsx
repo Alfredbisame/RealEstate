@@ -146,36 +146,36 @@ export default function EmployeeRecognitionView() {
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
   const [selectedRecognition, setSelectedRecognition] = useState<Recognition | null>(null);
 
-  const getRecognitionTypeColor = (type: string) => {
+  const getTypeColor = (type: string) => {
     const colors = {
-      award: 'bg-yellow-100 text-yellow-800',
-      bonus: 'bg-green-100 text-green-800',
+      award: 'bg-blue-100 text-blue-800',
+      bonus: 'bg-blue-100 text-blue-800',
       achievement: 'bg-blue-100 text-blue-800',
-      promotion: 'bg-purple-100 text-purple-800',
-      certificate: 'bg-indigo-100 text-indigo-800'
+      promotion: 'bg-blue-100 text-blue-800',
+      certificate: 'bg-blue-100 text-blue-800'
     };
-    return colors[type as keyof typeof colors] || 'bg-gray-100 text-gray-800';
+    return colors[type as keyof typeof colors] || 'bg-blue-100 text-blue-800';
   };
 
   const getCategoryColor = (category: string) => {
     const colors = {
-      safety: 'bg-red-100 text-red-800',
-      productivity: 'bg-green-100 text-green-800',
+      safety: 'bg-blue-100 text-blue-800',
+      productivity: 'bg-blue-100 text-blue-800',
       innovation: 'bg-blue-100 text-blue-800',
-      leadership: 'bg-purple-100 text-purple-800',
-      excellence: 'bg-yellow-100 text-yellow-800',
-      longevity: 'bg-orange-100 text-orange-800'
+      leadership: 'bg-blue-100 text-blue-800',
+      excellence: 'bg-blue-100 text-blue-800',
+      longevity: 'bg-blue-100 text-blue-800'
     };
-    return colors[category as keyof typeof colors] || 'bg-gray-100 text-gray-800';
+    return colors[category as keyof typeof colors] || 'bg-blue-100 text-blue-800';
   };
 
   const getStatusColor = (status: string) => {
     const colors = {
-      active: 'bg-green-100 text-green-800',
-      pending: 'bg-yellow-100 text-yellow-800',
-      expired: 'bg-gray-100 text-gray-800'
+      active: 'bg-blue-100 text-blue-800',
+      pending: 'bg-blue-100 text-blue-800',
+      expired: 'bg-blue-100 text-blue-800'
     };
-    return colors[status as keyof typeof colors] || 'bg-gray-100 text-gray-800';
+    return colors[status as keyof typeof colors] || 'bg-blue-100 text-blue-800';
   };
 
   const filteredRecognitions = recognitions.filter(recognition => {
@@ -290,8 +290,8 @@ export default function EmployeeRecognitionView() {
                     <p className="text-sm text-gray-500 dark:text-gray-400">{recognition.position}</p>
                   </div>
                 </div>
-                <Badge className={getRecognitionTypeColor(recognition.recognitionType)}>
-                  {recognition.recognitionType}
+                <Badge className={getTypeColor(recognition.recognitionType)}>
+                  {recognition.recognitionType.charAt(0).toUpperCase() + recognition.recognitionType.slice(1)}
                 </Badge>
               </div>
             </CardHeader>
@@ -365,8 +365,8 @@ export default function EmployeeRecognitionView() {
                             </div>
                             <div>
                               <p className="text-sm font-medium text-gray-600 dark:text-gray-300">Recognition Type</p>
-                              <Badge className={getRecognitionTypeColor(selectedRecognition.recognitionType)}>
-                                {selectedRecognition.recognitionType}
+                              <Badge className={getTypeColor(selectedRecognition.recognitionType)}>
+                                {selectedRecognition.recognitionType.charAt(0).toUpperCase() + selectedRecognition.recognitionType.slice(1)}
                               </Badge>
                             </div>
                             <div>
