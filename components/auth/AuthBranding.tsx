@@ -13,8 +13,8 @@ export default function AuthBranding({ className = '' }: AuthBrandingProps) {
       icon: Briefcase,
       title: 'Project Management',
       description: 'Track construction projects, budgets, and timelines with precision.',
-      color: 'bg-green-100 dark:bg-green-900',
-      iconColor: 'text-green-600 dark:text-green-400'
+      color: 'bg-blue-100 dark:bg-blue-900',
+      iconColor: 'text-blue-600 dark:text-blue-400'
     },
     {
       icon: Shield,
@@ -27,15 +27,15 @@ export default function AuthBranding({ className = '' }: AuthBrandingProps) {
       icon: CheckCircle,
       title: 'Real-time Analytics',
       description: 'Live dashboards with profit/loss tracking and forecasting.',
-      color: 'bg-orange-100 dark:bg-orange-900',
-      iconColor: 'text-orange-600 dark:text-orange-400'
+      color: 'bg-blue-100 dark:bg-blue-900',
+      iconColor: 'text-blue-600 dark:text-blue-400'
     },
     {
       icon: Briefcase,
       title: 'Portfolio Management',
       description: 'Comprehensive property portfolio tracking and valuation.',
-      color: 'bg-purple-100 dark:bg-purple-900',
-      iconColor: 'text-purple-600 dark:text-purple-400'
+      color: 'bg-blue-100 dark:bg-blue-900',
+      iconColor: 'text-blue-600 dark:text-blue-400'
     }
   ];
 

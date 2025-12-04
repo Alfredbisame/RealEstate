@@ -20,7 +20,7 @@ export const ROLE_CONFIGS: Record<UserRole, RoleConfig> = {
     id: 'property-owner',
     name: 'Property Owner/Investor',
     description: 'Full access to all features',
-    color: 'bg-green-500',
+    color: 'bg-blue-500',
     permissions: ['read', 'write', 'admin', 'financial', 'reports']
   },
   'project-manager': {
@@ -34,35 +34,35 @@ export const ROLE_CONFIGS: Record<UserRole, RoleConfig> = {
     id: 'accountant',
     name: 'Accountant/Bookkeeper',
     description: 'Financial Focus',
-    color: 'bg-orange-500',
+    color: 'bg-blue-500',
     permissions: ['read', 'write', 'financial', 'reports']
   },
   'site-supervisor': {
     id: 'site-supervisor',
     name: 'Site Supervisor',
     description: 'Field Operations',
-    color: 'bg-amber-500',
+    color: 'bg-blue-500',
     permissions: ['read', 'write', 'field-ops']
   },
   'sales-agent': {
     id: 'sales-agent',
     name: 'Sales Agent',
     description: 'Sales & Marketing Focus',
-    color: 'bg-purple-500',
+    color: 'bg-blue-500',
     permissions: ['read', 'write', 'sales', 'marketing']
   },
   'hr-manager': {
     id: 'hr-manager',
     name: 'HR Manager',
     description: 'Human Resources Focus',
-    color: 'bg-pink-500',
+    color: 'bg-blue-500',
     permissions: ['read', 'write', 'hr', 'payroll']
   },
   'auditor': {
     id: 'auditor',
     name: 'Auditor/Viewer',
     description: 'Read-Only Access',
-    color: 'bg-gray-500',
+    color: 'bg-blue-500',
     permissions: ['read']
   }
 };

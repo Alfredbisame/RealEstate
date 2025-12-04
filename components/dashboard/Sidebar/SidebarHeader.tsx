@@ -12,7 +12,7 @@ export default function SidebarHeader({ collapsed, onToggle }: SidebarHeaderProp
       {!collapsed && (
         <div className="flex items-center space-x-3">
           <div className="w-12 h-12 rounded-lg flex items-center justify-center">
-               <Image
+            <Image
               src="/logo.png"
               alt="Ghana Real Estate Logo"
               width={78}

@@ -1,6 +1,6 @@
 'use client';
 
-import { Building2, Loader2 } from 'lucide-react';
+import Image from 'next/image';
 
 interface LoadingScreenProps {
   message?: string;
@@ -17,7 +17,13 @@ export default function LoadingScreen({
         {/* Logo/Brand Section */}
         <div className="flex items-center space-x-3 mb-4">
           <div className="relative">
-            <Building2 className="w-8 h-8 text-blue-600 dark:text-blue-400" />
+            <Image
+              src="/logo.png"
+              alt="Ghana Real Estate Logo"
+              width={78}
+              height={78}
+              className="object-cover"
+            />
             <div className="absolute -top-1 -right-1 w-3 h-3 bg-blue-500 rounded-full animate-pulse"></div>
           </div>
           <h1 className="text-2xl font-bold text-blue-500">
