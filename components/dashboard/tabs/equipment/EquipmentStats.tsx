@@ -25,7 +25,7 @@ export default function EquipmentStats({
       trend: 'up',
       icon: Truck,
       color: 'text-blue-600',
-      bgColor: 'bg-blue-50',
+      bgColor: 'bg-blue-100',
       progress: utilizationRate
     },
     {
@@ -34,8 +34,8 @@ export default function EquipmentStats({
       change: '+1.8%',
       trend: 'up',
       icon: Wrench,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-100',
       progress: maintenanceCompliance
     },
     {
@@ -44,8 +44,8 @@ export default function EquipmentStats({
       change: '-2.1%',
       trend: 'down',
       icon: Clock,
-      color: 'text-orange-600',
-      bgColor: 'bg-orange-50',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-100',
       progress: equipmentAvailability
     },
     {
@@ -54,8 +54,8 @@ export default function EquipmentStats({
       change: '+5.4%',
       trend: 'up',
       icon: BarChart3,
-      color: 'text-purple-600',
-      bgColor: 'bg-purple-50',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-100',
       progress: Math.min((rentalRevenue / 15000) * 100, 100)
     }
   ];
@@ -80,7 +80,7 @@ export default function EquipmentStats({
                 {stat.value}
               </span>
               <div className={`flex items-center text-xs font-medium ${
-                stat.trend === 'up' ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
+                stat.trend === 'up' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-600 dark:text-gray-400'
               }`}>
                 {stat.trend === 'up' ? (
                   <TrendingUp className="w-3 h-3 mr-1" />
@@ -99,4 +99,4 @@ export default function EquipmentStats({
       ))}
     </div>
   );
-} 
+}
