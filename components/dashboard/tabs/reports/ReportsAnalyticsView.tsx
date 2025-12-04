@@ -25,7 +25,7 @@ const departmentExpenses = [
   { department: 'Operations', value: 9000 },
 ];
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#A020F0'];
+const COLORS = ['#3B82F6', '#60A5FA', '#93C5FD', '#BFDBFE', '#DBEAFE'];
 
 export default function ReportsAnalyticsView({ user }: { user: any }) {
   const chartRef = useRef<HTMLDivElement>(null);
@@ -176,7 +176,7 @@ export default function ReportsAnalyticsView({ user }: { user: any }) {
               <YAxis />
               <Tooltip />
               <Legend />
-              <Line type="monotone" dataKey="NetProfit" stroke="#A020F0" strokeWidth={3} dot={{ r: 5 }} />
+              <Line type="monotone" dataKey="NetProfit" stroke="#3B82F6" strokeWidth={3} dot={{ r: 5 }} />
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -187,12 +187,12 @@ export default function ReportsAnalyticsView({ user }: { user: any }) {
             <AreaChart data={monthlyData}>
               <defs>
                 <linearGradient id="colorRev" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#0088FE" stopOpacity={0.8}/>
-                  <stop offset="95%" stopColor="#0088FE" stopOpacity={0}/>
+                  <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.8}/>
+                  <stop offset="95%" stopColor="#3B82F6" stopOpacity={0}/>
                 </linearGradient>
                 <linearGradient id="colorExp" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="5%" stopColor="#FF8042" stopOpacity={0.8}/>
-                  <stop offset="95%" stopColor="#FF8042" stopOpacity={0}/>
+                  <stop offset="5%" stopColor="#60A5FA" stopOpacity={0.8}/>
+                  <stop offset="95%" stopColor="#60A5FA" stopOpacity={0}/>
                 </linearGradient>
               </defs>
               <XAxis dataKey="month" />
