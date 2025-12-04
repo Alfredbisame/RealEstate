@@ -21,27 +21,27 @@ interface NotificationCardProps {
 export default function NotificationCard({ notification, onMarkRead, onDelete }: NotificationCardProps) {
   const getNotificationIcon = (type: string) => {
     switch (type) {
-      case 'success': return <CheckCircle className="w-5 h-5 text-green-600" />;
-      case 'warning': return <AlertTriangle className="w-5 h-5 text-orange-600" />;
-      case 'error': return <AlertTriangle className="w-5 h-5 text-red-600" />;
+      case 'success': return <CheckCircle className="w-5 h-5 text-blue-600" />;
+      case 'warning': return <AlertTriangle className="w-5 h-5 text-blue-500" />;
+      case 'error': return <AlertTriangle className="w-5 h-5 text-blue-600" />;
       case 'info': return <Info className="w-5 h-5 text-blue-600" />;
-      default: return <Bell className="w-5 h-5 text-gray-600" />;
+      default: return <Bell className="w-5 h-5 text-blue-600" />;
     }
   };
 
   const getNotificationColor = (type: string) => {
     switch (type) {
-      case 'success': return 'border-l-green-500 bg-green-50/50 dark:bg-green-900/10';
-      case 'warning': return 'border-l-orange-500 bg-orange-50/50 dark:bg-orange-900/10';
-      case 'error': return 'border-l-red-500 bg-red-50/50 dark:bg-red-900/10';
-      case 'info': return 'border-l-blue-500 bg-blue-50/50 dark:bg-blue-900/10';
-      default: return 'border-l-gray-500 bg-gray-50/50 dark:bg-gray-900/10';
+      case 'success': return 'border-l-blue-500 bg-blue-50 dark:bg-blue-900/20';
+      case 'warning': return 'border-l-blue-400 bg-blue-50 dark:bg-blue-900/20';
+      case 'error': return 'border-l-blue-500 bg-blue-50 dark:bg-blue-900/20';
+      case 'info': return 'border-l-blue-500 bg-blue-50 dark:bg-blue-900/20';
+      default: return 'border-l-blue-500 bg-blue-50 dark:bg-blue-900/20';
     }
   };
 
   return (
     <div 
-      className={`bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 border-l-4 border border-gray-200/50 dark:border-gray-700/50 ${getNotificationColor(notification.type)} ${
+      className={`bg-white dark:bg-gray-800 rounded-xl p-6 border-l-4 border border-gray-200 dark:border-gray-700 ${getNotificationColor(notification.type)} ${
         !notification.read ? 'ring-2 ring-blue-500/20' : ''
       } hover:shadow-lg transition-all duration-300 group`}
     >
@@ -50,51 +50,47 @@ export default function NotificationCard({ notification, onMarkRead, onDelete }:
           <div className="flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300">
             {getNotificationIcon(notification.type)}
           </div>
-          <div className="flex-1">
-            <div className="flex items-center space-x-2 mb-1">
-              <h3 className={`font-semibold transition-colors duration-300 ${
-                !notification.read 
-                  ? 'text-gray-900 dark:text-white' 
-                  : 'text-gray-700 dark:text-gray-300'
-              }`}>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center justify-between">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {notification.title}
               </h3>
-              {!notification.read && (
-                <div className="w-2 h-2 bg-blue-500 rounded-full animate-pulse"></div>
-              )}
+              <span className="text-xs text-gray-500 dark:text-gray-400 flex items-center">
+                <Clock className="w-3 h-3 mr-1" />
+                {notification.time}
+              </span>
             </div>
-            <p className="text-gray-600 dark:text-gray-400 text-sm mb-2 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
+            <p className="mt-2 text-gray-600 dark:text-gray-300">
               {notification.message}
             </p>
-            <div className="flex items-center space-x-4 text-xs text-gray-500 dark:text-gray-400">
-              <div className="flex items-center space-x-1">
-                <Clock size={12} />
-                <span>{notification.time}</span>
-              </div>
-              <span className="capitalize bg-gray-100 dark:bg-gray-700 px-2 py-1 rounded-full">
+            <div className="mt-3 flex items-center">
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
                 {notification.category}
               </span>
             </div>
           </div>
         </div>
-        
-        <div className="flex items-center space-x-2">
-          {!notification.read && (
-            <button 
-              onClick={() => onMarkRead?.(notification.id)}
-              className="px-3 py-1 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-all duration-300 hover:scale-105 text-sm"
+        <div className="flex space-x-2 ml-4">
+          {!notification.read && onMarkRead && (
+            <button
+              onClick={() => onMarkRead(notification.id)}
+              className="p-1 text-gray-500 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              aria-label="Mark as read"
             >
-              Mark Read
+              <CheckCircle className="w-5 h-5" />
             </button>
           )}
-          <button 
-            onClick={() => onDelete?.(notification.id)}
-            className="p-1 text-gray-400 hover:text-gray-600 transition-all duration-300 hover:scale-110"
-          >
-            <X size={16} />
-          </button>
+          {onDelete && (
+            <button
+              onClick={() => onDelete(notification.id)}
+              className="p-1 text-gray-500 hover:text-red-600 dark:hover:text-red-400 transition-colors"
+              aria-label="Delete notification"
+            >
+              <X className="w-5 h-5" />
+            </button>
+          )}
         </div>
       </div>
     </div>
   );
-} 
+}
