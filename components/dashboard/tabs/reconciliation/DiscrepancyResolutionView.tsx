@@ -80,17 +80,17 @@ export default function DiscrepancyResolutionView({ user }: { user: any }) {
                 <td className="px-4 py-3 whitespace-nowrap text-sm">{discrepancy.type}</td>
                 <td className="px-4 py-3 whitespace-nowrap">
                   <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                    discrepancy.priority === 'High' ? 'bg-red-100 text-red-800' :
-                    discrepancy.priority === 'Medium' ? 'bg-yellow-100 text-yellow-800' :
-                    'bg-green-100 text-green-800'
+                    discrepancy.priority === 'High' ? 'bg-blue-100 text-blue-800' :
+                    discrepancy.priority === 'Medium' ? 'bg-blue-50 text-blue-700' :
+                    'bg-blue-50 text-blue-700'
                   }`}>
                     {discrepancy.priority}
                   </span>
                 </td>
                 <td className="px-4 py-3 whitespace-nowrap">
                   <span className={`px-2 py-1 text-xs font-semibold rounded-full ${
-                    discrepancy.status === 'Resolved' ? 'bg-green-100 text-green-800' :
-                    discrepancy.status === 'Pending' ? 'bg-yellow-100 text-yellow-800' :
+                    discrepancy.status === 'Resolved' ? 'bg-blue-50 text-blue-700' :
+                    discrepancy.status === 'Pending' ? 'bg-blue-100 text-blue-800' :
                     'bg-blue-100 text-blue-800'
                   }`}>
                     {discrepancy.status}

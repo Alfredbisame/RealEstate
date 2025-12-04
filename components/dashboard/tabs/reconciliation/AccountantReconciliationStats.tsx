@@ -11,19 +11,19 @@ const stats = [
     label: 'Reconciled Amount',
     value: 'GHS 2.5M',
     icon: CheckCircle,
-    color: 'bg-green-100 text-green-700 dark:bg-green-900 dark:text-green-200'
+    color: 'bg-blue-50 text-blue-700 dark:bg-blue-800 dark:text-blue-200'
   },
   {
     label: 'Pending Items',
     value: '23',
     icon: Clock,
-    color: 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900 dark:text-yellow-200'
+    color: 'bg-blue-50 text-blue-700 dark:bg-blue-900 dark:text-blue-200'
   },
   {
     label: 'Discrepancies',
     value: '5',
     icon: AlertTriangle,
-    color: 'bg-red-100 text-red-700 dark:bg-red-900 dark:text-red-200'
+    color: 'bg-blue-50 text-blue-700 dark:bg-blue-900 dark:text-blue-200'
   }
 ];
 
@@ -35,10 +35,10 @@ export default function AccountantReconciliationStats() {
           <stat.icon className="w-6 h-6 mr-3" />
           <div>
             <div className="text-lg font-bold">{stat.value}</div>
-            <div className="text-xs font-medium opacity-80">{stat.label}</div>
+            <div className="text-xs font-medium text-blue-600 dark:text-blue-400">{stat.label}</div>
           </div>
         </div>
       ))}
     </div>
   );
-} 
+}
