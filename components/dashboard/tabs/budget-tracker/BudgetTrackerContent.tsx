@@ -10,10 +10,10 @@ interface BudgetTrackerContentProps {
 
 export default function BudgetTrackerContent({ activeView, onViewChange }: BudgetTrackerContentProps) {
   return (
-    <div className="bg-white/80 dark:bg-gray-800/80 rounded-xl p-6 mt-4 border border-gray-200 dark:border-gray-700">
+    <div className="bg-white dark:bg-gray-800 rounded-xl p-6 mt-4 border border-gray-200 dark:border-gray-700">
       <div className="flex space-x-4 mb-6">
         <button
-          className={`px-4 py-2 rounded-lg font-medium transition-colors ${activeView === 'table' ? 'bg-gradient-to-r from-yellow-500 to-green-500 text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200'}`}
+          className={`px-4 py-2 rounded-lg font-medium transition-colors ${activeView === 'table' ? 'bg-blue-500 text-white' : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200'}`}
           onClick={() => onViewChange('table')}
         >
           Budget Table
