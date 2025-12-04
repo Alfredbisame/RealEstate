@@ -50,9 +50,9 @@ export default function SettingsPanel({ isOpen, onClose, user }: SettingsPanelPr
   return (
     <div className="fixed inset-0 z-50 flex">
       {/* Backdrop */}
-      <div className="fixed inset-0 bg-black backdrop-blur-sm" onClick={onClose} />
+      <div className="absolute inset-0 bg-black/10 backdrop-blur-sm" onClick={onClose} />
       {/* Panel */}
-      <div className="ml-auto w-full max-w-md bg-white dark:bg-gray-800 shadow-2xl border-l border-gray-200 dark:border-gray-700">
+      <div className="relative ml-auto w-full max-w-md bg-white dark:bg-gray-800 shadow-2xl border-l border-gray-200 dark:border-gray-700">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">Settings</h2>
