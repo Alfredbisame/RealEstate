@@ -76,20 +76,20 @@ export default function IncidentReportsView() {
 
   const getStatusBadge = (status: string) => {
     const variants = {
-      open: 'bg-orange-100 text-orange-800 dark:bg-orange-900/20 dark:text-orange-400',
-      resolved: 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400',
-      closed: 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400'
+      open: 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400',
+      resolved: 'bg-blue-50 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400',
+      closed: 'bg-blue-50 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400'
     };
-    return variants[status as keyof typeof variants] || 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400';
+    return variants[status as keyof typeof variants] || 'bg-blue-50 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400';
   };
 
   const getSeverityBadge = (severity: string) => {
     const variants = {
-      low: 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400',
-      medium: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400',
-      high: 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400'
+      low: 'bg-blue-50 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400',
+      medium: 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400',
+      high: 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400'
     };
-    return variants[severity as keyof typeof variants] || 'bg-gray-100 text-gray-800 dark:bg-gray-900/20 dark:text-gray-400';
+    return variants[severity as keyof typeof variants] || 'bg-blue-50 text-blue-800 dark:bg-blue-900/20 dark:text-blue-400';
   };
 
   const filteredIncidents = incidents.filter(incident => {

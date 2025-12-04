@@ -24,8 +24,8 @@ export default function SafetyStats({
       change: '+1',
       trend: 'up',
       icon: AlertTriangle,
-      color: 'text-orange-600',
-      bgColor: 'bg-orange-50',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-50',
       progress: Math.min(monthlyIncidents * 10, 100)
     },
     {
@@ -34,8 +34,8 @@ export default function SafetyStats({
       change: '+0.5%',
       trend: 'up',
       icon: Shield,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-50',
       progress: complianceRate
     },
     {
@@ -54,8 +54,8 @@ export default function SafetyStats({
       change: '+2',
       trend: 'up',
       icon: CheckCircle,
-      color: 'text-green-600',
-      bgColor: 'bg-green-50',
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-50',
       progress: Math.min(resolvedCases * 10, 100)
     }
   ];
@@ -76,11 +76,11 @@ export default function SafetyStats({
           </CardHeader>
           <CardContent className="pt-0">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">
+              <span className="text-2xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                 {stat.value}
               </span>
               <div className={`flex items-center text-xs font-medium ${
-                stat.trend === 'up' ? 'text-green-600 dark:text-green-400' : 'text-red-600 dark:text-red-400'
+                stat.trend === 'up' ? 'text-blue-600 dark:text-blue-400' : 'text-blue-600 dark:text-blue-400'
               }`}>
                 {stat.trend === 'up' ? (
                   <TrendingUp className="w-3 h-3 mr-1" />
@@ -99,4 +99,4 @@ export default function SafetyStats({
       ))}
     </div>
   );
-} 
+}
