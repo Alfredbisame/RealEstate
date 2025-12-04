@@ -35,7 +35,7 @@ export default function TaxBreakdownView() {
               <tr key={idx} className="border-t border-gray-200 dark:border-gray-700">
                 <td className="px-4 py-2 text-sm text-gray-800 dark:text-gray-100">{item.type}</td>
                 <td className="px-4 py-2 text-sm text-gray-800 dark:text-gray-100">{item.amount}</td>
-                <td className={`px-4 py-2 text-sm font-medium ${item.status === 'Paid' ? 'text-green-600' : 'text-red-500'}`}>{item.status}</td>
+                <td className={`px-4 py-2 text-sm font-medium ${item.status === 'Paid' ? 'text-blue-600 dark:text-blue-400' : 'text-blue-500 dark:text-blue-300'}`}>{item.status}</td>
               </tr>
             ))}
           </tbody>
@@ -43,4 +43,4 @@ export default function TaxBreakdownView() {
       </div>
     </div>
   );
-} 
+}
