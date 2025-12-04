@@ -18,19 +18,19 @@ export default function InvoiceCard({ invoice, onClick }: InvoiceCardProps) {
   const getStatusStyles = (status: string) => {
     switch (status) {
       case 'Paid':
-        return 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400 border-green-200 dark:border-green-800';
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-400 border-blue-200 dark:border-blue-800';
       case 'Pending':
-        return 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-400 border-orange-200 dark:border-orange-800';
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-400 border-blue-200 dark:border-blue-800';
       case 'Overdue':
-        return 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-400 border-red-200 dark:border-red-800';
+        return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-400 border-gray-200 dark:border-gray-800';
       default:
-        return 'bg-gray-100 text-gray-800 dark:bg-gray-900/30 dark:text-gray-400 border-gray-200 dark:border-gray-800';
+        return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-400 border-gray-200 dark:border-gray-800';
     }
   };
 
   return (
     <div 
-      className="bg-white/50 dark:bg-gray-700/50 rounded-lg p-4 border border-gray-200/50 dark:border-gray-600/50 hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer backdrop-blur-sm"
+      className="bg-white dark:bg-gray-700 rounded-lg p-4 border border-gray-200 dark:border-gray-600 hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
       onClick={() => onClick?.(invoice)}
     >
       <div className="flex justify-between items-start mb-3">
@@ -51,4 +51,4 @@ export default function InvoiceCard({ invoice, onClick }: InvoiceCardProps) {
       </div>
     </div>
   );
-} 
+}
