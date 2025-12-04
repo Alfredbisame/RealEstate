@@ -24,17 +24,17 @@ interface Progress {
             <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">{totalPrograms}</div>
             <div className="text-sm text-blue-800 dark:text-blue-200">Total Programs</div>
           </div>
-          <div className="bg-green-50 dark:bg-green-900/10 rounded-lg p-4 text-center">
-            <div className="text-2xl font-bold text-green-700 dark:text-green-300">{totalEnrollments}</div>
-            <div className="text-sm text-green-800 dark:text-green-200">Total Enrollments</div>
+          <div className="bg-blue-50 dark:bg-blue-900/10 rounded-lg p-4 text-center">
+            <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">{totalEnrollments}</div>
+            <div className="text-sm text-blue-800 dark:text-blue-200">Total Enrollments</div>
           </div>
-          <div className="bg-yellow-50 dark:bg-yellow-900/10 rounded-lg p-4 text-center">
-            <div className="text-2xl font-bold text-yellow-700 dark:text-yellow-300">{avgProgress}%</div>
-            <div className="text-sm text-yellow-800 dark:text-yellow-200">Avg. Progress</div>
+          <div className="bg-blue-50 dark:bg-blue-900/10 rounded-lg p-4 text-center">
+            <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">{avgProgress}%</div>
+            <div className="text-sm text-blue-800 dark:text-blue-200">Avg. Progress</div>
           </div>
-          <div className="bg-purple-50 dark:bg-purple-900/10 rounded-lg p-4 text-center">
-            <div className="text-2xl font-bold text-purple-700 dark:text-purple-300">{completionRate}</div>
-            <div className="text-sm text-purple-800 dark:text-purple-200">Completion Rate</div>
+          <div className="bg-blue-50 dark:bg-blue-900/10 rounded-lg p-4 text-center">
+            <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">{completionRate}</div>
+            <div className="text-sm text-blue-800 dark:text-blue-200">Completion Rate</div>
           </div>
         </div>
         <div className="overflow-x-auto">
@@ -68,4 +68,3 @@ interface Progress {
       </div>
     );
   }
-  

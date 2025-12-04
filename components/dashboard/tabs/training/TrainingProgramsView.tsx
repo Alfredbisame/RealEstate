@@ -36,13 +36,13 @@ export default function TrainingProgramsView({ programs }: TrainingProgramsViewP
         <h2 className="text-xl font-bold">Training Programs</h2>
         <div className="flex gap-2">
           <button
-            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-all"
+            className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all"
             onClick={handleAddProgram}
           >
             <Plus className="w-4 h-4" /> Add Program
           </button>
           <button
-            className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-all"
+            className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all"
             onClick={handleSchedule}
           >
             <Calendar className="w-4 h-4" /> Schedule
@@ -59,11 +59,11 @@ export default function TrainingProgramsView({ programs }: TrainingProgramsViewP
               &times;
             </button>
             <div className="flex flex-col items-center">
-              <Calendar className="w-12 h-12 text-green-600 mb-4" />
+              <Calendar className="w-12 h-12 text-blue-500 mb-4" />
               <h3 className="text-lg font-bold mb-2">Program Scheduling (Stub)</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-4">A calendar UI for scheduling new training programs will appear here.</p>
               <button
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
                 onClick={handleCloseCalendar}
               >
                 Close
@@ -92,7 +92,7 @@ export default function TrainingProgramsView({ programs }: TrainingProgramsViewP
                 <td className="px-4 py-2">{program.end}</td>
                 <td className="px-4 py-2">
                   <span className={
-                    program.status === 'Ongoing' ? 'text-blue-600' : 'text-gray-500 dark:text-gray-400'
+                    program.status === 'Ongoing' ? 'text-blue-600 dark:text-blue-400' : 'text-gray-500 dark:text-gray-400'
                   }>
                     {program.status}
                   </span>
@@ -104,4 +104,4 @@ export default function TrainingProgramsView({ programs }: TrainingProgramsViewP
       </div>
     </div>
   );
-} 
+}

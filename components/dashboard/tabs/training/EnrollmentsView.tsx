@@ -33,7 +33,7 @@ interface Enrollment {
                   <td className="px-4 py-2">
                     <div className="w-32 bg-gray-200 rounded-full h-3 dark:bg-gray-700">
                       <div
-                        className="bg-green-500 h-3 rounded-full"
+                        className="bg-blue-500 h-3 rounded-full"
                         style={{ width: `${enroll.progress}%` }}
                       ></div>
                     </div>
@@ -47,4 +47,3 @@ interface Enrollment {
       </div>
     );
   }
-  
