@@ -14,7 +14,7 @@ interface StatCardProps {
 
 function StatCard({ icon: Icon, value, label, change, color, bgColor, iconColor }: StatCardProps) {
   return (
-    <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-xl p-6 border border-gray-200/50 dark:border-gray-700/50 hover:shadow-lg hover:scale-105 transition-all duration-300 group">
+    <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:scale-105 transition-all duration-300 group">
       <div className="flex items-center space-x-3">
         <div className={`w-12 h-12 ${bgColor} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
           <Icon className={`w-6 h-6 ${iconColor}`} />
@@ -38,18 +38,18 @@ export default function EmployeeStats() {
       value: '48',
       label: 'Total Employees',
       change: '+3 this month',
-      color: 'text-pink-600',
-      bgColor: 'bg-pink-100 dark:bg-pink-900',
-      iconColor: 'text-pink-600 dark:text-pink-400'
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-100 dark:bg-blue-900',
+      iconColor: 'text-blue-600 dark:text-blue-400'
     },
     {
       icon: Clock,
       value: '42',
       label: 'Present Today',
       change: '87.5% attendance',
-      color: 'text-green-600',
-      bgColor: 'bg-green-100 dark:bg-green-900',
-      iconColor: 'text-green-600 dark:text-green-400'
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-100 dark:bg-blue-900',
+      iconColor: 'text-blue-600 dark:text-blue-400'
     },
     {
       icon: DollarSign,
@@ -65,9 +65,9 @@ export default function EmployeeStats() {
       value: '84%',
       label: 'Avg Performance',
       change: '+2% improvement',
-      color: 'text-orange-600',
-      bgColor: 'bg-orange-100 dark:bg-orange-900',
-      iconColor: 'text-orange-600 dark:text-orange-400'
+      color: 'text-blue-600',
+      bgColor: 'bg-blue-100 dark:bg-blue-900',
+      iconColor: 'text-blue-600 dark:text-blue-400'
     }
   ];
 
@@ -78,4 +78,4 @@ export default function EmployeeStats() {
       ))}
     </div>
   );
-} 
+}

@@ -11,29 +11,59 @@ interface PerformanceMetricsProps {
 
 export default function PerformanceMetrics({ employees }: PerformanceMetricsProps) {
   const metrics = [
-    { label: 'Overall Score', value: 84, color: 'bg-green-500' },
+    { label: 'Overall Score', value: 84, color: 'bg-blue-500' },
     { label: 'Productivity', value: 91, color: 'bg-blue-500' },
-    { label: 'Quality', value: 88, color: 'bg-orange-500' }
+    { label: 'Quality', value: 88, color: 'bg-blue-500' }
   ];
 
   const reviews = [
-    { type: 'Excellent Work', employee: 'Kwame Asante', period: 'Q1 2024', color: 'green' },
+    { type: 'Excellent Work', employee: 'Kwame Asante', period: 'Q1 2024', color: 'blue' },
     { type: 'Meets Expectations', employee: 'Ama Osei', period: 'Q1 2024', color: 'blue' },
-    { type: 'Needs Improvement', employee: 'Kojo Mensah', period: 'Q1 2024', color: 'orange' }
+    { type: 'Needs Improvement', employee: 'Kojo Mensah', period: 'Q1 2024', color: 'blue' }
   ];
+
+  const getColorClass = (color: string) => {
+    switch (color) {
+      case 'blue':
+        return 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200';
+      default:
+        return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
+    }
+  };
 
   return (
     <div className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Performance Metrics */}
+        <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+          <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Performance Metrics</h3>
+          <div className="space-y-4">
+            {metrics.map((metric, index) => (
+              <div key={index} className="space-y-2">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{metric.label}</span>
+                  <span className="text-sm font-bold text-gray-900 dark:text-white">{metric.value}%</span>
+                </div>
+                <div className="w-full bg-gray-200 rounded-full h-2 dark:bg-gray-700">
+                  <div 
+                    className={`h-2 rounded-full ${metric.color}`} 
+                    style={{ width: `${metric.value}%` }}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Top Performers */}
-        <div className="bg-white/50 dark:bg-gray-700/50 rounded-xl p-6 backdrop-blur-sm border border-gray-200/50 dark:border-gray-600/50">
+        <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
           <h3 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
             <span className="w-2 h-2 bg-yellow-500 rounded-full mr-2"></span>
             Top Performers
           </h3>
           <div className="space-y-3">
             {employees.slice(0, 3).map((employee, index) => (
-              <div key={employee.id} className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-600/50 transition-colors duration-200">
+              <div key={employee.id} className="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors duration-200">
                 <div className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white ${
                   index === 0 ? 'bg-yellow-500' : index === 1 ? 'bg-gray-400' : 'bg-orange-500'
                 }`}>
@@ -49,71 +79,32 @@ export default function PerformanceMetrics({ employees }: PerformanceMetricsProp
           </div>
         </div>
 
-        {/* Performance Metrics */}
-        <div className="bg-white/50 dark:bg-gray-700/50 rounded-xl p-6 backdrop-blur-sm border border-gray-200/50 dark:border-gray-600/50">
-          <h3 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
-            <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
-            Performance Metrics
-          </h3>
-          <div className="space-y-4">
-            {metrics.map((metric, index) => (
-              <div key={index}>
-                <div className="flex justify-between text-sm mb-2">
-                  <span className="text-gray-600 dark:text-gray-400">{metric.label}</span>
-                  <span className="font-medium text-gray-900 dark:text-white">{metric.value}%</span>
-                </div>
-                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
-                  <div 
-                    className={`${metric.color} h-2 rounded-full transition-all duration-1000 ease-out`} 
-                    style={{ width: `${metric.value}%` }}
-                  ></div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Recent Reviews */}
-        <div className="bg-white/50 dark:bg-gray-700/50 rounded-xl p-6 backdrop-blur-sm border border-gray-200/50 dark:border-gray-600/50">
-          <h3 className="font-semibold text-gray-900 dark:text-white mb-4 flex items-center">
-            <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-            Recent Reviews
-          </h3>
+        <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+          <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Recent Reviews</h3>
           <div className="space-y-3">
             {reviews.map((review, index) => (
-              <div 
-                key={index} 
-                className={`p-3 rounded-lg border-l-4 transition-all duration-300 hover:scale-105 ${
-                  review.color === 'green' 
-                    ? 'bg-green-50 dark:bg-green-900/20 border-green-500' 
-                    : review.color === 'blue'
-                    ? 'bg-blue-50 dark:bg-blue-900/20 border-blue-500'
-                    : 'bg-orange-50 dark:bg-orange-900/20 border-orange-500'
-                }`}
-              >
-                <p className={`text-sm font-medium ${
-                  review.color === 'green' 
-                    ? 'text-green-800 dark:text-green-400' 
-                    : review.color === 'blue'
-                    ? 'text-blue-800 dark:text-blue-400'
-                    : 'text-orange-800 dark:text-orange-400'
-                }`}>
-                  {review.type}
-                </p>
-                <p className={`text-xs ${
-                  review.color === 'green' 
-                    ? 'text-green-600 dark:text-green-500' 
-                    : review.color === 'blue'
-                    ? 'text-blue-600 dark:text-blue-500'
-                    : 'text-orange-600 dark:text-orange-500'
-                }`}>
-                  {review.employee} - {review.period}
-                </p>
+              <div key={index} className="p-3 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors">
+                <div className="flex justify-between items-start mb-1">
+                  <span className="text-sm font-medium text-gray-900 dark:text-white">{review.type}</span>
+                  <span className={`px-2 py-1 rounded-full text-xs ${getColorClass(review.color)}`}>
+                    {review.period}
+                  </span>
+                </div>
+                <p className="text-sm text-gray-600 dark:text-gray-400">{review.employee}</p>
               </div>
             ))}
           </div>
         </div>
       </div>
+
+      {/* Performance Trends */}
+      <div className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700">
+        <h3 className="font-semibold text-gray-900 dark:text-white mb-4">Performance Trends</h3>
+        <div className="h-64 flex items-center justify-center">
+          <p className="text-gray-500 dark:text-gray-400">Performance trend visualization would appear here</p>
+        </div>
+      </div>
     </div>
   );
-} 
+}
