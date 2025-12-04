@@ -25,14 +25,14 @@ export default function AuditTrailHeader({
   onClear,
 }: AuditTrailHeaderProps) {
   return (
-    <div className="sticky top-0 z-20 backdrop-blur bg-gradient-to-r from-gray-800/80 to-gray-900/80 rounded-xl p-6 mb-4 shadow-xl border border-white/10">
+    <div className="sticky top-0 z-20 bg-blue-500 rounded-xl p-6 mb-4 shadow-xl border border-gray-200 dark:border-gray-700">
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
           <h2 className="text-3xl font-extrabold text-white mb-1 tracking-tight drop-shadow">Audit Trail</h2>
-          <p className="text-white/70 text-base">Comprehensive log of all system activities for compliance and transparency.</p>
+          <p className="text-white text-base">Comprehensive log of all system activities for compliance and transparency.</p>
         </div>
         <div className="flex gap-2 mt-2 md:mt-0">
-          <button className="flex items-center px-4 py-2 bg-white/10 text-white rounded-lg font-semibold text-sm hover:bg-white/20 transition shadow-md" onClick={onExport}>
+          <button className="flex items-center px-4 py-2 bg-white bg-opacity-20 text-white rounded-lg font-semibold text-sm hover:bg-white hover:bg-opacity-30 transition shadow-md" onClick={onExport}>
             <Download className="w-4 h-4 mr-2" /> Export
           </button>
         </div>
@@ -43,7 +43,7 @@ export default function AuditTrailHeader({
           <input
             type="text"
             placeholder="Search audit trail..."
-            className="w-full pl-10 pr-4 py-2 rounded-full border border-gray-700 bg-gray-900/80 text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
+            className="w-full pl-10 pr-4 py-2 rounded-full border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-400 focus:ring-2 focus:ring-blue-500 focus:outline-none transition"
             value={search}
             onChange={e => setSearch(e.target.value)}
           />
