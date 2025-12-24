@@ -59,6 +59,7 @@ import CommissionsScreen from './dashboard-screens/sales-agent/CommissionsScreen
 import MarketingTab from './tabs/MarketingTab';
 import MarketingScreen from './dashboard-screens/sales-agent/MarketingScreen';
 import PropertyListingsTab from './tabs/PropertyListingsTab';
+import ContactsTab from './tabs/ContactsTab';
 import HRManagerAttendanceTab from './tabs/HRManagerAttendanceTab';
 import HRManagerPayrollTab from './tabs/HRManagerPayrollTab';
 import HRManagerPerformanceTab from './tabs/HRManagerPerformanceTab';
@@ -212,6 +213,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <MarketingScreen user={user} />;
           case 'listings':
             return <PropertyListingsTab user={user} />;
+          case 'contacts':
+            return <ContactsTab user={user} />;
           default:
             return <SalesAgentDashboard />;
         }
