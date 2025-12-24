@@ -11,6 +11,7 @@ import AuditorDashboard from './dashboard-screens/AuditorDashboard';
 import AnalyticsTab from './tabs/AnalyticsTab';
 import PortfolioTab from './tabs/PortfolioTab';
 import ProjectsTab from './tabs/ProjectsTab';
+import TimelineTab from './tabs/TimelineTab';
 import FinancialsTab from './tabs/FinancialsTab';
 import EmployeesTab from './tabs/EmployeesTab';
 import NotificationsTab from './tabs/NotificationsTab';
@@ -135,6 +136,8 @@ export default function DashboardContent({ user, activeTab }: DashboardContentPr
             return <ProjectManagerDashboard />;
           case 'projects':
             return <ProjectsTab user={user} />;
+          case 'timeline':
+            return <TimelineTab user={user} />;
           case 'budget':
             return <BudgetTrackerScreen user={user} />;
           case 'resources':
