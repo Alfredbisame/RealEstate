@@ -30,7 +30,7 @@ export default function ProjectTimelineWidget({
   className = "" 
 }: ProjectTimelineWidgetProps) {
   return (
-    <div className={`bg-white dark:bg-gray-800 rounded-lg shadow ${className}`}>
+    <div className={`bg-white dark:bg-gray-800 rounded-lg shadow ${className} max-w-full`}>
       <ProjectTimelineHeader />
       <ProjectTimelineContent milestones={milestones} />
     </div>

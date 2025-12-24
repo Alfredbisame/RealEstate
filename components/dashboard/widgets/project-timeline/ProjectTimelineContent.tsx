@@ -41,13 +41,13 @@ export default function ProjectTimelineContent({ milestones }: ProjectTimelineCo
     <div className="p-4">
       <div className="space-y-4">
         {milestones.map((milestone) => (
-          <div key={milestone.id} className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
-            <div className="flex items-center">
-              <div className="mr-3">
+          <div key={milestone.id} className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg max-w-full">
+            <div className="flex items-center min-w-0 flex-1">
+              <div className="mr-3 flex-shrink-0">
                 {getStatusIcon(milestone.status)}
               </div>
-              <div>
-                <p className="text-sm font-medium text-gray-900 dark:text-white">{milestone.title}</p>
+              <div className="min-w-0 flex-1">
+                <p className="text-sm font-medium text-gray-900 dark:text-white truncate">{milestone.title}</p>
                 <div className="flex items-center mt-1">
                   <span className={`text-xs px-2 py-0.5 rounded-full ${getStatusColor(milestone.status)}`}>
                     {milestone.status.replace('-', ' ')}
@@ -55,7 +55,7 @@ export default function ProjectTimelineContent({ milestones }: ProjectTimelineCo
                 </div>
               </div>
             </div>
-            <div className="text-xs text-gray-500 dark:text-gray-400">
+            <div className="text-xs text-gray-500 dark:text-gray-400 whitespace-nowrap ml-2 flex-shrink-0">
               {milestone.startDate} - {milestone.endDate}
             </div>
           </div>

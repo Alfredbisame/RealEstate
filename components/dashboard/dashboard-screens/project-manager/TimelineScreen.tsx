@@ -110,7 +110,7 @@ export default function TimelineScreen({ user }: { user: User }) {
   });
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 max-w-full">
       <TimelineHeader 
         user={user} 
         searchTerm={searchTerm} 

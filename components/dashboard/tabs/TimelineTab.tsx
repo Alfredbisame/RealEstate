@@ -16,5 +16,9 @@ interface TimelineTabProps {
 }
 
 export default function TimelineTab({ user }: TimelineTabProps) {
-  return <TimelineScreen user={user} />;
+  return (
+    <div className="max-w-full">
+      <TimelineScreen user={user} />
+    </div>
+  );
 }

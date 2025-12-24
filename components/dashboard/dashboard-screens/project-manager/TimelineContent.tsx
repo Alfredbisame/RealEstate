@@ -50,28 +50,28 @@ export default function TimelineContent({ milestones }: TimelineContentProps) {
   return (
     <div className="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
       <div className="overflow-x-auto">
-        <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
+        <table className="w-full max-w-full divide-y divide-gray-200 dark:divide-gray-700">
           <thead className="bg-gray-50 dark:bg-gray-700">
             <tr>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+              <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider min-w-[150px]">
                 Milestone
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+              <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider min-w-[120px]">
                 Dates
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+              <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider min-w-[100px]">
                 Assignee
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+              <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider min-w-[100px]">
                 Status
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+              <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider min-w-[80px]">
                 Priority
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+              <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider min-w-[120px]">
                 Progress
               </th>
-              <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
+              <th scope="col" className="px-4 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider min-w-[80px]">
                 Actions
               </th>
             </tr>
@@ -79,24 +79,24 @@ export default function TimelineContent({ milestones }: TimelineContentProps) {
           <tbody className="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
             {milestones.map((milestone) => (
               <tr key={milestone.id} className="hover:bg-gray-50 dark:hover:bg-gray-700/50">
-                <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-4 py-3 whitespace-nowrap">
                   <div>
-                    <div className="text-sm font-medium text-gray-900 dark:text-white">{milestone.title}</div>
-                    <div className="text-sm text-gray-500 dark:text-gray-400">{milestone.description}</div>
+                    <div className="text-sm font-medium text-gray-900 dark:text-white truncate max-w-xs">{milestone.title}</div>
+                    <div className="text-xs text-gray-500 dark:text-gray-400 truncate max-w-xs">{milestone.description}</div>
                   </div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-4 py-3 whitespace-nowrap">
                   <div className="text-sm text-gray-900 dark:text-white">
                     {milestone.startDate} <ArrowRight className="inline w-4 h-4 mx-1" /> {milestone.endDate}
                   </div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-4 py-3 whitespace-nowrap">
                   <div className="flex items-center">
                     <User className="w-4 h-4 mr-2 text-gray-500 dark:text-gray-400" />
-                    <span className="text-sm text-gray-900 dark:text-white">{milestone.assignee}</span>
+                    <span className="text-sm text-gray-900 dark:text-white truncate max-w-[80px]">{milestone.assignee}</span>
                   </div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-4 py-3 whitespace-nowrap">
                   <div className="flex items-center">
                     {getStatusIcon(milestone.status)}
                     <span className={`ml-2 px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getStatusColor(milestone.status)}`}>
@@ -104,14 +104,14 @@ export default function TimelineContent({ milestones }: TimelineContentProps) {
                     </span>
                   </div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-4 py-3 whitespace-nowrap">
                   <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${getPriorityColor(milestone.priority)}`}>
                     {milestone.priority.charAt(0).toUpperCase() + milestone.priority.slice(1)}
                   </span>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap">
+                <td className="px-4 py-3 whitespace-nowrap">
                   <div className="text-sm text-gray-900 dark:text-white">{milestone.progress}%</div>
-                  <div className="mt-1 w-full bg-gray-200 rounded-full h-2">
+                  <div className="mt-1 w-full bg-gray-200 rounded-full h-2 max-w-[80px]">
                     <div 
                       className={`h-2 rounded-full ${
                         milestone.progress === 100 ? 'bg-green-600' : 
@@ -123,7 +123,7 @@ export default function TimelineContent({ milestones }: TimelineContentProps) {
                     ></div>
                   </div>
                 </td>
-                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                <td className="px-4 py-3 whitespace-nowrap text-sm font-medium">
                   <button className="text-blue-600 hover:text-blue-900 dark:text-blue-400 dark:hover:text-blue-300">
                     View
                   </button>
